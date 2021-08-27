@@ -1,7 +1,7 @@
 line 1:
 line 2:
 line 3:missing ;
-line 4:undeclared variable X
+line 4:undeclared variable
 line 5:
 line 6:
 line 7:

@@ -21,6 +21,7 @@ int main()
     runCheck(1,3,1);
     runCheck(2,3,8);
     runCheck(10,9,1000000000);
-    
+
+    printf("Your code has passed all test cases!!!\n");
     return EXIT_SUCCESS;
 }

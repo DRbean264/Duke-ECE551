@@ -1,0 +1,55 @@
+Grading at 09/08/2021:03:56:52.876296
+For commit ID 75ef7f103b2450badb6ca8254ea693fde4fefb4a
+Grading at Tue Sep  7 23:56:51 EDT 2021
+**Testing broken implementation 10 **
+-------------------------------------
+
+For 2 and 5, expected 32 but got 2
+**Testing broken implementation 11 **
+-------------------------------------
+
+For 10 and 9, expected 1000000000 but got 512
+**Testing broken implementation 1 **
+-------------------------------------
+
+For 2 and 1, expected 2 but got 1
+**Testing broken implementation 2 **
+-------------------------------------
+
+For 2 and 0, expected 1 but got 0
+**Testing broken implementation 3 **
+-------------------------------------
+
+For 0 and 0, expected 1 but got 0
+**Testing broken implementation 4 **
+-------------------------------------
+
+For 2 and 31, expected 2147483648 but got 0
+**Testing broken implementation 5 **
+-------------------------------------
+
+For 2 and 5, expected 32 but got 0
+**Testing broken implementation 6 **
+-------------------------------------
+
+For 0 and 3, expected 0 but got 8
+**Testing broken implementation 7 **
+-------------------------------------
+
+For 2 and 1, expected 2 but got 3
+**Testing broken implementation 8 **
+-------------------------------------
+
+For 2 and 5, expected 32 but got 10
+**Testing broken implementation 9 **
+-------------------------------------
+
+For 2 and 1, expected 2 but got 0
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED

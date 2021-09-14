@@ -2,6 +2,6 @@
 Now *p = 16
 anArray[0] = 5
 anArray[1] = 42
-anArray[0] = 9
-anArray[0] = 12
+anArray[2] = 9
+anArray[3] = 12
 

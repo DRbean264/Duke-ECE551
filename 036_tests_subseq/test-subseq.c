@@ -4,7 +4,10 @@
 size_t maxSeq(int *array, size_t n);
 
 int testCase(int *array, size_t n, size_t trueAns) {
-    if (maxSeq(array, n) != trueAns) return 0;
+    if (maxSeq(array, n) != trueAns) {
+        printf("True: %zu   Expected ans: %zu", trueAns, maxSeq(array, n));
+        return 0;
+    }
     else return 1;
 }
 
@@ -18,15 +21,14 @@ int main()
     int arr6[8] = {-5,-87,-63,-52,-88,-96,-90,-3};
     int arr7[8] = {999,3,5,-63,-52,-3,1,0};
 
-    if (!testCase(arr1,6,1)) return EXIT_FAILURE;
-    if (!testCase(arr3,0,0)) return EXIT_FAILURE;
-    if (!testCase(arr2,1,1)) return EXIT_FAILURE;
-    if (!testCase(arr3,8,8)) return EXIT_FAILURE;
-    if (!testCase(arr4,8,1)) return EXIT_FAILURE;
-    if (!testCase(arr5,8,5)) return EXIT_FAILURE;
-    if (!testCase(arr6,8,3)) return EXIT_FAILURE;
-    if (!testCase(arr7,8,4)) return EXIT_FAILURE;
-    
+    if (!testCase(arr1,6,1)) exit(EXIT_FAILURE);
+    if (!testCase(arr3,0,0)) exit(EXIT_FAILURE);
+    if (!testCase(arr2,1,1)) exit(EXIT_FAILURE);
+    if (!testCase(arr3,8,8)) exit(EXIT_FAILURE);
+    if (!testCase(arr4,8,1)) exit(EXIT_FAILURE);
+    if (!testCase(arr5,8,5)) exit(EXIT_FAILURE);
+    if (!testCase(arr6,8,3)) exit(EXIT_FAILURE);
+    if (!testCase(arr7,8,4)) exit(EXIT_FAILURE);    
     
     return EXIT_SUCCESS;
 }

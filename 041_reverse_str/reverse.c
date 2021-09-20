@@ -5,6 +5,8 @@
 void reverse(char * str) {
     //WRITE ME!
     //  calculate length
+    if (!str) return;
+
     size_t len = 0;
     char *sptr = str;
     while (*sptr != '\0') {

@@ -5,13 +5,13 @@
 int main(int argc, char *argv[])
 {
     if (argc != 2) {
-        fprintf(stderr, "The command line arguments is of wrong number!");
+        fprintf(stderr, "The command line arguments are of wrong number!\n");
         exit(EXIT_FAILURE);
     }
     //  open the file
     FILE *f = fopen(argv[1], "r");
     if (f == NULL) {
-         fprintf(stderr, "Fail to open the requested file!");
+         fprintf(stderr, "Fail to open the requested file!\n");
          exit(EXIT_FAILURE);
     }
 
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
     // printf("%c\n", 'a' + (int)maxFreqIndex);
     int key;
-    if (maxFreqIndex > 4) key = maxFreqIndex - 4;
+    if (maxFreqIndex >= 4) key = maxFreqIndex - 4;
     else key = 26 - (4 - maxFreqIndex);
 
     printf("%d\n", key);

@@ -1,0 +1,17 @@
+Grading at 09/22/2021:04:29:18.273580
+For commit ID 741b3cdcd8ffb2cf5bd6bab4a1f7674a060357ca
+Grading at Wed Sep 22 00:29:14 EDT 2021
+Attempting to compile breaker.c 
+make: 'breaker' is up to date.
+valgrind reported memory errors
+#################################################
+testcase2:
+testcase2 failed
+#################################################
+testcase3:
+testcase3 passed
+#################################################
+testcase4:
+testcase4 passed
+
+Overall Grade: F

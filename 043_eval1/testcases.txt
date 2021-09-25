@@ -5,4 +5,5 @@ printDailyMax population.csv
 
 #success
 printCountries population.csv
+printCountries population_broken.csv
 printDailyMax population.csv daily_small.csv

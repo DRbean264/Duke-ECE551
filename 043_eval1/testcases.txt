@@ -6,7 +6,6 @@ printRunningAvg population.csv
 printRunningAvg daily_small.csv
 printRunningAvg daily_small.csv population.csv
 printRunningAvg
-printRunningAvg population.csv daily_non.csv
 printDailyMax population.csv
 
 #success
@@ -15,4 +14,5 @@ printCountries population_fine.csv
 printRunningAvg population.csv daily_small.csv
 printRunningAvg population.csv daily_smallest.csv
 printRunningAvg population.csv daily_cases.csv
+printRunningAvg population.csv daily_non.csv
 printDailyMax population.csv daily_small.csv

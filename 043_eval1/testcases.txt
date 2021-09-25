@@ -10,4 +10,5 @@ printCountries population.csv
 printCountries population_fine.csv
 printRunningAvg population.csv daily_small.csv
 printRunningAvg population.csv daily_smallest.csv
+printRunningAvg population.csv daily_cases.csv
 printDailyMax population.csv daily_small.csv

@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <math.h>
 
 country_t parseLine(char * line) {
     //WRITE ME
@@ -50,15 +51,14 @@ country_t parseLine(char * line) {
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     //WRITE ME
-    if (n_days < 7) {  //  not enough days
-        fprintf(stderr, "Running average error: the days are less than 7\n");
-        exit(EXIT_FAILURE);
-    }
-    
     int sum_seven_day = 0;
-    for (int i = 0; i < 7; ++i) {
+    for (size_t i = 0; i < (n_days < 7 ? n_days : 7); ++i) {
         sum_seven_day += data[i];
     }
+    if (n_days < 7) {  //  the array avg only has one element
+        avg[0] = sum_seven_day * 1.0 / n_days;
+        return;
+    }    
     avg[0] = sum_seven_day / 7.0;
 
     for (size_t i = 1; i < n_days - 6; ++i) {

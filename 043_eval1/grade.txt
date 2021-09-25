@@ -1,6 +1,6 @@
-Grading at 09/25/2021:19:38:39.365644
-For commit ID 365d57b57a8b5512829dcad502d7eaffdf36a61d
-Grading at Sat Sep 25 15:38:34 EDT 2021
+Grading at 09/25/2021:19:41:09.378238
+For commit ID 66e126b11454be43d7cf2de7d39faf4e34f68e84
+Grading at Sat Sep 25 15:41:04 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -14,7 +14,7 @@ Test case printCountries
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population_broken.csv
-Our printCountries does not consider this an error case
+Your program successfully indicated a failure case
 
 Compiling printDailyMax
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -40,7 +40,7 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o prin
 Test case printDailyMax population.csv daily_small.csv
 Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET

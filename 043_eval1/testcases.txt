@@ -1,0 +1,8 @@
+#error
+printCountries invalid.csv
+printCountries 
+printDailyMax population.csv
+
+#success
+printCountries population.csv
+printDailyMax population.csv daily_small.csv

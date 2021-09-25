@@ -39,7 +39,7 @@ country_t parseLine(char * line) {
     }
     //  pass format checking, store the population
     char *leftover;    
-    unsigned long long tmpPop = strtoul(commaPos + 1, &leftover, 10);
+    unsigned long long tmpPop = strtoull(commaPos + 1, &leftover, 10);
     if (tmpPop > ULLONG_MAX) {
         fprintf(stderr, "Population error: the population is too large to be fit into the variable\n");
         exit(EXIT_FAILURE);

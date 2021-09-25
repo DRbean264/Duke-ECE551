@@ -1,7 +1,46 @@
-Grading at 09/25/2021:18:39:10.341311
-For commit ID 5df13f7fa86ef8b95ea1b092078b57906fc3f01a
-Grading at Sat Sep 25 14:39:10 EDT 2021
+Grading at 09/25/2021:18:41:04.270242
+For commit ID 2fc3e3df3e1f208e98c6e45102702ce439132f50
+Grading at Sat Sep 25 14:40:59 EDT 2021
 Running your test cases
-Cannot proceed without testcases.txt
+
+Compiling printCountries
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
++-----------------------------------------------------------------------+
+Test case printCountries invalid.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries 
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries population_broken.csv
+Your program successfully indicated a failure case
+
+Compiling printDailyMax
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv
+Your program successfully indicated a failure case
+
+Compiling printCountries
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
++-----------------------------------------------------------------------+
+Test case printCountries population.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries population_fine.csv
+Your file matched the expected output
+
+Compiling printDailyMax
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_small.csv
+Your file matched the expected output
+
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET

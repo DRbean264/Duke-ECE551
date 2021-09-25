@@ -37,7 +37,8 @@ country_t parseLine(char * line) {
         ++tmp;
     }
     //  pass format checking, store the population
-    ans.population = atoi(commaPos + 1);
+    char *leftover;
+    ans.population = strtoul(commaPos + 1, &leftover, 10);
 
     return ans;
 }

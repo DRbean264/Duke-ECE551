@@ -1,7 +1,40 @@
-Grading at 09/25/2021:04:35:06.423112
-For commit ID e8feb2af2ffb8510fb7f139cc55c7855e486a7ff
-Grading at Sat Sep 25 00:35:06 EDT 2021
+Grading at 09/25/2021:17:49:28.060168
+For commit ID 1d50b015ee705cb2728b7f5bf4bb11bbed5b46d0
+Grading at Sat Sep 25 13:49:24 EDT 2021
 Running your test cases
-Cannot proceed without testcases.txt
+
+Compiling printCountries
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
++-----------------------------------------------------------------------+
+Test case printCountries invalid.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries 
+Your program successfully indicated a failure case
+
+Compiling printDailyMax
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv
+Your program successfully indicated a failure case
+
+Compiling printCountries
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
++-----------------------------------------------------------------------+
+Test case printCountries population.csv
+Your file matched the expected output
+
+Compiling printDailyMax
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_small.csv
+Your file matched the expected output
+
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET

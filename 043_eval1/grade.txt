@@ -1,6 +1,6 @@
-Grading at 09/25/2021:19:58:03.112405
-For commit ID 110bcf94c1dba1d0e577537eb3055bf192371de1
-Grading at Sat Sep 25 15:57:56 EDT 2021
+Grading at 09/25/2021:20:01:33.853715
+For commit ID 23c32d82c40f4b7b7b31fdb6b0afbbd39cb91c1a
+Grading at Sat Sep 25 16:01:26 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -41,6 +41,9 @@ Test case printRunningAvg population.csv daily_small.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_smallest.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_cases.csv
 Your file matched the expected output
 
 Compiling printDailyMax

@@ -2,8 +2,11 @@
 printCountries invalid.csv
 printCountries 
 printCountries population_broken.csv
+printRunningAvg population.csv
+printRunningAvg daily_small.csv
+printRunningAvg daily_small.csv population.csv
+printRunningAvg
 printDailyMax population.csv
-
 
 #success
 printCountries population.csv

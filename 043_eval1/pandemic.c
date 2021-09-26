@@ -31,21 +31,14 @@ country_t parseLine(char * line) {
         fprintf(stderr, "Format error: population is not given\n");
         exit(EXIT_FAILURE);
     }
-    if (*tmp < '0' || *tmp > '9') {
+    if (*tmp < '0' || *tmp > '9') {  //  if the character directly after the comma is not a number
         fprintf(stderr, "Format error: population contains other character other than number\n");
         exit(EXIT_FAILURE);
     } 
-    /* while (*tmp != '\n') { */
-    /*     if (*tmp < '0' || *tmp > '9') {  //  if meet a non-number */
-    /*         fprintf(stderr, "Format error: population contains other character other than number\n"); */
-    /*         exit(EXIT_FAILURE);     */
-    /*     } */
-    /*     ++tmp; */
-    /* } */
     //  pass format checking, store the population
     char *leftover;    
     unsigned long long tmpPop = strtoull(commaPos + 1, &leftover, 10);
-    if (tmpPop > ULLONG_MAX) {
+    if (tmpPop > ULONG_MAX) {
         fprintf(stderr, "Population error: the population is too large to be fit into the variable\n");
         exit(EXIT_FAILURE);
     }

@@ -32,9 +32,12 @@ country_t parseLine(char * line) {
         exit(EXIT_FAILURE);
     }
     //  skip the white space directly after the comma
-    while (*(tmp++) == ' ');
+    while (*tmp == ' ') {
+        ++tmp;
+    }
     
     if ((*tmp < '0' || *tmp > '9') && *tmp != '+' && *tmp != '-') {  //  if the character directly after the comma is not a number
+        printf("%c\n", *tmp);
         fprintf(stderr, "Format error: population contains other character other than number\n");
         exit(EXIT_FAILURE);
     } 

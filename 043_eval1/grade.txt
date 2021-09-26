@@ -1,6 +1,6 @@
-Grading at 09/26/2021:04:27:04.820665
-For commit ID 1aeee38e7595f92767835273bdc30679fb3b1e73
-Grading at Sun Sep 26 00:26:51 EDT 2021
+Grading at 09/26/2021:04:28:42.959085
+For commit ID 51cc19ae939a19bc7ecbe80d9eabd65e9836965d
+Grading at Sun Sep 26 00:28:29 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -14,7 +14,9 @@ Test case printCountries
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population_broken.csv
-Your program successfully indicated a failure case
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 1
+ewjriif: 0
+Your program did not indicate a failure case
 
 Compiling printRunningAvg
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -47,19 +49,7 @@ Test case printCountries population.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries population_fine.csv
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_8_did_not_match
-Line_9_did_not_match
-Line_10_did_not_match
-Line_11_did_not_match
-Line_12_did_not_match
-Your file did not match the expected ouput
+Your file matched the expected output
 
 Compiling printRunningAvg
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax

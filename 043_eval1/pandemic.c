@@ -36,10 +36,16 @@ country_t parseLine(char * line) {
         ++tmp;
     }
     
-    if ((*tmp < '0' || *tmp > '9') && *tmp != '+' && *tmp != '-') {  //  if the character directly after the comma is not a number
-        printf("%c\n", *tmp);
-        fprintf(stderr, "Format error: population contains other character other than number\n");
-        exit(EXIT_FAILURE);
+    if (*tmp < '0' || *tmp > '9') {  //  if the character directly after the comma is not a number
+        if (*tmp == '-' || *tmp == '+') {  //  if it's the +/-
+            if (*(tmp + 1) < '0' || *(tmp + 1) > '9') {
+                fprintf(stderr, "Format error: population contains other character other than number after the sign character\n");
+            exit(EXIT_FAILURE);
+            }
+        } else {
+            fprintf(stderr, "Format error: population begins with other character other than number and sign character\n");
+            exit(EXIT_FAILURE);   
+        }
     } 
     //  pass format checking, store the population
     char *leftover;    

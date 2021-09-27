@@ -40,7 +40,7 @@ country_t parseLine(char * line) {
         if (*tmp == '-' || *tmp == '+') {  //  if it's the +/-
             if (*(tmp + 1) < '0' || *(tmp + 1) > '9') {
                 fprintf(stderr, "Format error: population contains other character other than number after the sign character\n");
-            exit(EXIT_FAILURE);
+                exit(EXIT_FAILURE);
             }
         } else {
             fprintf(stderr, "Format error: population begins with other character other than number and sign character\n");

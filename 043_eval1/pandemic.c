@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <math.h>
+#include <errno.h>
 
 country_t parseLine(char * line) {
     //WRITE ME
@@ -50,7 +51,7 @@ country_t parseLine(char * line) {
     //  pass format checking, store the population
     char *leftover;    
     unsigned long long tmpPop = strtoull(commaPos + 1, &leftover, 10);
-    if (tmpPop > ULONG_MAX) {
+    if (tmpPop == ULONG_MAX && errno == ERANGE) {
         fprintf(stderr, "Population error: the population is too large to be fit into the variable\n");
         exit(EXIT_FAILURE);
     }

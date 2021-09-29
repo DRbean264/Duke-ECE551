@@ -1,6 +1,6 @@
-Grading at 09/29/2021:19:28:22.816423
-For commit ID 4117f5f0733c8a3c258b1b4c09cc49bcf09a6901
-Grading at Wed Sep 29 15:28:09 EDT 2021
+Grading at 09/29/2021:19:29:53.678310
+For commit ID 2659cfeef679441b0825fa1d7f4edbd137f3aaa1
+Grading at Wed Sep 29 15:29:39 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -83,6 +83,9 @@ Test case printDailyMax population.csv daily_small.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_cases.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_tie.csv
 Your file matched the expected output
 
 You have PASSED all of your test cases

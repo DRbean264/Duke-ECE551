@@ -116,7 +116,7 @@ void findMax(size_t *maxCountryIndex, size_t *maxDayIndex, int *isTie, unsigned 
                 *maxCountryIndex = i;
                 *maxDayIndex = j;
                 *isTie = 0;
-            } else if (data[i][j] == data[*maxCountryIndex][*maxDayIndex]) {
+            } else if (data[i][j] == data[*maxCountryIndex][*maxDayIndex] && i != *maxCountryIndex) {
                 *isTie = 1;
             }
         }        

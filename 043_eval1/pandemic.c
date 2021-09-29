@@ -6,19 +6,25 @@
 #include <math.h>
 #include <errno.h>
 
+//  check the format of the country name
+void countryNameFormatChecking(const char *line, const char *commaPos) {
+    if (commaPos == NULL) {  //  if ',' is not found, error
+        fprintf(stderr, "Format error: there's no comma\n");
+        exit(EXIT_FAILURE);
+    } else if (commaPos - line > 63) {  //  name longer than 63 characters, error
+        fprintf(stderr, "Format error: the name is too long\n");
+        exit(EXIT_FAILURE);    
+    }
+}
+
 country_t parseLine(char * line) {
     //WRITE ME
     country_t ans;
     
     //  find comma
     char *commaPos = strchr(line, ',');
-    if (commaPos == NULL) {  //  if , is not found
-        fprintf(stderr, "Format error: there's no comma\n");
-        exit(EXIT_FAILURE);
-    } else if (commaPos - line > 63) {  //  name too long
-        fprintf(stderr, "Format error: the name is too long\n");
-        exit(EXIT_FAILURE);    
-    }
+    // format checking
+    countryNameFormatChecking(line, commaPos);
     //  store the name
     int i;
     for (i = 0; (line + i) != commaPos; ++i) {

@@ -61,6 +61,8 @@ country_t parseLine(char * line) {
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     //WRITE ME
+    if (n_days < 7) return;
+    
     int sum_seven_day = 0;
     for (size_t i = 0; i < (n_days < 7 ? n_days : 7); ++i) {
         sum_seven_day += data[i];
@@ -80,6 +82,8 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
     //WRITE ME
+    if (n_days == 0) return;
+    
     //  calculate the first one
     uint64_t cumulative = data[0];
     cum[0] = cumulative * 100000.0 / pop;
@@ -95,6 +99,8 @@ void printCountryWithMax(country_t * countries,
                          unsigned ** data,
                          size_t n_days) {
     //WRITE ME
+    if (n_countries == 0 || n_days == 0) return;
+    
     size_t maxCountryIndex = 0;
     size_t maxDayIndex = 0;
     int isTie = 0;

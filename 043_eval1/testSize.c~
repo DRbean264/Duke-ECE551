@@ -1,8 +1,0 @@
-#include <stdio.h>
-
-int main()
-{
-    printf("%zd\n", sizeof(unsigned long));
-    printf("%zd\n", sizeof(unsigned long long));
-    return 0;
-}

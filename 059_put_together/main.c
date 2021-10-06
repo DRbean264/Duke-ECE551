@@ -35,8 +35,11 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
         if (!isValid) {         /* if not valid */
             addCount(c, NULL);
         }
+        free(line);
+        line = NULL;
     }
-    
+    free(line);
+    fclose(fp);
     return c;
 }
 

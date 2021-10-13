@@ -9,7 +9,7 @@ private:
     
 public:
     Vector2D();
-    Vector2D(int x_init, int y_init);
+    Vector2D(double x_init, double y_init);
     void initVector(double init_x, double init_y);
     double getMagnitude() const;
     Vector2D operator+(const Vector2D &rhs) const;

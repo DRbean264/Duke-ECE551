@@ -10,7 +10,7 @@ using std::printf;
 Vector2D::Vector2D() : x(0), y(0) {
 }
 
-Vector2D::Vector2D(int x_init, int y_init) : x(x_init), y(y_init) {
+Vector2D::Vector2D(double x_init, double y_init) : x(x_init), y(y_init) {
 }
 
 double Vector2D::getMagnitude() const {
@@ -18,8 +18,7 @@ double Vector2D::getMagnitude() const {
 }
 
 Vector2D Vector2D::operator+(const Vector2D &rhs) const {
-    Vector2D newVec;
-    newVec.initVector(x + rhs.x, y + rhs.y);
+    Vector2D newVec(x + rhs.x, y + rhs.y);
     return newVec;
 }
 

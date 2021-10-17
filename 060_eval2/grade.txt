@@ -1,6 +1,6 @@
-Grading at 10/17/2021:20:32:02.629877
-For commit ID a3dff33dbd071da6745c91cd9dbf3dade2375fa6
-Grading at Sun Oct 17 16:31:55 EDT 2021
+Grading at 10/17/2021:20:36:34.578554
+For commit ID 990baa6e54c71c676fec3f3cd8dbcfb3bded631c
+Grading at Sun Oct 17 16:36:28 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -54,30 +54,10 @@ gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story.txt
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_8_did_not_match
-Line_9_did_not_match
-Line_10_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story2.txt
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_8_did_not_match
-Line_9_did_not_match
-Line_10_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 
 Compiling story-step4
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o

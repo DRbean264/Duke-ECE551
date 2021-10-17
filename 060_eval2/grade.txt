@@ -1,6 +1,6 @@
-Grading at 10/17/2021:21:12:09.660758
-For commit ID 9e845ff70f53f1a5a771a52034454fe35fe1eb26
-Grading at Sun Oct 17 17:12:02 EDT 2021
+Grading at 10/17/2021:21:13:25.405809
+For commit ID fa2ae1084fb348eaf62ce339089c73f9b1b43bd0
+Grading at Sun Oct 17 17:13:17 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -34,7 +34,7 @@ Test case story-step4 words.txt -n story2.txt
 Words: words.txt
 Story: story2.txt
 Reuse: 0
-Your program did not indicate a failure case
+Your program successfully indicated a failure case
 
 Compiling story-step1
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -83,6 +83,7 @@ Test case story-step4 words.txt -n story2.txt
 Line_1_did_not_match
 Line_2_did_not_match
 Line_3_did_not_match
+Line_4_did_not_match
 Your file did not match the expected output
 
 You have FAILED one or more of your test cases

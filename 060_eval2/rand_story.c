@@ -19,6 +19,36 @@ const char *findMark(const char *line, const char mark) {
     return NULL;                /* if not found */
 }
 
+int isValidNum(const char *category, category_t *used) {
+    char *rest = NULL;
+    unsigned long num = strtoul(category, &rest, 10);
+
+    /* anything smaller than 1 or there exists characters other then number, is not a valid number */
+    if (num < 1 || *rest != '\0') {
+        return 0;
+    }
+    /* if the number is bigger than the number of words used, is still not a valid number */
+    if (num > used->n_words) {
+        return 0;
+    }    
+    return 1;
+}
+
+int isCategoryExist(const char *category, catarray_t *catarr) {
+    for (size_t i = 0; i < catarr->n; ++i) {
+        if (strcmp(category, catarr->arr[i].name) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+void updateUsedWord(category_t *used, const char *word) {
+    used->words = realloc(used->words, (used->n_words + 1) * sizeof(*used->words));
+    used->words[used->n_words] = (char *)word;
+    ++used->n_words;
+}
+
 void parseStory(const char *filename, catarray_t *catarr) {
     // open file
     FILE *f = fopen(filename, "r");
@@ -26,6 +56,11 @@ void parseStory(const char *filename, catarray_t *catarr) {
         exitWithError("Cannot open the file.\n");
     }
 
+    category_t used;
+    used.name = NULL;
+    used.words = NULL;
+    used.n_words = 0;
+    
     size_t sz = 0;
     char *line = NULL;
     while (getline(&line, &sz, f) >= 0) {
@@ -47,8 +82,20 @@ void parseStory(const char *filename, catarray_t *catarr) {
 
             /* extract the category & find the word to insert & print the word */
             char *category = strndup(firstMark + 1, matchedMark - firstMark - 1);
-            const char *word = chooseWord(category, catarr);            
-            printf("%s", word);
+            /* check if "category" is a valid number */
+            if (isValidNum(category, &used)) { /* if is a valid number, then use previous word */
+                /* I don't know if I should consider the number is out of the range of long integer */
+                unsigned long num = strtoul(category, NULL, 10);
+                const char *word = used.words[used.n_words - num];
+                updateUsedWord(&used, word);
+                printf("%s", word);
+            } else if (isCategoryExist(category, catarr)) { /* if the category exists, then random choose a word from that */
+                const char *word = chooseWord(category, catarr);
+                updateUsedWord(&used, word);
+                printf("%s", word);
+            } else {
+                exitWithError("The category is neither a valid number nor an existed one.\n");
+            }
 
             /* update print position */
             printPos = matchedMark + 1;
@@ -57,7 +104,9 @@ void parseStory(const char *filename, catarray_t *catarr) {
         /* print the rest of the line */
         printf("%s", printPos);
     }
-    free(line);    
+    free(line);
+    /* free used */
+    free(used.words);
     fclose(f);
 }
 

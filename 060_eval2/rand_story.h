@@ -11,5 +11,9 @@ const char *findMark(const char *line, const char mark);
 catarray_t *getCatArrayFromFile(const char *filename);    
 void addWordInCategory(catarray_t *catarr, char *category, char *word);
 void freeCatArray(catarray_t *catarr);
+int isValidNum(const char *category, category_t *used);
+int isCategoryExist(const char *category, catarray_t *catarr);
+void updateUsedWord(category_t *used, const char *word);
+
 
 #endif

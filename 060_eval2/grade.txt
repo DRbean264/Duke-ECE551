@@ -1,6 +1,6 @@
-Grading at 10/17/2021:20:36:34.578554
-For commit ID 990baa6e54c71c676fec3f3cd8dbcfb3bded631c
-Grading at Sun Oct 17 16:36:28 EDT 2021
+Grading at 10/17/2021:20:55:09.806081
+For commit ID 80266438088e0dd3cfdd028708eee68c70f61221
+Grading at Sun Oct 17 16:55:02 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -31,10 +31,10 @@ gcc -o story-step1 story-step1.o rand_story.o provided.o
 rm story-step1.o
 +-----------------------------------------------------------------------+
 Test case story-step1 story2.txt
-Valgrind reported memory errors
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step1 story.txt
-Valgrind reported memory errors
+Your file matched the expected output
 
 Compiling story-step2
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o

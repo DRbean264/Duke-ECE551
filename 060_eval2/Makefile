@@ -1,6 +1,5 @@
 CFLAGS=-std=gnu99 -pedantic -Wall -Werror -ggdb3
-#PROGS=story-step1 story-step2 story-step3 story-step4
-PROGS=story-step1 story-step2 story-step3
+PROGS=story-step1 story-step2 story-step3 story-step4
 OBJS=$(patsubst %,%.o,$(PROGS)) rand_story.o
 all: $(PROGS)
 story-step%: story-step%.o rand_story.o provided.o

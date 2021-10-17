@@ -14,6 +14,7 @@ void freeCatArray(catarray_t *catarr);
 int isValidNum(const char *category, category_t *used);
 int isCategoryExist(const char *category, catarray_t *catarr);
 void updateUsedWord(category_t *used, const char *word);
-
+int checkOptional(int argc, char *argv[]);
+void parseCommand(int argc, char *argv[], const char **wordsFileName, const char **storyFileName, int *reuse);
 
 #endif

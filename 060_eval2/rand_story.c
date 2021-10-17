@@ -8,6 +8,37 @@ void exitWithError(const char *m) {
     exit(EXIT_FAILURE);
 }
 
+int checkOptional(int argc, char *argv[]) {
+    for (size_t i = 0; i < (size_t)argc - 1; ++i) {
+        if (strcmp(argv[i + 1], "-n") == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+void parseCommand(int argc, char *argv[], const char **wordsFileName, const char **storyFileName, int *reuse) {
+    if (argc == 3) {
+        /* check if "-n" is one of them */
+        if (checkOptional(argc, argv) == 1) { /* if is one of them, wrong */
+            exitWithError("The command is of wrong format.\n");
+        }
+        *wordsFileName = argv[1];
+        *storyFileName = argv[2];
+        *reuse = 1;
+    } else if (argc == 4) {
+        /* check if "-n" is one of them */
+        if (checkOptional(argc, argv) == 0) { /* if is not one of them, wrong */
+            exitWithError("The command is of wrong format.\n");
+        }
+        *wordsFileName = argv[2];
+        *storyFileName = argv[3];
+        *reuse = 0;
+    } else {
+        exitWithError("The command is of wrong format.\n");
+    }
+}
+
 const char *findMark(const char *line, const char mark) {
     const char *pos = line;
     while (*pos != '\0') {

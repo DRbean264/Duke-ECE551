@@ -9,15 +9,9 @@ int main(int argc, char *argv[])
     }
 
     catarray_t *catarr = getCatArrayFromFile(argv[1]);
-    printWords(catarr);
-
+    
     printf("\n");
     parseStory(argv[2], catarr);
-    /* printf("\nCheck randomness:\n"); */
-    /* int count = 20; */
-    /* while (count--) { */
-    /*     printf("%s\n", chooseWord("adjective", catarr)); */
-    /* } */
     
     freeCatArray(catarr);
     return 0;

@@ -1,6 +1,6 @@
-Grading at 10/17/2021:20:17:23.406087
-For commit ID b4059e8e0e3e352f1b1859ce47eb6173f199880d
-Grading at Sun Oct 17 16:17:20 EDT 2021
+Grading at 10/17/2021:20:32:02.629877
+For commit ID a3dff33dbd071da6745c91cd9dbf3dade2375fa6
+Grading at Sun Oct 17 16:31:55 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -23,18 +23,18 @@ rm story-step3.o
 Test case story-step3 err_words.txt story.txt
 Your program successfully indicated a failure case
 
-Compiling story-step4
+Compiling story-step1
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
-gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
-gcc -o story-step4 story-step4.o rand_story.o provided.o
-rm story-step4.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
+gcc -o story-step1 story-step1.o rand_story.o provided.o
+rm story-step1.o
 +-----------------------------------------------------------------------+
-Test case story-step4 words.txt -n story2.txt
-Words: -n
-Story: story2.txt
-Reuse: 0
-Your program did not indicate a failure case
+Test case story-step1 story2.txt
+Valgrind reported memory errors
++-----------------------------------------------------------------------+
+Test case story-step1 story.txt
+Valgrind reported memory errors
 
 Compiling story-step2
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -45,6 +45,52 @@ rm story-step2.o
 +-----------------------------------------------------------------------+
 Test case story-step2 words.txt
 Your file matched the expected output
+
+Compiling story-step3
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story.txt
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story2.txt
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Your file did not match the expected output
+
+Compiling story-step4
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
+gcc -o story-step4 story-step4.o rand_story.o provided.o
+rm story-step4.o
++-----------------------------------------------------------------------+
+Test case story-step4 words.txt -n story2.txt
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Your file did not match the expected output
 
 You have FAILED one or more of your test cases
 Keep debugging

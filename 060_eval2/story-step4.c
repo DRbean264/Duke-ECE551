@@ -11,6 +11,6 @@ int main(int argc, char *argv[])
     parseCommand(argc, argv, &wordsFileName, &storyFileName, &reuse);
 
     printf("Words: %s\nStory: %s\nReuse: %d\n", wordsFileName, storyFileName, reuse);
-    
+    exit(EXIT_FAILURE);
     return 0;
 }

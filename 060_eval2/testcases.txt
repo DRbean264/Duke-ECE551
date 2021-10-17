@@ -1,6 +1,7 @@
 #error
 story-step1 invalid.txt
 story-step3 err_words.txt story.txt
+story-step4 words.txt -n story2.txt
 
 #success
 story-step1 story2.txt

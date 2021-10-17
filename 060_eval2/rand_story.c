@@ -19,23 +19,23 @@ int checkOptional(int argc, char *argv[]) {
 
 void parseCommand(int argc, char *argv[], const char **wordsFileName, const char **storyFileName, int *reuse) {
     if (argc == 3) {
-        /* check if "-n" is one of them */
-        if (checkOptional(argc, argv) == 1) { /* if is one of them, wrong */
-            exitWithError("The command is of wrong format.\n");
+        /* check if "-n" is the second of them */
+        if (strcmp("-n", argv[1]) == 0) { /* if the second is "-n", wrong */
+            exitWithError("The command is of wrong format. Need a story file.\n");
         }
         *wordsFileName = argv[1];
         *storyFileName = argv[2];
         *reuse = 1;
     } else if (argc == 4) {
-        /* check if "-n" is one of them */
-        if (checkOptional(argc, argv) == 0) { /* if is not one of them, wrong */
-            exitWithError("The command is of wrong format.\n");
+        /* check if "-n" is the second of them */
+        if (strcmp("-n", argv[1]) != 0) { /* if the second is not "-n", wrong */
+            exitWithError("The command is of wrong format. Should have the -n.\n");
         }
-        *wordsFileName = argv[1];
+        *wordsFileName = argv[2];
         *storyFileName = argv[3];
         *reuse = 0;
     } else {
-        exitWithError("The command is of wrong format.\n");
+        exitWithError("The command is of wrong format. Wrong number.\n");
     }
 }
 

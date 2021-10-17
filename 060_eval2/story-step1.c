@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void parseStory(const char *filename, catarray_t *catarr);
-
 int main(int argc, char *argv[])
 {
     if (argc != 2) {

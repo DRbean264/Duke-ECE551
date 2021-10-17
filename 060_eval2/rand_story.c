@@ -113,8 +113,11 @@ void parseStory(const char *filename, catarray_t *catarr) {
 
             /* extract the category & find the word to insert & print the word */
             char *category = strndup(firstMark + 1, matchedMark - firstMark - 1);
-            /* check if "category" is a valid number */
-            if (isValidNum(category, &used)) { /* if is a valid number, then use previous word */
+            /* check the "category" format */
+            if (catarr == NULL) { /* specifically for step 1 */
+                const char *word = chooseWord(category, catarr);
+                printf("%s", word);
+            } else if (isValidNum(category, &used)) { /* if is a valid number, then use previous word */
                 /* I don't know if I should consider the number is out of the range of long integer */
                 unsigned long num = strtoul(category, NULL, 10);
                 const char *word = used.words[used.n_words - num];

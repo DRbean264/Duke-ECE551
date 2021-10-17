@@ -31,7 +31,7 @@ void parseCommand(int argc, char *argv[], const char **wordsFileName, const char
         if (checkOptional(argc, argv) == 0) { /* if is not one of them, wrong */
             exitWithError("The command is of wrong format.\n");
         }
-        *wordsFileName = argv[2];
+        *wordsFileName = argv[1];
         *storyFileName = argv[3];
         *reuse = 0;
     } else {

@@ -1,6 +1,6 @@
-Grading at 10/17/2021:21:13:25.405809
-For commit ID fa2ae1084fb348eaf62ce339089c73f9b1b43bd0
-Grading at Sun Oct 17 17:13:17 EDT 2021
+Grading at 10/17/2021:21:21:15.375758
+For commit ID 5c7da95446c7a9f3e52e0e747e07c9a7d9e67c85
+Grading at Sun Oct 17 17:21:07 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -31,9 +31,6 @@ gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
 Test case story-step4 words.txt -n story2.txt
-Words: words.txt
-Story: story2.txt
-Reuse: 0
 Your program successfully indicated a failure case
 
 Compiling story-step1
@@ -71,6 +68,9 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story2.txt
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words_empty.txt story_empty.txt
+Your file matched the expected output
 
 Compiling story-step4
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -81,9 +81,6 @@ rm story-step4.o
 +-----------------------------------------------------------------------+
 Test case story-step4 words.txt -n story2.txt
 Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
 Your file did not match the expected output
 
 You have FAILED one or more of your test cases

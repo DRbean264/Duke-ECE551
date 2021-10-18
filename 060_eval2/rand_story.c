@@ -3,8 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-void exitWithError(const char *m) {
+void exitWithError(const char *m, catarray_t *catarr, category_t *used) {
     fprintf(stderr, "%s", m);
+    freeCatArray(catarr);
+    freeUsedWord(used);
     exit(EXIT_FAILURE);
 }
 
@@ -12,7 +14,7 @@ void parseCommand(int argc, char *argv[], const char **wordsFileName, const char
     if (argc == 3) {
         /* check if "-n" is the second of them */
         if (strcmp("-n", argv[1]) == 0) { /* if the second is "-n", wrong */
-            exitWithError("The command is of wrong format. Need a story file.\n");
+            exitWithError("The command is of wrong format. Need a story file.\n", NULL, NULL);
         }
         *wordsFileName = argv[1];
         *storyFileName = argv[2];
@@ -20,13 +22,13 @@ void parseCommand(int argc, char *argv[], const char **wordsFileName, const char
     } else if (argc == 4) {
         /* check if "-n" is the second of them */
         if (strcmp("-n", argv[1]) != 0) { /* if the second is not "-n", wrong */
-            exitWithError("The command is of wrong format. Should have the -n in the second place.\n");
+            exitWithError("The command is of wrong format. Should have the -n in the second place.\n", NULL, NULL);
         }
         *wordsFileName = argv[2];
         *storyFileName = argv[3];
         *reuse = 0;
     } else {
-        exitWithError("The command is of wrong format. Wrong number.\n");
+        exitWithError("The command is of wrong format. Wrong number.\n", NULL, NULL);
     }
 }
 
@@ -88,6 +90,7 @@ void updateUsedAndExist(category_t *used, catarray_t *catarr, const char *word, 
 }
 
 void freeUsedWord(category_t *used) {
+    if (used == NULL) return;
     for (size_t i = 0; i < used->n_words; ++i) {
         free(used->words[i]);
     }
@@ -98,7 +101,7 @@ void parseStory(const char *filename, catarray_t *catarr, int reuse) {
     // open file
     FILE *f = fopen(filename, "r");
     if (f == NULL) {
-        exitWithError("Cannot open the file.\n");
+        exitWithError("Cannot open the file.\n", NULL, NULL);
     }
 
     category_t used;
@@ -118,7 +121,9 @@ void parseStory(const char *filename, catarray_t *catarr, int reuse) {
             }
             const char *matchedMark = findMark(firstMark + 1, '_'); /* find the second mark */
             if (matchedMark == NULL) { /* no matched mark, error */
-                exitWithError("The underscore is not matched.\n");
+                fclose(f);
+                free(line);
+                exitWithError("The underscore is not matched.\n", catarr, &used);                
             }            
 
             /* print the string before the Mark */
@@ -143,7 +148,9 @@ void parseStory(const char *filename, catarray_t *catarr, int reuse) {
                 printf("%s", word);
                 updateUsedAndExist(&used, catarr, word, catIndex, reuse);                
             } else {
-                exitWithError("The category is neither a valid number nor an existed one.\n");
+                fclose(f);
+                free(line);
+                exitWithError("The category is neither a valid number nor an existed one.\n", catarr, &used);
             }
 
             /* update print position */
@@ -195,7 +202,7 @@ catarray_t *getCatArrayFromFile(const char *filename) {
     /* open file */
     FILE *f = fopen(filename, "r");
     if (f == NULL) {            /* if fail to open file, error */
-        exitWithError("Fail to open the file.\n");
+        exitWithError("Fail to open the file.\n", catarr, NULL);
     }
 
     size_t sz = 0;
@@ -203,7 +210,9 @@ catarray_t *getCatArrayFromFile(const char *filename) {
     while (getline(&line, &sz, f) >= 0) {
         const char *colPos = findMark(line, ':');
         if (colPos == NULL) {   /* if not found the ':' */
-            exitWithError("Invalid format: not found a colon\n");
+            fclose(f);
+            free(line);
+            exitWithError("Invalid format: not found a colon\n", catarr, NULL);
         }
 
         /* extract the category & word*/
@@ -219,6 +228,7 @@ catarray_t *getCatArrayFromFile(const char *filename) {
 }
 
 void freeCatArray(catarray_t *catarr) {
+    if (catarr == NULL) return;
     for (size_t i = 0; i < catarr->n; ++i) {
         category_t *curCategory = catarr->arr + i;
         for (size_t j = 0; j < curCategory->n_words; ++j) {

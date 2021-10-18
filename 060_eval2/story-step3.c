@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     if (argc != 3) {
-        exitWithError("The number of command line arguments should be 3.\n");
+        exitWithError("The number of command line arguments should be 3.\n", NULL, NULL);
     }
 
     catarray_t *catarr = getCatArrayFromFile(argv[1]);

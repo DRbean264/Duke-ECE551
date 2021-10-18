@@ -5,7 +5,7 @@
 
 //any functions you want your main to use
 
-void exitWithError(const char *m);
+void exitWithError(const char *m, catarray_t *catarr, category_t *used);
 void parseStory(const char *filename, catarray_t *catarr, int reuse);
 const char *findMark(const char *line, const char mark);
 catarray_t *getCatArrayFromFile(const char *filename);    

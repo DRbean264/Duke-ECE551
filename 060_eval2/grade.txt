@@ -1,6 +1,6 @@
-Grading at 10/18/2021:21:12:48.374925
-For commit ID d326877088aff14ad474bfba10d1ef98f81299b9
-Grading at Mon Oct 18 17:12:38 EDT 2021
+Grading at 10/18/2021:21:18:30.965821
+For commit ID 7368ff553ac90251263531bf6096e9e9f648e5fa
+Grading at Mon Oct 18 17:18:20 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -14,7 +14,8 @@ Test case story-step1 invalid.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step1 story_debug.txt
-Once upon a time, there was a catYour program successfully indicated a failure case
+Once upon a time, there was a cat. This cat lived in a very
+cat cat2catplacecatYour program successfully indicated a failure case
 
 Compiling story-step3
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -54,6 +55,9 @@ Test case story-step1 story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step1 story_debug2.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step1 story_success.txt
 Your file matched the expected output
 
 Compiling story-step2

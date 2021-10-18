@@ -172,13 +172,13 @@ void addWordInCategory(catarray_t *catarr, char *category, char *word) {
         category_t *curCategory = catarr->arr + i;
         if (strcmp(category, curCategory->name) == 0) { /* if the category already exists */
             free(category);
-            /* check if the word exists, if yes, then the "word" needs to be freed */
-            for (size_t j = 0; j < curCategory->n_words; ++j) {
-                if (strcmp(curCategory->words[j], word) == 0) { /* if the word already exists */
-                    free(word);
-                    return;
-                }
-            }
+            /* /\* check if the word exists, if yes, then the "word" needs to be freed *\/ */
+            /* for (size_t j = 0; j < curCategory->n_words; ++j) { */
+            /*     if (strcmp(curCategory->words[j], word) == 0) { /\* if the word already exists *\/ */
+            /*         free(word); */
+            /*         return; */
+            /*     } */
+            /* } */
             curCategory->words = realloc(curCategory->words, (curCategory->n_words + 1) * sizeof(*curCategory->words));
             curCategory->words[curCategory->n_words] = word;
             ++curCategory->n_words;

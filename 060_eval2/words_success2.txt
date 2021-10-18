@@ -4,9 +4,9 @@ place:cave
 place:cave
 place:duke
 animal:dragon
-:
-:
-:
+:    
+:_ÿ
+:$&*&(*
 adjective:peculiar
 adjective:peculiar
 :sddsda

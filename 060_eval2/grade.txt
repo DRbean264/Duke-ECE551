@@ -1,6 +1,6 @@
-Grading at 10/18/2021:21:59:35.473171
-For commit ID 80daf1687c292c1a082128e71c4f121a78f61371
-Grading at Mon Oct 18 17:59:21 EDT 2021
+Grading at 10/18/2021:22:03:41.233129
+For commit ID a8c2cafb5d6c5de4c7973071b3d71abfdd04472c
+Grading at Mon Oct 18 18:03:26 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -106,6 +106,9 @@ Test case story-step3 words_empty.txt story_empty.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story_success2.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words_success.txt story_success2.txt
 Your file matched the expected output
 
 Compiling story-step4

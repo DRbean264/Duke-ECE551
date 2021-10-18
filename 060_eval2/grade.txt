@@ -1,6 +1,6 @@
-Grading at 10/18/2021:21:46:55.361136
-For commit ID 454f1613aa28b24f492d5ba4a1e7e9a9665ba69c
-Grading at Mon Oct 18 17:46:42 EDT 2021
+Grading at 10/18/2021:21:53:03.640621
+For commit ID 29f7de3847e82f0f83a01c9e0c11f71ccb3b23e7
+Grading at Mon Oct 18 17:52:49 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -36,6 +36,10 @@ rm story-step3.o
 +-----------------------------------------------------------------------+
 Test case story-step3 err_words.txt story.txt
 Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_wrong.txt
+Once upon a time, there was a walrus. This walrus lived in a very
+scary cave. One day, it left its Your program successfully indicated a failure case
 
 Compiling story-step4
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -100,6 +104,9 @@ Test case story-step3 words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step3 words_empty.txt story_empty.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_success2.txt
 Your file matched the expected output
 
 Compiling story-step4

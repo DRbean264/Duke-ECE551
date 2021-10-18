@@ -19,4 +19,5 @@ story-step3 words.txt story.txt
 story-step3 words.txt story2.txt
 story-step3 words_empty.txt story_empty.txt
 story-step3 words.txt story_success2.txt
+story-step3 words_success.txt story_success2.txt
 story-step4 -n words.txt story2.txt

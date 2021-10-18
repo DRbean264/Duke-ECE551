@@ -1,2 +1,2 @@
-Once upon a time, there was a _animal_. This _01_ lived in a very
-_adjective_ _place_. One day, it left its _02_ _004_ and met a _animal_.
+Once upon a time, there was a _animal_. This _+01_ lived in a very
+_adjective_ _place_. One day, it left its _02_ _+004_ and met a _animal_.

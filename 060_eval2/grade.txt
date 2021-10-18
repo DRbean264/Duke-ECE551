@@ -1,6 +1,6 @@
-Grading at 10/18/2021:01:49:18.330077
-For commit ID 7b015cbd9cdc3275aec40d723992477e42338aec
-Grading at Sun Oct 17 21:49:10 EDT 2021
+Grading at 10/18/2021:01:51:41.379502
+For commit ID f204e4779eea405bd34f046fb2bbc5a85157ad44
+Grading at Sun Oct 17 21:51:32 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -80,12 +80,9 @@ gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
 Test case story-step4 -n words.txt story2.txt
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET

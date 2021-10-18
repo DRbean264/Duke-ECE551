@@ -1,6 +1,6 @@
-Grading at 10/17/2021:21:21:15.375758
-For commit ID 5c7da95446c7a9f3e52e0e747e07c9a7d9e67c85
-Grading at Sun Oct 17 17:21:07 EDT 2021
+Grading at 10/18/2021:01:49:18.330077
+For commit ID 7b015cbd9cdc3275aec40d723992477e42338aec
+Grading at Sun Oct 17 21:49:10 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -79,8 +79,10 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
 gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
-Test case story-step4 words.txt -n story2.txt
+Test case story-step4 -n words.txt story2.txt
 Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
 Your file did not match the expected output
 
 You have FAILED one or more of your test cases

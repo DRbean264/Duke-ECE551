@@ -1,6 +1,6 @@
-Grading at 10/18/2021:21:53:03.640621
-For commit ID 29f7de3847e82f0f83a01c9e0c11f71ccb3b23e7
-Grading at Mon Oct 18 17:52:49 EDT 2021
+Grading at 10/18/2021:21:55:44.938048
+For commit ID 3f1b6ca7a69ab14f51812f27340edce699f83315
+Grading at Mon Oct 18 17:55:30 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -38,8 +38,7 @@ Test case story-step3 err_words.txt story.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story_wrong.txt
-Once upon a time, there was a walrus. This walrus lived in a very
-scary cave. One day, it left its Your program successfully indicated a failure case
+Once upon a time, there was a walrus. This Your program successfully indicated a failure case
 
 Compiling story-step4
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o

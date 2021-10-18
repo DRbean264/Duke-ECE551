@@ -8,6 +8,6 @@ int main(int argc, char *argv[])
         exitWithError("The number of command line arguments should be 2.\n");
     }
 
-    parseStory(argv[1], NULL);    
+    parseStory(argv[1], NULL, 1);    
     return 0;
 }

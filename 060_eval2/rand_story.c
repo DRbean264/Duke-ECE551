@@ -8,15 +8,6 @@ void exitWithError(const char *m) {
     exit(EXIT_FAILURE);
 }
 
-int checkOptional(int argc, char *argv[]) {
-    for (size_t i = 0; i < (size_t)argc - 1; ++i) {
-        if (strcmp(argv[i + 1], "-n") == 0) {
-            return 1;
-        }
-    }
-    return 0;
-}
-
 void parseCommand(int argc, char *argv[], const char **wordsFileName, const char **storyFileName, int *reuse) {
     if (argc == 3) {
         /* check if "-n" is the second of them */
@@ -29,7 +20,7 @@ void parseCommand(int argc, char *argv[], const char **wordsFileName, const char
     } else if (argc == 4) {
         /* check if "-n" is the second of them */
         if (strcmp("-n", argv[1]) != 0) { /* if the second is not "-n", wrong */
-            exitWithError("The command is of wrong format. Should have the -n.\n");
+            exitWithError("The command is of wrong format. Should have the -n in the second place.\n");
         }
         *wordsFileName = argv[2];
         *storyFileName = argv[3];
@@ -65,22 +56,45 @@ int isValidNum(const char *category, category_t *used) {
     return 1;
 }
 
-int isCategoryExist(const char *category, catarray_t *catarr) {
+int findCategory(const char *category, catarray_t *catarr) {
     for (size_t i = 0; i < catarr->n; ++i) {
         if (strcmp(category, catarr->arr[i].name) == 0) {
-            return 1;
+            return i;
         }
     }
-    return 0;
+    return -1;
 }
 
-void updateUsedWord(category_t *used, const char *word) {
+void updateUsedAndExist(category_t *used, catarray_t *catarr, const char *word, int catIndex, int reuse) {
     used->words = realloc(used->words, (used->n_words + 1) * sizeof(*used->words));
-    used->words[used->n_words] = (char *)word;
+    used->words[used->n_words] = strdup(word);
     ++used->n_words;
+    /* if same word cannot be used twice, need to adjust the original catarr */
+    if (!reuse) {
+        size_t wordIndex = 0;
+        category_t *curCategory = catarr->arr + catIndex;
+        for (; wordIndex < curCategory->n_words; ++wordIndex) {
+            if (strcmp(word, curCategory->words[wordIndex]) == 0) {
+                break;
+            }
+        }
+
+        free(curCategory->words[wordIndex]);
+        for (size_t i = wordIndex; i < curCategory->n_words - 1; ++i) {
+            curCategory->words[i] = curCategory->words[i + 1];
+        }
+        --curCategory->n_words;
+    }
 }
 
-void parseStory(const char *filename, catarray_t *catarr) {
+void freeUsedWord(category_t *used) {
+    for (size_t i = 0; i < used->n_words; ++i) {
+        free(used->words[i]);
+    }
+    free(used->words);
+}
+
+void parseStory(const char *filename, catarray_t *catarr, int reuse) {
     // open file
     FILE *f = fopen(filename, "r");
     if (f == NULL) {
@@ -114,6 +128,7 @@ void parseStory(const char *filename, catarray_t *catarr) {
             /* extract the category & find the word to insert & print the word */
             char *category = strndup(firstMark + 1, matchedMark - firstMark - 1);
             /* check the "category" format */
+            int catIndex = 0;
             if (catarr == NULL) { /* specifically for step 1 */
                 const char *word = chooseWord(category, catarr);
                 printf("%s", word);
@@ -121,12 +136,12 @@ void parseStory(const char *filename, catarray_t *catarr) {
                 /* I don't know if I should consider the number is out of the range of long integer */
                 unsigned long num = strtoul(category, NULL, 10);
                 const char *word = used.words[used.n_words - num];
-                updateUsedWord(&used, word);
                 printf("%s", word);
-            } else if (isCategoryExist(category, catarr)) { /* if the category exists, then random choose a word from that */
+                updateUsedAndExist(&used, catarr, word, catIndex, 1);      
+            } else if ((catIndex = findCategory(category, catarr)) != -1) { /* if the category exists, then random choose a word from that */
                 const char *word = chooseWord(category, catarr);
-                updateUsedWord(&used, word);
                 printf("%s", word);
+                updateUsedAndExist(&used, catarr, word, catIndex, reuse);                
             } else {
                 exitWithError("The category is neither a valid number nor an existed one.\n");
             }
@@ -140,7 +155,7 @@ void parseStory(const char *filename, catarray_t *catarr) {
     }
     free(line);
     /* free used */
-    free(used.words);
+    freeUsedWord(&used);
     fclose(f);
 }
 

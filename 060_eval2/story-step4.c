@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     const char *storyFileName = NULL;
     int reuse = 0;
     parseCommand(argc, argv, &wordsFileName, &storyFileName, &reuse);
-    printf("Words: %s\nStory: %s\nReuse: %d\n", wordsFileName, storyFileName, reuse);
+    //printf("Words: %s\nStory: %s\nReuse: %d\n", wordsFileName, storyFileName, reuse);
 
     catarray_t *catarr = getCatArrayFromFile(wordsFileName);
     parseStory(storyFileName, catarr, reuse);

@@ -73,9 +73,9 @@ void updateUsedAndExist(category_t *used, catarray_t *catarr, const char *word, 
     ++used->n_words;
     /* if same word cannot be used twice, need to adjust the original catarr */
     if (!reuse) {
-        size_t wordIndex = 0;
         category_t *curCategory = catarr->arr + catIndex;
-        for (; wordIndex < curCategory->n_words; ++wordIndex) {
+        int wordIndex = curCategory->n_words - 1; /* debugging */
+        for (; wordIndex >= 0; --wordIndex) {
             if (strcmp(word, curCategory->words[wordIndex]) == 0) {
                 break;
             }

@@ -67,6 +67,6 @@ std::ostream & operator<<(std::ostream & s, const IntArray & rhs) {
     for (int i = 0; i < rhs.size() - 1; ++i) {
         s << rhs[i] << ", ";
     }
-    s << rhs[rhs.size() - 1] << "}\n";
+    s << rhs[rhs.size() - 1] << "}";
     return s;
 }

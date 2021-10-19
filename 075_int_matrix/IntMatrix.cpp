@@ -1,4 +1,5 @@
 #include "IntMatrix.h"
+#include "IntArray.h"
 
 IntMatrix::IntMatrix()
     : numRows(0), numColumns(0), rows(NULL){

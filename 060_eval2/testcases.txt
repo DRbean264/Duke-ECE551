@@ -25,4 +25,3 @@ story-step3 words_success.txt story_success2.txt
 story-step4 -n words.txt story2.txt
 story-step4 words_success3.txt story_success3.txt
 story-step4 -n words_success3.txt story_success3.txt
-story-step4 -n wrong-name.txt story_success3.txt

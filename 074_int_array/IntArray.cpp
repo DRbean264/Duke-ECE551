@@ -5,29 +5,18 @@
 IntArray::IntArray()
     : data(NULL), numElements(0) {}
 
-IntArray::IntArray(int n) {
-    if (n == 0) {
-        IntArray();
-    } else {
-        numElements = n;
-        data = new int[numElements];
-    }
-}
+IntArray::IntArray(int n)
+    : data(new int[n]), numElements(n) {}
 
 IntArray::IntArray(const IntArray & rhs)
-    : data(NULL), numElements(rhs.numElements) {
-    if (numElements != 0) {
-        data = new int[numElements];
-        for (int i = 0; i < rhs.numElements; ++i) {
-            data[i] = rhs.data[i];
-        }
-    }    
+    : data(new int[rhs.numElements]), numElements(rhs.numElements) {
+    for (int i = 0; i < rhs.numElements; ++i) {
+        data[i] = rhs.data[i];            
+    } 
 }
 
 IntArray::~IntArray() {
-    if (numElements != 0) {
-        delete [] data;
-    }    
+    delete [] data;
 }
 
 IntArray & IntArray::operator=(const IntArray & rhs) {
@@ -36,13 +25,10 @@ IntArray & IntArray::operator=(const IntArray & rhs) {
     }
     delete [] data;
     numElements = rhs.numElements;
-    data = NULL;
-    if (numElements != 0) {
-        data = new int[numElements];
-        for (int i = 0; i < numElements; ++i) {
-            data[i] = rhs.data[i];
-        }
-    }    
+    data = new int[numElements];
+    for (int i = 0; i < numElements; ++i) {
+        data[i] = rhs.data[i];
+    }   
     return *this;
 }
 
@@ -77,6 +63,10 @@ bool IntArray::operator!=(const IntArray & rhs) const {
 }
 
 std::ostream & operator<<(std::ostream & s, const IntArray & rhs) {
+    if (rhs.size() == 0) {
+        s << "{}\n";
+        return s;
+    }
     s << '{';
     for (int i = 0; i < rhs.size() - 1; ++i) {
         s << rhs[i] << ", ";

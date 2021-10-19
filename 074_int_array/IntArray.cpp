@@ -25,7 +25,9 @@ IntArray::IntArray(const IntArray & rhs)
 }
 
 IntArray::~IntArray() {
-    delete [] data;    
+    if (numElements != 0) {
+        delete [] data;
+    }    
 }
 
 IntArray & IntArray::operator=(const IntArray & rhs) {

@@ -15,6 +15,7 @@ story-step1 story_success.txt
 story-step2 words.txt
 story-step2 words_success.txt
 story-step2 words_success2.txt
+story-step2 words_success3.txt
 story-step3 words.txt story.txt
 story-step3 words.txt story2.txt
 story-step3 words_empty.txt story_empty.txt

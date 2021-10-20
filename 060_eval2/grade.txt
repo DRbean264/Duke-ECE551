@@ -1,6 +1,6 @@
-Grading at 10/20/2021:20:32:19.448599
-For commit ID 583be1eae3e229a0a5d80c04b505c168c073fc08
-Grading at Wed Oct 20 16:32:00 EDT 2021
+Grading at 10/20/2021:20:33:40.052645
+For commit ID f7d9a4d9a66eccdcf23a46ba51c900871bbd93d4
+Grading at Wed Oct 20 16:33:20 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -38,7 +38,7 @@ Test case 4 (error): story-step3 err_words.txt story.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 5 (error): story-step3 words.txt story_wrong.txt
-Once upon a time, there was a walrus. This Your program successfully indicated a failure case
+Once upon a time, there was a Your program successfully indicated a failure case
 
 Compiling story-step4
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -54,26 +54,12 @@ Test case 7 (error): story-step4 words.txt -n
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 8 (error): story-step4 -n words.txt story_hard.txt
-Once upon a time, there was a walrus. This dragon lived in a very
-peculiar cave. One day, it left its Your program successfully indicated a failure case
+Once upon a time, there was a Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 9 (error): story-step4 -n words_success3.txt story_wrong2.txt
-wolf
-goose
-cat
-elephant
-dog
-walrus
-dragon
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 10 (error): story-step4 -n words_success3.txt story_wrong3.txt
-wolf
-goose
-cat
-elephant
-dog
-walrus
 Your program successfully indicated a failure case
 
 Compiling story-step1
@@ -122,7 +108,9 @@ gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
 Test case 19 (success): story-step3 words.txt story.txt
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 20 (success): story-step3 words.txt story2.txt
 Line_1_did_not_match

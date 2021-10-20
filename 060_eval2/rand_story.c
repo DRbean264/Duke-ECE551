@@ -5,6 +5,10 @@
 
 /* detect an error, we need to free the category array and used word array before exit */
 /* Actually, Drew said we don't have to consider the memory free when we encounter an error, why is that? */
+/* arguments: */
+/* m: error message */
+/* catarr: category-words array */
+/* used: keep track of the used words */
 void exitWithError(const char *m, catarray_t *catarr, category_t *used) {
     fprintf(stderr, "%s", m);
     freeCatArray(catarr);
@@ -13,8 +17,14 @@ void exitWithError(const char *m, catarray_t *catarr, category_t *used) {
 }
 
 /* parse the command line argument for step 4 */
+/* arguments */
+/* argc: indicate the number of command line arguments */
+/* argv: includes the strings read from the command line */
+/* wordsFileName: the file name of the words file */
+/* storyFileName: the file name of the story file */
+/* reuse: if the option -n exits, then set this as 1, otherwise 0 */
 void parseCommand(int argc, char *argv[], const char **wordsFileName, const char **storyFileName, int *reuse) {
-    /* if the number of command line arguments is 3 */
+    /* if the number of command line arguments is 3, then should only be one words and one story file */
     if (argc == 3) {
         /* check if "-n" is the second of them */
         if (strcmp("-n", argv[1]) == 0) { /* if the second is "-n", wrong */
@@ -23,7 +33,7 @@ void parseCommand(int argc, char *argv[], const char **wordsFileName, const char
         *wordsFileName = argv[1];
         *storyFileName = argv[2];
         *reuse = 1;
-    } else if (argc == 4) {
+    } else if (argc == 4) {    /* if the number of command line arguments is 4, then should be -n, one words and one story file */
         /* check if "-n" is the second of them */
         if (strcmp("-n", argv[1]) != 0) { /* if the second is not "-n", wrong */
             exitWithError("The command is of wrong format. Should have the -n in the second place.\n", NULL, NULL);
@@ -36,6 +46,10 @@ void parseCommand(int argc, char *argv[], const char **wordsFileName, const char
     }
 }
 
+/* find a specific character of a string */
+/* arguments */
+/* line: the string */
+/* mark: the character to be found */
 const char *findMark(const char *line, const char mark) {
     const char *pos = line;
     while (*pos != '\0') {
@@ -47,6 +61,10 @@ const char *findMark(const char *line, const char mark) {
     return NULL;                /* if not found */
 }
 
+/* check if the string between the _'s is a valid number */
+/* arguments: */
+/* category: category string */
+/* used: records the words used */
 int isValidNum(const char *category, category_t *used) {
     char *rest = NULL;
     unsigned long num = strtoul(category, &rest, 10);
@@ -62,6 +80,8 @@ int isValidNum(const char *category, category_t *used) {
     return 1;
 }
 
+/* find the category index of the category-words variable */
+/* if not found, return -1 */
 int findCategory(const char *category, catarray_t *catarr) {
     for (size_t i = 0; i < catarr->n; ++i) {
         if (strcmp(category, catarr->arr[i].name) == 0) {
@@ -71,20 +91,29 @@ int findCategory(const char *category, catarray_t *catarr) {
     return -1;
 }
 
+/* whenever a word is printed out, we should update the category-words variable and the used array */
+/* arguments: */
+/* used: the words used are all stored in the array */
+/* catarr: the category-words variable */
+/* word: the word which is outputted */
+/* catIndex: category index under which the word is chosen */
+/* reuse: if reuse word or not */
 void updateUsedAndExist(category_t *used, catarray_t *catarr, const char *word, int catIndex, int reuse) {
+    /* put the word into used array */
     used->words = realloc(used->words, (used->n_words + 1) * sizeof(*used->words));
     used->words[used->n_words] = strdup(word);
     ++used->n_words;
-    /* if same word cannot be used twice, need to adjust the original catarr */
+    /* if same word cannot be used twice, need to delete it from the original catarr */
     if (!reuse) {
         category_t *curCategory = catarr->arr + catIndex;
-        size_t wordIndex = 0; /* debugging */
+        /* find the word position */
+        size_t wordIndex = 0;
         for (; wordIndex < curCategory->n_words; ++wordIndex) {
             if (word == curCategory->words[wordIndex]) {
                 break;
             }
         }
-
+        /* delete the word */
         free(curCategory->words[wordIndex]);
         for (size_t i = wordIndex; i < curCategory->n_words - 1; ++i) {
             curCategory->words[i] = curCategory->words[i + 1];
@@ -93,6 +122,7 @@ void updateUsedAndExist(category_t *used, catarray_t *catarr, const char *word, 
     }
 }
 
+/* free the memory allocated to used array */
 void freeUsedWord(category_t *used) {
     if (used == NULL) return;
     for (size_t i = 0; i < used->n_words; ++i) {
@@ -199,6 +229,7 @@ void addWordInCategory(catarray_t *catarr, char *category, char *word) {
     ++catarr->n;
 }
 
+/* create the category-words variable from words file */
 catarray_t *getCatArrayFromFile(const char *filename) {
     catarray_t *catarr = malloc(sizeof(*catarr));
     catarr->arr = NULL;
@@ -209,6 +240,7 @@ catarray_t *getCatArrayFromFile(const char *filename) {
         exitWithError("Fail to open the file.\n", catarr, NULL);
     }
 
+    /* process each line */
     size_t sz = 0;
     char *line = NULL;
     while (getline(&line, &sz, f) >= 0) {
@@ -218,12 +250,15 @@ catarray_t *getCatArrayFromFile(const char *filename) {
             free(line);
             exitWithError("Invalid format: not found a colon\n", catarr, NULL);
         }
-
-        /* extract the category & word*/
+        
+        /* extract the category & word */
         char *category = strndup(line, colPos - line);
-        /* need to be modified, if there is no newline character */
-        size_t wordLen = strlen(line) - (colPos - line) - 2;
+        size_t wordLen = strlen(line) - (colPos - line) - 1;
         char *word = strndup(colPos + 1, wordLen);
+        /* get rid of the new line character */
+        if (word[strlen(word) - 1] == '\n') {
+            word[strlen(word) - 1] = '\0';
+        }
         addWordInCategory(catarr, category, word);                
     }
     free(line);

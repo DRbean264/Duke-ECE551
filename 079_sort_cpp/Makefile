@@ -5,5 +5,6 @@ sortLines: sortLines.o
 %.o: sortLines.cpp
 	g++ -c $(CCFLAGS) sortLines.cpp
 
+.PHONY: clean
 clean:
-	rm -f *.o  *~ sortLines
+	rm -f *.o *~ sortLines

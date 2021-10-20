@@ -27,6 +27,9 @@ int main(int argc, char *argv[])
     } else if (argc >= 1){      // if have files
         for (size_t i = 1; i < (size_t)argc; ++i) {
             ifstream f(argv[i]);
+            if (!f) {
+                cout << "Fail to open the file" << argv[i] << '\n';
+            }
             sortAndPrintFromFile<ifstream>(f);
             f.close();
         }

@@ -5,6 +5,7 @@ story-step2 words_failure.txt
 story-step3 err_words.txt story.txt
 story-step3 words.txt story_wrong.txt
 story-step4 words.txt -n story2.txt
+story-step4 words.txt -n
 story-step4 -n words.txt story_hard.txt
 story-step4 -n words_success3.txt story_wrong2.txt
 story-step4 -n words_success3.txt story_wrong3.txt

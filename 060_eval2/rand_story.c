@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* detect an error, we need to free the category array and used word array before exit */
+/* Actually, Drew said we don't have to consider the memory free when we encounter an error, why is that? */
 void exitWithError(const char *m, catarray_t *catarr, category_t *used) {
     fprintf(stderr, "%s", m);
     freeCatArray(catarr);
@@ -10,7 +12,9 @@ void exitWithError(const char *m, catarray_t *catarr, category_t *used) {
     exit(EXIT_FAILURE);
 }
 
+/* parse the command line argument for step 4 */
 void parseCommand(int argc, char *argv[], const char **wordsFileName, const char **storyFileName, int *reuse) {
+    /* if the number of command line arguments is 3 */
     if (argc == 3) {
         /* check if "-n" is the second of them */
         if (strcmp("-n", argv[1]) == 0) { /* if the second is "-n", wrong */

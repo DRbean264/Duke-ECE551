@@ -227,6 +227,7 @@ catarray_t *getCatArrayFromFile(const char *filename) {
     return catarr;
 }
 
+
 void freeCatArray(catarray_t *catarr) {
     if (catarr == NULL) return;
     for (size_t i = 0; i < catarr->n; ++i) {

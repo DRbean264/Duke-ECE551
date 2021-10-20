@@ -11,6 +11,9 @@ int main(int argc, char *argv[])
     catarray_t *catarr = getCatArrayFromFile(argv[1]);
     parseStory(argv[2], catarr, 1);
 
+    freeCatArray(catarr);
+    return 0;
+
     /* const char *chosen = NULL; */
     /* int count = 10; */
 
@@ -25,8 +28,5 @@ int main(int argc, char *argv[])
     /* while (count--) { */
     /*     chosen = chooseWord("adjective", catarr); */
     /*     printf("%s\n", chosen); */
-    /* } */
-    
-    freeCatArray(catarr);
-    return 0;
+    /* } */    
 }

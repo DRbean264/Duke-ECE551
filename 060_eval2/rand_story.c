@@ -45,14 +45,14 @@ const char *findMark(const char *line, const char mark) {
 
 int isValidNum(const char *category, category_t *used) {
     char *rest = NULL;
-    unsigned long num = strtoul(category, &rest, 10);
+    long num = strtol(category, &rest, 10);
 
     /* anything smaller than 1 or there exists characters other then number, is not a valid number */
     if (num < 1 || *rest != '\0') {
         return 0;
     }
     /* if the number is bigger than the number of words used, is still not a valid number */
-    if (num > used->n_words) {
+    if (num > (long)used->n_words) {
         return 0;
     }    
     return 1;
@@ -139,7 +139,7 @@ void parseStory(const char *filename, catarray_t *catarr, int reuse) {
                 printf("%s", word);
             } else if (isValidNum(category, &used)) { /* if is a valid number, then use previous word */
                 /* I don't know if I should consider the number is out of the range of long integer */
-                unsigned long num = strtoul(category, NULL, 10);
+                long num = strtol(category, NULL, 10);
                 const char *word = used.words[used.n_words - num];
                 printf("%s", word);
                 updateUsedAndExist(&used, catarr, word, catIndex, 1);      

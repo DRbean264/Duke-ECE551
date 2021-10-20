@@ -69,6 +69,9 @@ int isValidNum(const char *category, category_t *used) {
     char *rest = NULL;
     unsigned long num = strtoul(category, &rest, 10);
 
+    /* if (strlen(category) == 0) { */
+    /*     return 0; */
+    /* } */
     /* anything smaller than 1 or there exists characters other then number, is not a valid number */
     if (num < 1 || *rest != '\0') {
         return 0;

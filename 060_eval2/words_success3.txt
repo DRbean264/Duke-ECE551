@@ -10,6 +10,7 @@ animal:cat
 place:duke
 place:shanghai
 animal:dog
+:wordsunderemptycat
 adjective:peculiar
 adjective:noisy
 adjective:peaceful

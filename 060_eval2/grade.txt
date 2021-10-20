@@ -1,6 +1,6 @@
-Grading at 10/20/2021:19:48:54.679155
-For commit ID 00f987eb4f144045503117fc27ee271572882b8b
-Grading at Wed Oct 20 15:48:35 EDT 2021
+Grading at 10/20/2021:20:32:19.448599
+For commit ID 583be1eae3e229a0a5d80c04b505c168c073fc08
+Grading at Wed Oct 20 16:32:00 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -125,16 +125,22 @@ Test case 19 (success): story-step3 words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 20 (success): story-step3 words.txt story2.txt
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 21 (success): story-step3 words_empty.txt story_empty.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 22 (success): story-step3 words.txt story_success2.txt
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 23 (success): story-step3 words_success.txt story_success2.txt
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected output
 
 Compiling story-step4
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -144,15 +150,19 @@ gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
 Test case 24 (success): story-step4 -n words.txt story2.txt
-Your file matched the expected output
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 25 (success): story-step4 words_success3.txt story_success3.txt
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 26 (success): story-step4 -n words_success3.txt story_success3.txt
-Your file matched the expected output
+Line_1_did_not_match
+Your file did not match the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET

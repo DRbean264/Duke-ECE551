@@ -69,7 +69,7 @@ int isValidNum(const char *category, category_t *used) {
     char *rest = NULL;
     unsigned long num = strtoul(category, &rest, 10);
 
-    if (strcmp(category, "")) {
+    if (strcmp(category, "") == 0) {
         return 0;
     }
     /* if (strlen(category) == 0) { */

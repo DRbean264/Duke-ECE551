@@ -131,6 +131,7 @@ void freeUsedWord(category_t *used) {
     free(used->words);
 }
 
+/* parse the story file */
 void parseStory(const char *filename, catarray_t *catarr, int reuse) {
     // open file
     FILE *f = fopen(filename, "r");
@@ -138,6 +139,7 @@ void parseStory(const char *filename, catarray_t *catarr, int reuse) {
         exitWithError("Cannot open the file.\n", NULL, NULL);
     }
 
+    /* initialize the used array */
     category_t used;
     used.name = NULL;
     used.words = NULL;
@@ -149,12 +151,12 @@ void parseStory(const char *filename, catarray_t *catarr, int reuse) {
         const char *printPos = line;
 
         while(1) {              /* keep looking for the blank until the end of the line */
-            const char *firstMark = findMark(printPos, '_'); /* find the first mark (underscore) */
-            if (firstMark == NULL) { /* if not find a single mark, break */
+            const char *firstMark = findMark(printPos, '_'); /* find the first _ */
+            if (firstMark == NULL) { /* if not find a single _, namely only normall text, break */
                 break;
             }
             const char *matchedMark = findMark(firstMark + 1, '_'); /* find the second mark */
-            if (matchedMark == NULL) { /* no matched mark, error */
+            if (matchedMark == NULL) { /* find unmatched _, error */
                 fclose(f);
                 free(line);
                 exitWithError("The underscore is not matched.\n", catarr, &used);                
@@ -181,12 +183,12 @@ void parseStory(const char *filename, catarray_t *catarr, int reuse) {
                 const char *word = chooseWord(category, catarr);
                 printf("%s", word);
                 updateUsedAndExist(&used, catarr, word, catIndex, reuse);                
-            } else {
+            } else {            /* if not a valid number nor a valid category, error */
                 fclose(f);
                 free(line);
                 exitWithError("The category is neither a valid number nor an existed one.\n", catarr, &used);
             }
-
+            
             /* update print position */
             printPos = matchedMark + 1;
             free(category);    
@@ -195,24 +197,20 @@ void parseStory(const char *filename, catarray_t *catarr, int reuse) {
         printf("%s", printPos);
     }
     free(line);
+
     /* free used */
     freeUsedWord(&used);
     fclose(f);
 }
 
+
+/* add a word in certain category */
 void addWordInCategory(catarray_t *catarr, char *category, char *word) {
     /* check if the category exists, if yes, then the "category" needs to be freed */
     for (size_t i = 0; i < catarr->n; ++i) {
         category_t *curCategory = catarr->arr + i;
         if (strcmp(category, curCategory->name) == 0) { /* if the category already exists */
             free(category);
-            /* /\* check if the word exists, if yes, then the "word" needs to be freed *\/ */
-            /* for (size_t j = 0; j < curCategory->n_words; ++j) { */
-            /*     if (strcmp(curCategory->words[j], word) == 0) { /\* if the word already exists *\/ */
-            /*         free(word); */
-            /*         return; */
-            /*     } */
-            /* } */
             curCategory->words = realloc(curCategory->words, (curCategory->n_words + 1) * sizeof(*curCategory->words));
             curCategory->words[curCategory->n_words] = word;
             ++curCategory->n_words;
@@ -266,7 +264,7 @@ catarray_t *getCatArrayFromFile(const char *filename) {
     return catarr;
 }
 
-
+/* free the category-words variable */
 void freeCatArray(catarray_t *catarr) {
     if (catarr == NULL) return;
     for (size_t i = 0; i < catarr->n; ++i) {

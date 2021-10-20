@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
         for (size_t i = 1; i < (size_t)argc; ++i) {
             ifstream f(argv[i]);
             sortAndPrintFromFile<ifstream>(f);
+            f.close();
         }
     }
     return 0;

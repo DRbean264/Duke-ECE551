@@ -1,6 +1,6 @@
-Grading at 10/20/2021:18:43:28.429434
-For commit ID 80cbcba6b444a99164caee171558bfe4491a81ba
-Grading at Wed Oct 20 14:43:09 EDT 2021
+Grading at 10/20/2021:18:49:22.123594
+For commit ID dfb4876ab9e934f0c713ac3ecec898a6b0bea7e3
+Grading at Wed Oct 20 14:49:02 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -50,11 +50,14 @@ rm story-step4.o
 Test case 6 (error): story-step4 words.txt -n story2.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 7 (error): story-step4 -n words.txt story_hard.txt
+Test case 7 (error): story-step4 words.txt -n
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 8 (error): story-step4 -n words.txt story_hard.txt
 Once upon a time, there was a walrus. This dragon lived in a very
 peculiar cave. One day, it left its Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 8 (error): story-step4 -n words_success3.txt story_wrong2.txt
+Test case 9 (error): story-step4 -n words_success3.txt story_wrong2.txt
 wolf
 goose
 cat
@@ -64,7 +67,7 @@ walrus
 dragon
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 9 (error): story-step4 -n words_success3.txt story_wrong3.txt
+Test case 10 (error): story-step4 -n words_success3.txt story_wrong3.txt
 wolf
 goose
 cat
@@ -80,16 +83,16 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
 gcc -o story-step1 story-step1.o rand_story.o provided.o
 rm story-step1.o
 +-----------------------------------------------------------------------+
-Test case 10 (success): story-step1 story2.txt
+Test case 11 (success): story-step1 story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 11 (success): story-step1 story.txt
+Test case 12 (success): story-step1 story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 12 (success): story-step1 story_debug2.txt
+Test case 13 (success): story-step1 story_debug2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 13 (success): story-step1 story_success.txt
+Test case 14 (success): story-step1 story_success.txt
 Your file matched the expected output
 
 Compiling story-step2
@@ -99,16 +102,16 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
 rm story-step2.o
 +-----------------------------------------------------------------------+
-Test case 14 (success): story-step2 words.txt
+Test case 15 (success): story-step2 words.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 15 (success): story-step2 words_success.txt
+Test case 16 (success): story-step2 words_success.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 16 (success): story-step2 words_success2.txt
+Test case 17 (success): story-step2 words_success2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 17 (success): story-step2 words_success3.txt
+Test case 18 (success): story-step2 words_success3.txt
 Your file matched the expected output
 
 Compiling story-step3
@@ -118,19 +121,19 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
 gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
-Test case 18 (success): story-step3 words.txt story.txt
+Test case 19 (success): story-step3 words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 19 (success): story-step3 words.txt story2.txt
+Test case 20 (success): story-step3 words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 20 (success): story-step3 words_empty.txt story_empty.txt
+Test case 21 (success): story-step3 words_empty.txt story_empty.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 21 (success): story-step3 words.txt story_success2.txt
+Test case 22 (success): story-step3 words.txt story_success2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 22 (success): story-step3 words_success.txt story_success2.txt
+Test case 23 (success): story-step3 words_success.txt story_success2.txt
 Your file matched the expected output
 
 Compiling story-step4
@@ -140,13 +143,13 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
 gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
-Test case 23 (success): story-step4 -n words.txt story2.txt
+Test case 24 (success): story-step4 -n words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 24 (success): story-step4 words_success3.txt story_success3.txt
+Test case 25 (success): story-step4 words_success3.txt story_success3.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 25 (success): story-step4 -n words_success3.txt story_success3.txt
+Test case 26 (success): story-step4 -n words_success3.txt story_success3.txt
 Your file matched the expected output
 
 You have PASSED all of your test cases

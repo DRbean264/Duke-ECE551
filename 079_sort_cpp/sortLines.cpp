@@ -11,7 +11,10 @@ void sortAndPrintFromFile(T &s) {
     string line;
     while (getline(s, line).eof() != true) {
         lines.push_back(line);
-    }    
+    }
+    if (lines.size() == 0) {
+        return;
+    }
     
     sort(lines.begin(), lines.end());
     // print the strings

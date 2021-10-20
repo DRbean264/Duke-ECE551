@@ -1,6 +1,6 @@
-Grading at 10/20/2021:23:45:49.362109
-For commit ID fc87f7b2a89c5167cdbd056722a24e1fb0f28949
-Grading at Wed Oct 20 19:45:39 EDT 2021
+Grading at 10/20/2021:23:49:59.701309
+For commit ID b724f014a721992b392080081ae6224da23e0647
+Grading at Wed Oct 20 19:49:49 EDT 2021
 Looking for malloc in your files
 No uses found (good).
 Looking for free in your files
@@ -14,7 +14,7 @@ No uses found (good).
 Looking for printf in your files
 No uses found (good).
 Attempting to compile with make
-make: 'sortLines' is up to date.
+g++ -o sortLines --std=gnu++98 -pedantic -Wall -Werror -ggdb3 sortLines.o
 Using sortLines..
 #################################################
 testcase1:

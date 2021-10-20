@@ -176,7 +176,7 @@ void parseStory(const char *filename, catarray_t *catarr, int reuse) {
             if (catarr == NULL) { /* specifically for step 1 */
                 const char *word = chooseWord(category, catarr);
                 printf("%s", word);
-            } else if (isValidNum(category, &used)) { /* if is a valid number, then use previous word */
+            } else if (strcmp(category, "") != 0 && isValidNum(category, &used)) { /* if is a valid number, then use previous word */
                 /* I don't know if I should consider the number is out of the range of long integer */
                 unsigned long num = strtoul(category, NULL, 10);
                 const char *word = used.words[used.n_words - num];

@@ -68,20 +68,17 @@ const char *findMark(const char *line, const char mark) {
 int isValidNum(const char *category, category_t *used) {
     char *rest = NULL;
     unsigned long num = strtoul(category, &rest, 10);
-
-    if (strcmp(category, "") == 0) {
-        return 0;
-    }
+    
     /* if (strlen(category) == 0) { */
     /*     return 0; */
     /* } */
     /* anything smaller than 1 or there exists characters other then number, is not a valid number */
     if (num < 1 || *rest != '\0') {
-        exitWithError("Invalid number\n", NULL, NULL);
+        return 0;        
     }
     /* if the number is bigger than the number of words used, is still not a valid number */
     if (num > (unsigned long)used->n_words) {
-        exitWithError("Invalid number\n", NULL, NULL);
+        return 0;        
     }    
     return 1;
 }

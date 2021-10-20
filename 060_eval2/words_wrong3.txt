@@ -17,6 +17,7 @@ adjective:noisy
 adjective:peaceful
 animal:goose
 animal:elephant
+1:-1
 -1:-1
 place:cave
 place:beijing

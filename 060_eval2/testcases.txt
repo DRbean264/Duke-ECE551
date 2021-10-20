@@ -9,6 +9,7 @@ story-step4 words.txt -n
 story-step4 -n words.txt story_hard.txt
 story-step4 -n words_success3.txt story_wrong2.txt
 story-step4 -n words_success3.txt story_wrong3.txt
+story-step4 -n words_wrong3.txt story_wrong3.txt
 
 #success
 story-step1 story2.txt
@@ -27,4 +28,3 @@ story-step3 words_success.txt story_success2.txt
 story-step4 -n words.txt story2.txt
 story-step4 words_success3.txt story_success3.txt
 story-step4 -n words_success3.txt story_success3.txt
-story-step4 -n words_wrong3.txt story_wrong3.txt

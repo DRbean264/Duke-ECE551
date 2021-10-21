@@ -9,10 +9,12 @@ using namespace std;
 template<typename T>
 void sortAndPrintFromFile(T &s) {
     vector<string> lines;
-    string line;
+    string line;    
     while (getline(s, line)) {
+        cout << "EOF bit: " << s.eof() << '\n';
         lines.push_back(line);
     }
+    cout << "EOF bit: " << s.eof() << '\n';
     
     sort(lines.begin(), lines.end());
     // print the strings

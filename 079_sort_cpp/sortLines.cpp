@@ -3,17 +3,15 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <cstdlib>
 using namespace std;
 
 template<typename T>
 void sortAndPrintFromFile(T &s) {
     vector<string> lines;
     string line;
-    while (getline(s, line).eof() != true) {
+    while (getline(s, line)) {
         lines.push_back(line);
-    }
-    if (lines.size() == 0) {
-        return;
     }
     
     sort(lines.begin(), lines.end());
@@ -31,7 +29,8 @@ int main(int argc, char *argv[])
         for (size_t i = 1; i < (size_t)argc; ++i) {
             ifstream f(argv[i]);
             if (!f) {
-                cout << "Fail to open the file" << argv[i] << '\n';
+                cerr << "Fail to open the file " << argv[i] << '\n';
+                exit(EXIT_FAILURE);
             }
             sortAndPrintFromFile<ifstream>(f);
             f.close();

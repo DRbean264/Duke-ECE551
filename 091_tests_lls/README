@@ -1,0 +1,61 @@
+For this assignment, you will be writing test cases for your next
+assignment. As usual, the instructions for the next assignment are in 
+next-README. 
+
+For this assignment, you will be writing test cases (in a file called
+test-lls.cpp) for an integer linked list class with the methods
+given in il.hpp. While the next assignment is writing a templated linked
+list class, you will only write test cases for the IntList class for
+now. By now, you should be quite familiar with the idea of writing test
+cases first.
+
+We have created compiled object files (in /usr/local/ece551/lls/ where il.o
+is correct, and the files with a number for 'X' in ilX.o files are each
+broken in some way).
+
+We have provided a run_all.sh script, which will compile your test-lls.cpp
+with each object file, run your tests, and report if your tests failed each
+broken implementation (and passed the correct one).
+
+In il.hpp, you will see the interface of IntList, including a friend
+class Tester. We have started writing the Tester class in test-lls.cpp
+for you, and you should continue adding methods and tests until you
+have identified all broken implementations.
+
+Submit your test-lls.cpp file when you are done.
+
+Hints and suggestions for testing:
+==================================
+
+Write as many mistakes and test cases as you can think of with pencil and
+paper before you write any code in test-lls.cpp.
+
+Think systematically about possible mistakes a programmer could make.
+
+Broken 1
+Start by thinking of mistakes a programmer could make with the default
+constructor, and test for what head and tail should be if it was written
+correctly.
+
+Broken 2-9
+Think of mistakes a programmer could make in writing addFront and addBack:
+What pointers could they forget to update? What functionality could they
+misunderstand?
+
+Broken 10-16
+Think about how the rule of three relates to the IntList class. What member
+functions does the programmer need to write and what mistakes could they
+make regarding copying, allocating, and deallocating memory?
+
+Broken 17-26
+Work out several removals by hand, and write comprehensive tests for things
+that could go wrong when removing from different positions in the
+list. Think carefully about where a programmer could fail to update
+pointers around the node being removed.
+
+For these tests, you may assume operator[], find, and getSize are
+implemented correctly.
+
+Note that run_all.sh uses valgrind and checks for memory leaks, so if
+valgrind detects an error or memory leak, run_all.sh will consider the
+broken implementation identified.

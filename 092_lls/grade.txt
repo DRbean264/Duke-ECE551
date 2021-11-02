@@ -1,0 +1,41 @@
+Grading at 11/02/2021:04:53:50.322600
+For commit ID 9cc4390ffff966caf7b13358450148549bcc580a
+Grading at Tue Nov  2 00:53:49 EDT 2021
+-----------------------------------------------
+testcase 1 : Testing with LinkedList<int>
+...compiling...
+In file included from tester.cpp:1:0:
+ll.hpp: In member function ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&)’:
+ll.hpp:62:18: error: ‘swap’ is not a member of ‘std’
+             std::swap(temp.head, head);
+                  ^~~~
+ll.hpp:63:18: error: ‘swap’ is not a member of ‘std’
+             std::swap(temp.tail, tail);
+                  ^~~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 2 : Testing with LinkedList<std::string>
+...compiling...
+In file included from tester.cpp:1:0:
+ll.hpp: In member function ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&)’:
+ll.hpp:62:18: error: ‘swap’ is not a member of ‘std’
+             std::swap(temp.head, head);
+                  ^~~~
+ll.hpp:63:18: error: ‘swap’ is not a member of ‘std’
+             std::swap(temp.tail, tail);
+                  ^~~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 3 : Testing with LinkedList<(a custom class we wrote)>
+...compiling...
+In file included from tester.cpp:1:0:
+ll.hpp: In member function ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&)’:
+ll.hpp:62:18: error: ‘swap’ is not a member of ‘std’
+             std::swap(temp.head, head);
+                  ^~~~
+ll.hpp:63:18: error: ‘swap’ is not a member of ‘std’
+             std::swap(temp.tail, tail);
+                  ^~~~
+The code did not compile.  This test failed.
+
+Overall Grade: F

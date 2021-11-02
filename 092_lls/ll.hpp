@@ -3,8 +3,10 @@
 
 #include <assert.h>
 
+#include <iostream>
 #include <cstdlib>
 #include <exception>
+#include <algorithm>
 
 //class Tester;
 
@@ -59,8 +61,8 @@ public:
                 curr = curr->next;
             }
 
-            swap(temp.head, head);
-            swap(temp.tail, tail);
+            std::swap(temp.head, head);
+            std::swap(temp.tail, tail);
         }
         return *this;
     }

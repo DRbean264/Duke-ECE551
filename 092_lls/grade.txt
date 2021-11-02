@@ -1,86 +1,89 @@
-Grading at 11/02/2021:04:55:41.091738
-For commit ID 53fa0fee15916fde6271273a33faf50abd5d10cc
-Grading at Tue Nov  2 00:55:40 EDT 2021
+Grading at 11/02/2021:04:59:34.185970
+For commit ID f8ce2fcadcf45709e8e4f47df34eeb85cae4a50c
+Grading at Tue Nov  2 00:59:33 EDT 2021
 -----------------------------------------------
 testcase 1 : Testing with LinkedList<int>
 ...compiling...
 In file included from tester.cpp:1:0:
-ll.hpp: In member function ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&)’:
-ll.hpp:62:18: error: ‘swap’ is not a member of ‘std’
-             std::swap<T>(temp.head, head);
-                  ^~~~
-ll.hpp:62:24: error: expected primary-expression before ‘>’ token
-             std::swap<T>(temp.head, head);
-                        ^
-ll.hpp:63:18: error: ‘swap’ is not a member of ‘std’
-             std::swap<T>(temp.tail, tail);
-                  ^~~~
-ll.hpp:63:24: error: expected primary-expression before ‘>’ token
-             std::swap<T>(temp.tail, tail);
-                        ^
 ll.hpp: In instantiation of ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&) [with T = int]’:
 tester.cpp:94:11:   required from here
-ll.hpp:62:31: error: left operand of comma operator has no effect [-Werror=unused-value]
-             std::swap<T>(temp.head, head);
-                          ~~~~~^~~~
-ll.hpp:63:31: error: left operand of comma operator has no effect [-Werror=unused-value]
-             std::swap<T>(temp.tail, tail);
-                          ~~~~~^~~~
-cc1plus: all warnings being treated as errors
+ll.hpp:62:17: error: ‘swap’ was not declared in this scope
+             swap(temp.head, head);
+             ~~~~^~~~~~~~~~~~~~~~~
+ll.hpp:62:17: note: suggested alternative:
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from tester.cpp:3:
+/usr/include/c++/7/bits/basic_string.h:6246:5: note:   ‘std::swap’
+     swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~
+In file included from tester.cpp:1:0:
+ll.hpp:63:17: error: ‘swap’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+             swap(temp.tail, tail);
+             ~~~~^~~~~~~~~~~~~~~~~
+ll.hpp:62:17: note: ‘swap’ declared here, later in the translation unit
+             swap(temp.head, head);
+             ~~~~^~~~~~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with LinkedList<std::string>
 ...compiling...
 In file included from tester.cpp:1:0:
-ll.hpp: In member function ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&)’:
-ll.hpp:62:18: error: ‘swap’ is not a member of ‘std’
-             std::swap<T>(temp.head, head);
-                  ^~~~
-ll.hpp:62:24: error: expected primary-expression before ‘>’ token
-             std::swap<T>(temp.head, head);
-                        ^
-ll.hpp:63:18: error: ‘swap’ is not a member of ‘std’
-             std::swap<T>(temp.tail, tail);
-                  ^~~~
-ll.hpp:63:24: error: expected primary-expression before ‘>’ token
-             std::swap<T>(temp.tail, tail);
-                        ^
 ll.hpp: In instantiation of ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&) [with T = std::__cxx11::basic_string<char>]’:
 tester.cpp:94:11:   required from here
-ll.hpp:62:31: error: left operand of comma operator has no effect [-Werror=unused-value]
-             std::swap<T>(temp.head, head);
-                          ~~~~~^~~~
-ll.hpp:63:31: error: left operand of comma operator has no effect [-Werror=unused-value]
-             std::swap<T>(temp.tail, tail);
-                          ~~~~~^~~~
-cc1plus: all warnings being treated as errors
+ll.hpp:62:17: error: ‘swap’ was not declared in this scope
+             swap(temp.head, head);
+             ~~~~^~~~~~~~~~~~~~~~~
+ll.hpp:62:17: note: suggested alternative:
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from tester.cpp:3:
+/usr/include/c++/7/bits/basic_string.h:6246:5: note:   ‘std::swap’
+     swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~
+In file included from tester.cpp:1:0:
+ll.hpp:63:17: error: ‘swap’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+             swap(temp.tail, tail);
+             ~~~~^~~~~~~~~~~~~~~~~
+ll.hpp:62:17: note: ‘swap’ declared here, later in the translation unit
+             swap(temp.head, head);
+             ~~~~^~~~~~~~~~~~~~~~~
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with LinkedList<(a custom class we wrote)>
 ...compiling...
 In file included from tester.cpp:1:0:
-ll.hpp: In member function ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&)’:
-ll.hpp:62:18: error: ‘swap’ is not a member of ‘std’
-             std::swap<T>(temp.head, head);
-                  ^~~~
-ll.hpp:62:24: error: expected primary-expression before ‘>’ token
-             std::swap<T>(temp.head, head);
-                        ^
-ll.hpp:63:18: error: ‘swap’ is not a member of ‘std’
-             std::swap<T>(temp.tail, tail);
-                  ^~~~
-ll.hpp:63:24: error: expected primary-expression before ‘>’ token
-             std::swap<T>(temp.tail, tail);
-                        ^
 ll.hpp: In instantiation of ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&) [with T = Tester]’:
 tester.cpp:94:11:   required from here
-ll.hpp:62:31: error: left operand of comma operator has no effect [-Werror=unused-value]
-             std::swap<T>(temp.head, head);
-                          ~~~~~^~~~
-ll.hpp:63:31: error: left operand of comma operator has no effect [-Werror=unused-value]
-             std::swap<T>(temp.tail, tail);
-                          ~~~~~^~~~
-cc1plus: all warnings being treated as errors
+ll.hpp:62:17: error: ‘swap’ was not declared in this scope
+             swap(temp.head, head);
+             ~~~~^~~~~~~~~~~~~~~~~
+ll.hpp:62:17: note: suggested alternative:
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from tester.cpp:3:
+/usr/include/c++/7/bits/basic_string.h:6246:5: note:   ‘std::swap’
+     swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~
+In file included from tester.cpp:1:0:
+ll.hpp:63:17: error: ‘swap’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+             swap(temp.tail, tail);
+             ~~~~^~~~~~~~~~~~~~~~~
+ll.hpp:62:17: note: ‘swap’ declared here, later in the translation unit
+             swap(temp.head, head);
+             ~~~~^~~~~~~~~~~~~~~~~
 The code did not compile.  This test failed.
 
 Overall Grade: F

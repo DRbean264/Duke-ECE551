@@ -59,8 +59,8 @@ public:
                 curr = curr->next;
             }
 
-            std::swap(temp.head, head);
-            std::swap(temp.tail, tail);
+            std::swap<T>(temp.head, head);
+            std::swap<T>(temp.tail, tail);
         }
         return *this;
     }

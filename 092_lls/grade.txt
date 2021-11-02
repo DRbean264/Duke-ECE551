@@ -1,17 +1,32 @@
-Grading at 11/02/2021:04:53:50.322600
-For commit ID 9cc4390ffff966caf7b13358450148549bcc580a
-Grading at Tue Nov  2 00:53:49 EDT 2021
+Grading at 11/02/2021:04:55:41.091738
+For commit ID 53fa0fee15916fde6271273a33faf50abd5d10cc
+Grading at Tue Nov  2 00:55:40 EDT 2021
 -----------------------------------------------
 testcase 1 : Testing with LinkedList<int>
 ...compiling...
 In file included from tester.cpp:1:0:
 ll.hpp: In member function ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&)’:
 ll.hpp:62:18: error: ‘swap’ is not a member of ‘std’
-             std::swap(temp.head, head);
+             std::swap<T>(temp.head, head);
                   ^~~~
+ll.hpp:62:24: error: expected primary-expression before ‘>’ token
+             std::swap<T>(temp.head, head);
+                        ^
 ll.hpp:63:18: error: ‘swap’ is not a member of ‘std’
-             std::swap(temp.tail, tail);
+             std::swap<T>(temp.tail, tail);
                   ^~~~
+ll.hpp:63:24: error: expected primary-expression before ‘>’ token
+             std::swap<T>(temp.tail, tail);
+                        ^
+ll.hpp: In instantiation of ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&) [with T = int]’:
+tester.cpp:94:11:   required from here
+ll.hpp:62:31: error: left operand of comma operator has no effect [-Werror=unused-value]
+             std::swap<T>(temp.head, head);
+                          ~~~~~^~~~
+ll.hpp:63:31: error: left operand of comma operator has no effect [-Werror=unused-value]
+             std::swap<T>(temp.tail, tail);
+                          ~~~~~^~~~
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with LinkedList<std::string>
@@ -19,11 +34,26 @@ testcase 2 : Testing with LinkedList<std::string>
 In file included from tester.cpp:1:0:
 ll.hpp: In member function ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&)’:
 ll.hpp:62:18: error: ‘swap’ is not a member of ‘std’
-             std::swap(temp.head, head);
+             std::swap<T>(temp.head, head);
                   ^~~~
+ll.hpp:62:24: error: expected primary-expression before ‘>’ token
+             std::swap<T>(temp.head, head);
+                        ^
 ll.hpp:63:18: error: ‘swap’ is not a member of ‘std’
-             std::swap(temp.tail, tail);
+             std::swap<T>(temp.tail, tail);
                   ^~~~
+ll.hpp:63:24: error: expected primary-expression before ‘>’ token
+             std::swap<T>(temp.tail, tail);
+                        ^
+ll.hpp: In instantiation of ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&) [with T = std::__cxx11::basic_string<char>]’:
+tester.cpp:94:11:   required from here
+ll.hpp:62:31: error: left operand of comma operator has no effect [-Werror=unused-value]
+             std::swap<T>(temp.head, head);
+                          ~~~~~^~~~
+ll.hpp:63:31: error: left operand of comma operator has no effect [-Werror=unused-value]
+             std::swap<T>(temp.tail, tail);
+                          ~~~~~^~~~
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with LinkedList<(a custom class we wrote)>
@@ -31,11 +61,26 @@ testcase 3 : Testing with LinkedList<(a custom class we wrote)>
 In file included from tester.cpp:1:0:
 ll.hpp: In member function ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&)’:
 ll.hpp:62:18: error: ‘swap’ is not a member of ‘std’
-             std::swap(temp.head, head);
+             std::swap<T>(temp.head, head);
                   ^~~~
+ll.hpp:62:24: error: expected primary-expression before ‘>’ token
+             std::swap<T>(temp.head, head);
+                        ^
 ll.hpp:63:18: error: ‘swap’ is not a member of ‘std’
-             std::swap(temp.tail, tail);
+             std::swap<T>(temp.tail, tail);
                   ^~~~
+ll.hpp:63:24: error: expected primary-expression before ‘>’ token
+             std::swap<T>(temp.tail, tail);
+                        ^
+ll.hpp: In instantiation of ‘LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>&) [with T = Tester]’:
+tester.cpp:94:11:   required from here
+ll.hpp:62:31: error: left operand of comma operator has no effect [-Werror=unused-value]
+             std::swap<T>(temp.head, head);
+                          ~~~~~^~~~
+ll.hpp:63:31: error: left operand of comma operator has no effect [-Werror=unused-value]
+             std::swap<T>(temp.tail, tail);
+                          ~~~~~^~~~
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 
 Overall Grade: F

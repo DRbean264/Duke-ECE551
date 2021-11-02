@@ -1,0 +1,9 @@
+I got stuck in the 24th broken implementation. Can you give me some hint?
+I've tried delete an element in a list which contains multiple of the same value;
+delete the list with a single element;
+delete the tail element;
+delete the head element;
+delete the non-existing element;
+delete the middle element;
+delete all the elements.
+I still couldn't find what went wrong.

@@ -1,0 +1,3 @@
+I got stuck in the oken implementation Can you give some hint? the middle element;
+delete all elements.
+still couldn't what went wrong.

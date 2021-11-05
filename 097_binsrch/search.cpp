@@ -23,28 +23,16 @@ using namespace std;
 // };
 
 int binarySearchForZero(Function<int, int> * f, int low, int high) {
-    if (low == high) {
+    if (low >= high - 1)
         return low;
-    }
+    int mid = (low + high) / 2;
+    int val = f->invoke(mid);
+    if (val > 0)
+        return binarySearchForZero(f, low, mid);
+    else if (val < 0)
+        return binarySearchForZero(f, mid, high);
 
-    int origLow = low;
-    low = low - 1;
-    high = high - 1;
-    int mid;
-    while (low < high) {
-        mid = (low + high) / 2;
-        int y = f->invoke(mid);
-        if (y == 0) {
-            return mid;
-        } else if (y < 0) {
-            low = mid;
-        } else {
-            high = mid - 1;
-        }
-    }
-    if (low + 1 == origLow)
-        return origLow;
-    return low;
+    return mid;
 }
 
 // int main()

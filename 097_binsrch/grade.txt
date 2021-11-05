@@ -1,20 +1,22 @@
-Grading at 11/05/2021:17:28:05.591992
-For commit ID fb75e07ecb9a345b688bc07ebb83ecb5063ba8ad
-Grading at Fri Nov  5 13:27:46 EDT 2021
+Grading at 11/05/2021:17:38:02.481302
+For commit ID 2855509e75583498530f19635d3d2f7b328ea6fa
+Grading at Fri Nov  5 13:37:56 EDT 2021
 Stripping out any main you may have written, and compiling...
 Testcase 1
 -----------------
   - Valgrind was clean (no errors, no memory leaks)
-  - You got the correct result in 18 steps (correct is 17)
+  - You got the correct result in 17 steps (correct is 17)
   - Test Passed
 Testcase 2
 -----------------
-  - Valgrind reported errors
-  - Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the correct result in 15 steps (correct is 15)
+  - Test Passed
 Testcase 3
 -----------------
-  - Valgrind reported errors
-  - Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the correct result in 17 steps (correct is 17)
+  - Test Passed
 Testcase 4
 -----------------
   - Valgrind was clean (no errors, no memory leaks)
@@ -28,11 +30,12 @@ Testcase 5
 Testcase 6
 -----------------
   - Valgrind was clean (no errors, no memory leaks)
-  - You got the wrong result
-  - Test Failed
+  - You got the correct result in 12 steps (correct is 12)
+  - Test Passed
 Testcase 7
 -----------------
-  - Valgrind reported errors
-  - Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the correct result in 4 steps (correct is 4)
+  - Test Passed
 
-Overall Grade: F
+Overall Grade: A

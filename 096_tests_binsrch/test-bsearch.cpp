@@ -1,5 +1,6 @@
 #include "function.h"
 #include <iostream>
+#include <cstdio>
 #include <cmath>
 #include <assert.h>
 using namespace std;
@@ -26,6 +27,9 @@ public:
         return f->invoke(arg);
     }
 
+    virtual ~CountedIntFn() {
+        delete f;
+    }
 };
 
 void check(Function<int,int> * f,
@@ -41,6 +45,7 @@ void check(Function<int,int> * f,
     }
     CountedIntFn *wrappedF = new CountedIntFn(maxInvoc, f, mesg);
     assert(expected_ans == binarySearchForZero(wrappedF, low, high));
+    delete wrappedF;
 }
 
 class linearFunc : public Function<int, int> {
@@ -53,10 +58,10 @@ public:
 
 
 int main()
-{
-    check(new linearFunc(), -3, 0, -2, "y = 3x + 2, x is in range [-3,0)");
-    check(new linearFunc(), -10, -4, -5, "y = 3x + 2, x is in range [-10,-4)");
-    check(new linearFunc(), 1, 5, 1, "y = 3x + 2, x is in range [1,5)");
-    check(new linearFunc(), 0, -3, 0, "y = 3x + 2, x is in range [-3,0)");
+{    
+    check(new linearFunc(), -3, 0, -2, "y = 2x + 3, x is in range [-3,0)");
+    check(new linearFunc(), -10, -4, -5, "y = 2x + 3, x is in range [-10,-4)");
+    check(new linearFunc(), 1, 5, 1, "y = 2x + 3, x is in range [1,5)");
+    check(new linearFunc(), 0, 0, 0, "y = 2x + 3, x is in range [-3,0)");
     return 0;
 }

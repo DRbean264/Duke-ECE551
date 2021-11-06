@@ -38,7 +38,7 @@ private:
         return curr;
     }
 
-    bool lookupHelper (Node *curr, const T &key) const {
+    bool containsHelper (Node *curr, const T &key) const {
         // base cases
         if (!curr) {
             return false;

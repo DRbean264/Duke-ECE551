@@ -15,10 +15,12 @@ int main()
         bm.add(80, 3);
         bm.add(4, 90);
         bm.add(-1, 98);
-        cout << "The tree is now: \n";
+        cout << "The tree bm is now: \n";
         bm.printBstMap();
         cout << '\n';
 
+        BstMap<int, int> bmCopy(bm);
+        
         cout << "Looking for key -1: " << bm.lookup(-1) << endl;
         cout << "Looking for key 0: " << bm.lookup(0) << endl;
         cout << "Looking for key 2: " << bm.lookup(2) << endl;
@@ -27,23 +29,27 @@ int main()
         cout << "Looking for key 80: " << bm.lookup(80) << endl;
 
         bm.remove(1);
-        cout << "After removing 0, the tree is now: \n";
+        cout << "After removing 0, the tree bm is now: \n";
         bm.printBstMap();
         cout << '\n';
 
         bm.remove(-1);
-        cout << "After removing -1, the tree is now: \n";
+        cout << "After removing -1, the tree bm is now: \n";
         bm.printBstMap();
         cout << '\n';
 
         bm.remove(3);
-        cout << "After removing 3, the tree is now: \n";
+        cout << "After removing 3, the tree bm is now: \n";
         bm.printBstMap();
         cout << '\n';
 
         bm.remove(5);
-        cout << "After removing 5, the tree is now: \n";
+        cout << "After removing 5, the tree bm is now: \n";
         bm.printBstMap();
+        cout << '\n';
+
+        cout << "The tree bmCopy is now: \n";
+        bmCopy.printBstMap();
         cout << '\n';
 
     } catch (invalid_argument &e) {

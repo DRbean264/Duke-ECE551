@@ -1,71 +1,26 @@
-Grading at 11/06/2021:16:03:20.886222
-For commit ID eea7c017cedde7ffe9d836d886680995b5bb4327
-Grading at Sat Nov  6 12:03:20 EDT 2021
+Grading at 11/06/2021:16:04:24.404654
+For commit ID 586ca44b53b13b1e917178e359d7bb8b15d8a48d
+Grading at Sat Nov  6 12:04:21 EDT 2021
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-In file included from 90-tester.cpp:1:0:
-bstset.h: In instantiation of ‘bool BstSet<T>::containsHelper(BstSet<T>::Node*, const T&) const [with T = int]’:
-bstset.h:127:30:   required from ‘bool BstSet<T>::contains(const T&) const [with T = int]’
-90-tester.cpp:113:28:   required from here
-bstset.h:52:32: error: ‘lookupHelper’ was not declared in this scope
-             return lookupHelper(curr->left, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-bstset.h:52:32: note: suggested alternative: ‘copyHelper’
-             return lookupHelper(curr->left, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-                    copyHelper
-bstset.h:54:32: error: ‘lookupHelper’ was not declared in this scope
-             return lookupHelper(curr->right, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
-bstset.h:54:32: note: suggested alternative: ‘copyHelper’
-             return lookupHelper(curr->right, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
-                    copyHelper
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-In file included from 90-tester.cpp:1:0:
-bstset.h: In instantiation of ‘bool BstSet<T>::containsHelper(BstSet<T>::Node*, const T&) const [with T = std::__cxx11::basic_string<char>]’:
-bstset.h:127:30:   required from ‘bool BstSet<T>::contains(const T&) const [with T = std::__cxx11::basic_string<char>]’
-90-tester.cpp:113:28:   required from here
-bstset.h:52:32: error: ‘lookupHelper’ was not declared in this scope
-             return lookupHelper(curr->left, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-bstset.h:52:32: note: suggested alternative: ‘copyHelper’
-             return lookupHelper(curr->left, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-                    copyHelper
-bstset.h:54:32: error: ‘lookupHelper’ was not declared in this scope
-             return lookupHelper(curr->right, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
-bstset.h:54:32: note: suggested alternative: ‘copyHelper’
-             return lookupHelper(curr->right, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
-                    copyHelper
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-In file included from 90-tester.cpp:1:0:
-bstset.h: In instantiation of ‘bool BstSet<T>::containsHelper(BstSet<T>::Node*, const T&) const [with T = Tester]’:
-bstset.h:127:30:   required from ‘bool BstSet<T>::contains(const T&) const [with T = Tester]’
-90-tester.cpp:113:28:   required from here
-bstset.h:52:32: error: ‘lookupHelper’ was not declared in this scope
-             return lookupHelper(curr->left, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-bstset.h:52:32: note: suggested alternative: ‘copyHelper’
-             return lookupHelper(curr->left, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-                    copyHelper
-bstset.h:54:32: error: ‘lookupHelper’ was not declared in this scope
-             return lookupHelper(curr->right, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
-bstset.h:54:32: note: suggested alternative: ‘copyHelper’
-             return lookupHelper(curr->right, key);
-                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
-                    copyHelper
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A

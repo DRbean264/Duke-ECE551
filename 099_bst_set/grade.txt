@@ -1,47 +1,71 @@
-Grading at 11/06/2021:16:02:00.202782
-For commit ID c09a7c1df4571d7beffb3a2c8c54de48331c78a0
-Grading at Sat Nov  6 12:01:59 EDT 2021
+Grading at 11/06/2021:16:03:20.886222
+For commit ID eea7c017cedde7ffe9d836d886680995b5bb4327
+Grading at Sat Nov  6 12:03:20 EDT 2021
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
 In file included from 90-tester.cpp:1:0:
-bstset.h: In instantiation of ‘bool BstSet<T>::contains(const T&) const [with T = int]’:
+bstset.h: In instantiation of ‘bool BstSet<T>::containsHelper(BstSet<T>::Node*, const T&) const [with T = int]’:
+bstset.h:127:30:   required from ‘bool BstSet<T>::contains(const T&) const [with T = int]’
 90-tester.cpp:113:28:   required from here
-bstset.h:127:30: error: ‘containsHelper’ was not declared in this scope
-         return containsHelper(root, key);
-                ~~~~~~~~~~~~~~^~~~~~~~~~~
-bstset.h:127:30: note: suggested alternative: ‘contains’
-         return containsHelper(root, key);
-                ~~~~~~~~~~~~~~^~~~~~~~~~~
-                contains
+bstset.h:52:32: error: ‘lookupHelper’ was not declared in this scope
+             return lookupHelper(curr->left, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+bstset.h:52:32: note: suggested alternative: ‘copyHelper’
+             return lookupHelper(curr->left, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+                    copyHelper
+bstset.h:54:32: error: ‘lookupHelper’ was not declared in this scope
+             return lookupHelper(curr->right, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+bstset.h:54:32: note: suggested alternative: ‘copyHelper’
+             return lookupHelper(curr->right, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+                    copyHelper
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
 In file included from 90-tester.cpp:1:0:
-bstset.h: In instantiation of ‘bool BstSet<T>::contains(const T&) const [with T = std::__cxx11::basic_string<char>]’:
+bstset.h: In instantiation of ‘bool BstSet<T>::containsHelper(BstSet<T>::Node*, const T&) const [with T = std::__cxx11::basic_string<char>]’:
+bstset.h:127:30:   required from ‘bool BstSet<T>::contains(const T&) const [with T = std::__cxx11::basic_string<char>]’
 90-tester.cpp:113:28:   required from here
-bstset.h:127:30: error: ‘containsHelper’ was not declared in this scope
-         return containsHelper(root, key);
-                ~~~~~~~~~~~~~~^~~~~~~~~~~
-bstset.h:127:30: note: suggested alternative: ‘contains’
-         return containsHelper(root, key);
-                ~~~~~~~~~~~~~~^~~~~~~~~~~
-                contains
+bstset.h:52:32: error: ‘lookupHelper’ was not declared in this scope
+             return lookupHelper(curr->left, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+bstset.h:52:32: note: suggested alternative: ‘copyHelper’
+             return lookupHelper(curr->left, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+                    copyHelper
+bstset.h:54:32: error: ‘lookupHelper’ was not declared in this scope
+             return lookupHelper(curr->right, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+bstset.h:54:32: note: suggested alternative: ‘copyHelper’
+             return lookupHelper(curr->right, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+                    copyHelper
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
 In file included from 90-tester.cpp:1:0:
-bstset.h: In instantiation of ‘bool BstSet<T>::contains(const T&) const [with T = Tester]’:
+bstset.h: In instantiation of ‘bool BstSet<T>::containsHelper(BstSet<T>::Node*, const T&) const [with T = Tester]’:
+bstset.h:127:30:   required from ‘bool BstSet<T>::contains(const T&) const [with T = Tester]’
 90-tester.cpp:113:28:   required from here
-bstset.h:127:30: error: ‘containsHelper’ was not declared in this scope
-         return containsHelper(root, key);
-                ~~~~~~~~~~~~~~^~~~~~~~~~~
-bstset.h:127:30: note: suggested alternative: ‘contains’
-         return containsHelper(root, key);
-                ~~~~~~~~~~~~~~^~~~~~~~~~~
-                contains
+bstset.h:52:32: error: ‘lookupHelper’ was not declared in this scope
+             return lookupHelper(curr->left, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+bstset.h:52:32: note: suggested alternative: ‘copyHelper’
+             return lookupHelper(curr->left, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+                    copyHelper
+bstset.h:54:32: error: ‘lookupHelper’ was not declared in this scope
+             return lookupHelper(curr->right, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+bstset.h:54:32: note: suggested alternative: ‘copyHelper’
+             return lookupHelper(curr->right, key);
+                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+                    copyHelper
 The code did not compile.  This test failed.
 
 Overall Grade: F

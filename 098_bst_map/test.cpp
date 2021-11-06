@@ -20,6 +20,8 @@ int main()
         cout << '\n';
 
         BstMap<int, int> bmCopy(bm);
+        BstMap<int, int> bm2;
+        bm2 = bm;    
         
         cout << "Looking for key -1: " << bm.lookup(-1) << endl;
         cout << "Looking for key 0: " << bm.lookup(0) << endl;
@@ -48,6 +50,12 @@ int main()
         bm.printBstMap();
         cout << '\n';
 
+        bm2.add(76, 3);
+        bm2.remove(80);
+        cout << "The tree bm2 is now: \n";
+        bm2.printBstMap();
+        cout << '\n';
+        
         cout << "The tree bmCopy is now: \n";
         bmCopy.printBstMap();
         cout << '\n';

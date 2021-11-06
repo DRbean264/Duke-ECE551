@@ -79,11 +79,11 @@ private:
                 }
                 curr->key = temp->key;
                 curr->value = temp->value;
-                delete temp;
-                if (prev)
-                    prev->left = NULL;
+                if (prev) 
+                    prev->left = temp->right;                    
                 else
-                    curr->right = NULL;
+                    curr->right = temp->right;
+                delete temp;                                
                 return curr;
             }
         }

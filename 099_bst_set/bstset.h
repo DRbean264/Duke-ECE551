@@ -49,9 +49,9 @@ private:
 
         // recursive call
         if (key < curr->key) {
-            return lookupHelper(curr->left, key);
+            return containsHelper(curr->left, key);
         } else {
-            return lookupHelper(curr->right, key);
+            return containsHelper(curr->right, key);
         }
     }
 

@@ -6,7 +6,7 @@
 
 template<typename K, typename V>
 class BstMap : public Map<K, V> {
-private:
+public:
     class Node {
     public:
         K key;
@@ -18,7 +18,7 @@ private:
         Node(K _key, V _value, Node *_left, Node *_right)
             : key(_key), value(_value), left(_left), right(_right) {}
     };
-
+private:
     Node *addHelper(Node *root, const K &key, const V &value) {
         // base cases
         if (!root) {

@@ -26,7 +26,7 @@ int main()
         // cout << "Looking for key 5: " << bm.lookup(5) << endl;
         cout << "Looking for key 80: " << bm.lookup(80) << endl;
 
-        bm.remove(0);
+        bm.remove(1);
         cout << "After removing 0, the tree is now: \n";
         bm.printBstMap();
         cout << '\n';
@@ -38,6 +38,11 @@ int main()
 
         bm.remove(3);
         cout << "After removing 3, the tree is now: \n";
+        bm.printBstMap();
+        cout << '\n';
+
+        bm.remove(5);
+        cout << "After removing 5, the tree is now: \n";
         bm.printBstMap();
         cout << '\n';
 

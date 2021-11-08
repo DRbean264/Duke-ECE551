@@ -1,6 +1,6 @@
-Grading at 11/08/2021:20:48:31.402498
-For commit ID 270d467480e70ff16852da3e8d2c98be6cd788e0
-Grading at Mon Nov  8 15:48:11 EST 2021
+Grading at 11/08/2021:20:51:51.315294
+For commit ID 8d8d99860d94670a7a018f84483a8eaea86fb64e
+Grading at Mon Nov  8 15:51:31 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -281,17 +281,9 @@ Test case 10 (error): cyoa-step1 story-test/invalid1.txt story-test/invalid2.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 11 (error): cyoa-step1 story-test/valid.txt
-One day, a strange old wizard comes to your village and tells you that
-there is an evil dragon lurking in the hills. This wizard's story explains
+Your program successfully indicated a failure case
 
-What would you like to do?
-
- 1. Choose the magic whistle.
- 2. Choose the magic shoes.
- 3. Choose the magic toaster.
-Your program did not indicate a failure case
-
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET

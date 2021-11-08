@@ -1,6 +1,6 @@
-Grading at 11/08/2021:21:57:36.917574
-For commit ID 17773e6ed543ee8b8aa5e6eb2bd9369d728049fc
-Grading at Mon Nov  8 16:57:16 EST 2021
+Grading at 11/08/2021:22:04:01.328502
+For commit ID 70360438316e397b41fc0ec355dbfc701ba45a10
+Grading at Mon Nov  8 17:03:40 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -287,7 +287,8 @@ What would you like to do?
 
  1. Choose the magic whistle.
  2. Choose the magic shoes.
- 3. Choose the magic toaster.Your program did not indicate a failure case
+ 3. Choose the magic toaster.
+Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
 Test case 12 (success): cyoa-step1 story-test/valid.txt
 1,7d0
@@ -298,7 +299,6 @@ Test case 12 (success): cyoa-step1 story-test/valid.txt
 <  1. Choose the magic whistle.
 <  2. Choose the magic shoes.
 <  3. Choose the magic toaster.
-\ No newline at end of file
 Your file did not match the expected output
 
 You have FAILED one or more of your test cases

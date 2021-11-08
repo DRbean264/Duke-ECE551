@@ -1,0 +1,298 @@
+Grading at 11/08/2021:17:00:21.401729
+For commit ID c96e10b216dc688fec1a775afc52d449c570c54b
+Grading at Mon Nov  8 12:00:01 EST 2021
+Checking Step 1 test cases required for extra credit
+
+Compiling cyoa-step1
+rm -f *~ *.o cyoa-step1
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp page.h
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
+Compiled for step 1
++-----------------------------------------------------------------------+
+Test case 1 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page1.txt
+1c1,24
+< ERROR: Testing wrongness.
+---
+> One day, a strange old wizard comes to your village and tells you that
+> there is an evil dragon lurking in the hills. This wizard's story explains
+> why the village's goats and cows have been going missing lately.
+> 
+> The wizard tells you: "It is up to you, hero, to stop this dragon. Nobody
+> else in this village is foolish...errrr I mean brave enough to stop this
+> dragon." 
+> 
+> The wizard offers you a choice of one of three magic items to help you on
+> your quest. 
+> 
+> The first is a magic whistle that lets you make any bird call that you
+> want. The second is a pair of magic shoes that let you jump 10 feet in the
+> air. The third is a magic toaster, which can take any item that you can fit
+> into it, and turn it into perfectly cooked toast (optionally with butter
+> and/or jam). 
+> 
+> "Choose wisely, for your quest and your village depend on you."
+> 
+> What would you like to do?
+> 
+>  1. Choose the magic whistle.
+>  2. Choose the magic shoes.
+>  3. Choose the magic toaster.
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 2 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page2.txt
+1c1,24
+< ERROR: Testing wrongness.
+---
+> As you take the magic whistle from the wizard's hand, he disappears in a
+> puff of smoke. You decide that you should give the whistle a try before you
+> set off to deal with the dragon (after all, if you learned nothing else in
+> school, it was that testing is VERY important). 
+> 
+> You think of a raven and blow on the whistle "CAW CAW CAW CAW". Then you
+> think of a chicken and blow "COCKADOODLEDOOOO". It seems like the whistle
+> works great, though you wonder how many different birds you can think of
+> and how they would help you deal with the dragon. 
+> 
+> Putting that question in the back of your mind, you contemplate whether or
+> not you should get some help before you set out. On the one hand, if you go
+> alone, you might be able to better sneak into the dragon's lair. On the
+> other hand, help might be useful.
+> 
+> Fortunately for you, the two wisest people you know, Denevieve and Grew,
+> live in the next village over. Thinking about it for several minutes, you
+> decide whom to go to for help.
+> 
+> What would you like to do?
+> 
+>  1. Go to Denevieve for help.
+>  2. Go to Grew for help.
+>  3. Go alone.
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 3 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page3.txt
+1c1,24
+< ERROR: Testing wrongness.
+---
+> As you take the magic shoes from the wizard's hand, he disappears in a puff
+> of smoke. You decide that you should give the shoes a try before you set
+> off to deal with the dragon (after all, if you learned nothing else in
+> school, it was that testing is VERY important). 
+> 
+> You put on the shoes and start jumping all over the village. As you bound
+> over fences and onto the roofs of small houses, your fellow villagers look
+> at you in awe. You are sure you could win any basketball game but are a
+> little more worried about how you will deal with a dragon.
+> 
+> Putting that question in the back of your mind, you contemplate whether or
+> not you should get some help before you set out. On the one hand, if you go
+> alone, you might be able to better sneak into the dragon's lair. On the
+> other hand, help might be useful.
+> 
+> Fortunately for you, the two wisest people you know, Denevieve and Grew,
+> live in the next village over. Thinking about it for several minutes, you
+> decide whom to go to for help.
+> 
+> What would you like to do?
+> 
+>  1. Go to Denevieve for help.
+>  2. Go to Grew for help.
+>  3. Go alone.
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 4 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page4.txt
+1c1,28
+< ERROR: Testing wrongness.
+---
+> As you take the magic toaster from the wizard's hand, he disappears in a
+> puff of smoke. You decide that you should give the toaster a try before you
+> set off to deal with the dragon (after all, if you learned nothing else in
+> school, it was that testing is VERY important). 
+> 
+> Having not had any breakfast, you are quite hungry, so testing the toaster
+> seems like a great solution to two problems. You grab a rock off the
+> ground, stuff it in, and think of delicious toast with raspberry jam. A few
+> seconds later, out pops the most perfectly done toast with just the right
+> amount of butter and jam. Wow that is good! You spend a while longer
+> testing the toaster again and again "just to be sure". After you are
+> stuffed on toast, you start to wonder how this will help you with the
+> dragon. 
+> 
+> Putting that question in the back of your mind, you contemplate whether or
+> not you should get some help before you set out. On the one hand, if you go
+> alone, you might be able to better sneak into the dragon's lair. On the
+> other hand, help might be useful.
+> 
+> Fortunately for you, the two wisest people you know, Denevieve and Grew,
+> live in the next village over. Thinking about it for several minutes, you
+> decide whom to go to for help.
+> 
+> What would you like to do?
+> 
+>  1. Go to Denevieve for help.
+>  2. Go to Grew for help.
+>  3. Go alone.
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 5 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page5.txt
+1c1,20
+< ERROR: Testing wrongness.
+---
+> After thinking about it a bit, you decide that Denevieve is probably a
+> better choice. After all, her singing skills are likely to come in handy,
+> especially with your magic whistle. Maybe dragons can be tamed by choir
+> music and bird calls? That could be right, but you aren't sure--you slept
+> through that day of Magical Creature Biology class. 
+> 
+> After knocking on the door, Denevieve is surprised to hear about the dragon
+> threat but is happy to help you. After all, you were her best student and
+> tested every piece of code extensively and incrementally. Surely you can be
+> trusted with a quest about dragons.
+> 
+> The two of you set off into the hills and find the cave of the dragon. You
+> take a minute to confer about your musical options and come up with a short
+> list of three possible combinations to tame the dragon. 
+> 
+> What would you like to do?
+> 
+>  1. Silent Night, accompanied by raven calls
+>  2. Angels We Have Heard on High, accompanied by roosters crowing
+>  3. Bohemian Rhapsody, accompanied by the magestic call of a bald eagle
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 6 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page1.txt
+1c1,15
+< ERROR: Testing wrongness.
+---
+> One bright weekend afternoon, you decide to adventure, putting on your Ring
+> of the Niebelungen and traveler's cloak and strapping the famed sword Ice
+> to your back.
+> 
+> Half-way up the mountain Matterhorn, you see a cave opening with steam
+> coming out. You enter the cave and tiptoe inside, straining your eyes in
+> the gloomy mist.
+> 
+> You encounter a dragon.
+> 
+> What would you like to do?
+> 
+>  1. Try to sneak past the sleeping dragon
+>  2. Leave the dragon's cave and go home
+>  3. Stab the dragon in the neck
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 7 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page2.txt
+1c1,9
+< ERROR: Testing wrongness.
+---
+> As you tiptoe past the sleeping dragon, steam rising from her nostrils, you
+> see a gleaming treasure hoard, just beyond the scaly tail.
+> 
+> An enormous, rare Scythian ruby gleams atop a pedestal, beckoning you.
+> 
+> What would you like to do?
+> 
+>  1. Pick up the ruby
+>  2. Pass the ruby to explore the rest of the hoard
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 8 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page3.txt
+1c1,4
+< ERROR: Testing wrongness.
+---
+> You enjoy a quiet evening at home with a mug of herbal tea and your cats,
+> who only think they are tiny dragons.
+> 
+> Congratulations! You have won. Hooray!
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 9 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page4.txt
+1c1,4
+< ERROR: Testing wrongness.
+---
+> Your famed sword Ice becomes embedded in the dragon's neck scales, and the
+> dragon rolls over, crushing you.
+> 
+> Sorry, you have lost. Better luck next time!
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 10 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page5.txt
+1c1,7
+< ERROR: Testing wrongness.
+---
+> The ruby is slippery, as though wet, and it glides through your fingers,
+> crashing hard into a golden plate, which clatters and crashes like a
+> cymbal.
+> 
+> The dragon wakes up, roasts you like a marshmallow, and eats you whole.
+> 
+> Sorry, you have lost. Better luck next time!
+Your file did not match the expected output
+Step 1: Failed test cases as above
+
+Compiling cyoa-step2
+rm -f *~ *.o cyoa-step1
+The code did not compile!
+Did not compile for step 2
+
+Compiling cyoa-step3
+rm -f *~ *.o cyoa-step1
+The code did not compile!
+Did not compile for step 3
+
+Compiling cyoa-step4
+rm -f *~ *.o cyoa-step1
+The code did not compile!
+Did not compile for step 4
+Running your test cases
+
+Compiling cyoa-step1
+rm -f *~ *.o cyoa-step1
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp page.h
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
++-----------------------------------------------------------------------+
+Test case 1 (error): cyoa-step1 story-test/invalid1.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 2 (error): cyoa-step1 story-test/invalid2.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 3 (error): cyoa-step1 story-test/invalid3.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 4 (error): cyoa-step1 story-test/invalid4.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 5 (error): cyoa-step1 story-test/invalid5.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 6 (error): cyoa-step1 story-test/invalid6.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 7 (error): cyoa-step1 story-test/invalid7.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 8 (error): cyoa-step1 story-test/invalid8.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 9 (error): cyoa-step1 story-test/notexist.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 10 (error): cyoa-step1 story-test/invalid1.txt story-test/invalid2.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 11 (success): cyoa-step1 story-test/valid.txt
+1,8d0
+< One day, a strange old wizard comes to your village and tells you that
+< there is an evil dragon lurking in the hills. This wizard's story explains
+< 
+< What would you like to do?
+< 
+<  1. Choose the magic whistle.
+<  2. Choose the magic shoes.
+<  3. Choose the magic toaster.
+Your file did not match the expected output
+
+You have FAILED one or more of your test cases
+Keep debugging
+
+Overall Grade: NO GRADE YET

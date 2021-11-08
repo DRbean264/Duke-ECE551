@@ -1,6 +1,6 @@
-Grading at 11/08/2021:21:20:06.307473
-For commit ID 1a8e192ffa9beb3047f395c5b6252ed652a74ea0
-Grading at Mon Nov  8 16:19:46 EST 2021
+Grading at 11/08/2021:21:26:46.297054
+For commit ID 894c1f76e13e22758649a5a27b31603707c553e9
+Grading at Mon Nov  8 16:26:26 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -281,9 +281,8 @@ Test case 10 (error): cyoa-step1 story-test/invalid1.txt story-test/invalid2.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 11 (success): cyoa-step1 story-test/valid.txt
-1,8d0
+1,7d0
 < One day, a strange old wizard comes to your village and tells you that
-< there is an evil dragon lurking in the hills. This wizard's story explains
 < 
 < What would you like to do?
 < 

@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
         cout << "\nWhat would you like to do?\n\n";
         cout << " 1. Choose the magic whistle.\n" <<
             " 2. Choose the magic shoes.\n" <<
-            " 3. Choose the magic toaster.\n";
+            " 3. Choose the magic toaster.";
     } else {
         ExitAbnormal("Testing wrongness.");
     }

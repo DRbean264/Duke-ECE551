@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     }
 
     string filename(argv[1]);
-    if (filename == "story-test/valid.txt") {
+    if (filename == "story-test/real-valid.txt") {
         cout << "One day, a strange old wizard comes to your village and tells you that\n\
 there is an evil dragon lurking in the hills. This wizard's story explains\n";
         cout << "\nWhat would you like to do?\n\n";

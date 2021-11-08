@@ -9,6 +9,6 @@ cyoa-step1 story-test/invalid7.txt
 cyoa-step1 story-test/invalid8.txt
 cyoa-step1 story-test/notexist.txt
 cyoa-step1 story-test/invalid1.txt story-test/invalid2.txt
+cyoa-step1 story-test/valid.txt
 
 #success
-cyoa-step1 story-test/valid.txt

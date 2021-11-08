@@ -1,3 +1,11 @@
+Before you Begin (Extra Credit):
+================================
+Before we dive into the assignment, we want to note that there is extra
+credit on this assignment.  The extra credit is not for doing extra
+work, but rather for doing each Step in a timely fashion (by an intermediate
+deadline).   Please see the enclosed Extra-Credit.txt file for details.  
+
+
 Choose Your Own Adventure
 ===========================================================================
 
@@ -64,6 +72,16 @@ The format of an input file is as follows:
     as it was in the input file. Note that any text is legal in this
     portion of the file (there is now way any of this input can be
     invalid).
+
+Note that we provide two example stories (one written by Drew,
+and one written by Genevieve!) in the story1 and story2 directories.
+There are also a variety of other test cases available in
+
+/usr/local/ece551/cyoa/
+
+some of which are valid and some of which are not.  These other test
+cases do not really tell meaningful stories (though story1 and story2
+are also there for convenience).
 
 Step 1
 ===========================================================================
@@ -256,11 +274,11 @@ above.
 
 Hint 1: Think about the story as a graph (make sure you have read and
         understood AoP Chapter 25), and think about what graph algorithm
-        makes the most sense here.
+        makes the most sense here. Especially think about how and when
+        you want to mark a node "visited."
 Hint 2: In the next step you may want a similar, but slightly
         different graph algorithm. How can you best avoid duplication
         of code here (AoP even gives you some hints on this...)?
-
 
 Make sure your Makefile produces cyoa-step3 (and that cyoa-step1 and
 cyoa-step2 still build and run correctly). Test your program well, and
@@ -322,6 +340,12 @@ The program should still exit successfully if it prints the above
 message, which is not an error (but instead a legitimate result of the
 program).  
 
+Hint: Step 3 hinted that you want a similar but slightly different
+      graph algorithm here. Think especially about how and when you
+      want to mark nodes as "visited" in this problem, if you want to
+      find ALL cycle-free winning paths. That is, you only want to
+      avoid re-visiting a node on the same path.
+
 Make sure your Makefile produces cyoa-step4 (and that cyoa-step1,
 cyoa-step2, and cyoa-step3 still build and run correctly). Test your
 program well, and submit.
@@ -331,14 +355,17 @@ Code Quality
 
 Your code will also be graded for its quality. Your grader will assess the
 quality of the abstraction, naming, formatting, OOP, and documentation
-of your code. For this assignment, make sure the functions you write
-use good abstraction, variable names are meaningful, formatting is
-standard (you can do this automatically by saving in Emacs; otherwise,
-you should run clang-format on your source code file), you have at
-least two classes, and their relationships, fields, and methods make
-sense, and that you document your work by adding a comment describing
-each of the functions you write, as well as a comment if you write
-anything complex or unusual. 
+of your code. For this assignment, this means to think about:
+  - Abstraction: function length and design, .hpp/.cpp file separation
+  - Naming: class, variable, function names
+  - Formatting: standard (you can do this automatically by saving in
+    Emacs; otherwise, you should run clang-format on your source code
+    file)
+  - OOP: you have at least two classes, and their relationships,
+    fields, and methods make sense, using access specifiers and const
+    appropriately 
+  - Documentation: comment describing each of the functions you write,
+    as well as a comment if you write anything complex or unusual. 
 
 Testing
 ===========================================================================
@@ -355,7 +382,7 @@ cyoa-step2 broken1
 
 #success
 cyoa-step1 story1/page1.txt
-cyoa-step2 story1
+cyoa-step2 story1 < test1/input2.txt
 cyoa-step3 story1
 cyoa-step4 story1
 
@@ -365,7 +392,24 @@ status. You are free to make your own test files.
 
 The next section has a #success header and is followed by test cases
 that should have a success status. For these the pregrader will check
-that your results match ours.
+that your results match ours. Note, you must provide input files for
+what the user would type to "read" a story. For example, you might
+have a directory test1 with test inputs for story1, where there might
+be a file input2.txt with this contents: 
+
+2
+1
+
+You can easily generate test files like this by doing
+
+tee test1/input2.txt | ./cyoa-step2 story1
+
+then "reading" the story. Note that you will need to press control-D
+when you are done to indicate end of input to "tee". Your typed inputs
+will be saved to test1/input2.txt, so that you could then read the
+story like 
+
+./cyoa-step2 story1 < test1/input2.txt
 
 You may write as many test cases as you like, but you are limited to
 20 seconds of compute time by the pregrader.
@@ -386,3 +430,8 @@ on all cases and without memory leaks on all success cases.
 
 This is an INDIVIDUAL assignment. You are only allowed to communicate
 regarding this assignment with an instructor or TA.
+
+Late Policy: As with all evaluative assignments, our late policy is
+that you may resubmit for a maximum of 70% up to one week after we
+return grades. Note that this policy DOES NOT apply if you receive a
+zero on the assignment due to academic misconduct.

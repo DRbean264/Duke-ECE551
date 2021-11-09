@@ -1,6 +1,6 @@
-Grading at 11/09/2021:04:48:06.869284
-For commit ID 6241862852819735d1fd123a89f9fcaadc8a7a8d
-Grading at Mon Nov  8 23:47:44 EST 2021
+Grading at 11/09/2021:04:51:19.061521
+For commit ID 889fb8236b344efa2ae4fee24912677ee15af6ec
+Grading at Mon Nov  8 23:50:56 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -290,17 +290,31 @@ Test case 13 (success): cyoa-step1 story-valid/page1.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 14 (success): cyoa-step1 story-valid/page+1.txt
-We considered this an error case and gave the following message:
-Could not open file story-valid/page+1.txt
-1d0
+1c1,8
 < ERROR: Testing wrongness.
+---
+> One day, a strange old wizard comes to your village and tells you that
+> there is an evil dragon lurking in the hills. This wizard's story explains
+> 
+> What would you like to do?
+> 
+>  1. Choose the magic whistle.
+>  2. Choose the magic shoes.
+>  3. Choose the magic toaster.
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 15 (success): cyoa-step1 story-valid/page002.txt
-We considered this an error case and gave the following message:
-Could not open file story-valid/page002.txt
-1d0
+1c1,8
 < ERROR: Testing wrongness.
+---
+> One day, a strange old wizard comes to your village and tells you that
+> there is an evil dragon lurking in the hills. This wizard's story explains
+> 
+> What would you like to do?
+> 
+>  1. Choose the magic whistle.
+>  2. Choose the magic shoes.
+>  3. Choose the magic toaster.
 Your file did not match the expected output
 
 You have FAILED one or more of your test cases

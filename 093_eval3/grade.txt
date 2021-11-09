@@ -1,6 +1,6 @@
-Grading at 11/08/2021:22:40:15.775174
-For commit ID 872f7a11a5cc215fea9193149a452234dc1cb4fb
-Grading at Mon Nov  8 17:39:55 EST 2021
+Grading at 11/09/2021:01:21:08.056090
+For commit ID 5cbbe18c88f4d54ca579c7c99e43b0e8f7bd0d82
+Grading at Mon Nov  8 20:20:46 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -250,55 +250,47 @@ rm -f *~ *.o cyoa-step1
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp page.h
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
 +-----------------------------------------------------------------------+
-Test case 1 (error): cyoa-step1 story-test/invalid1.txt
+Test case 1 (error): cyoa-step1 story-test/page-1.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 2 (error): cyoa-step1 story-test/invalid2.txt
+Test case 2 (error): cyoa-step1 story-test/page0.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 3 (error): cyoa-step1 story-test/invalid3.txt
+Test case 3 (error): cyoa-step1 story-test/page1.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 4 (error): cyoa-step1 story-test/invalid4.txt
+Test case 4 (error): cyoa-step1 story-test/page2.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 5 (error): cyoa-step1 story-test/invalid5.txt
+Test case 5 (error): cyoa-step1 story-test/page3.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 6 (error): cyoa-step1 story-test/invalid6.txt
+Test case 6 (error): cyoa-step1 story-test/page4.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 7 (error): cyoa-step1 story-test/invalid7.txt
+Test case 7 (error): cyoa-step1 story-test/page5.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 8 (error): cyoa-step1 story-test/invalid8.txt
+Test case 8 (error): cyoa-step1 story-test/page6.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 9 (error): cyoa-step1 story-test/notexist.txt
+Test case 9 (error): cyoa-step1 story-test/page7.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 10 (error): cyoa-step1 story-test/invalid1.txt story-test/invalid2.txt
+Test case 10 (error): cyoa-step1 story-test/page8.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 11 (error): cyoa-step1 story-test/valid.txt
-One day, a strange old wizard comes to your village and tells you that
-
-What would you like to do?
-
- 1. Choose the magic whistle.
- 2. Choose the magic shoes.
- 3. Choose the magic toaster.
-Your program did not indicate a failure case
+Test case 11 (error): cyoa-step1 story-test/page1238.txt
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 12 (success): cyoa-step1 story-test/valid.txt
-1,7d0
-< One day, a strange old wizard comes to your village and tells you that
-< 
-< What would you like to do?
-< 
-<  1. Choose the magic whistle.
-<  2. Choose the magic shoes.
-<  3. Choose the magic toaster.
+Test case 12 (error): cyoa-step1 story-test/page1.txt story-test/page2.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 13 (success): cyoa-step1 story-test/page1.txt
+We considered this an error case and gave the following message:
+Could not open file story-test/page1.txt
+1d0
+< ERROR: Testing wrongness.
 Your file did not match the expected output
 
 You have FAILED one or more of your test cases

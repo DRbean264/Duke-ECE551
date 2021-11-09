@@ -1,6 +1,6 @@
-Grading at 11/09/2021:04:22:11.526817
-For commit ID 27a5eb8a339a9030674d38477a67b310c179010c
-Grading at Mon Nov  8 23:21:51 EST 2021
+Grading at 11/09/2021:04:48:06.869284
+For commit ID 6241862852819735d1fd123a89f9fcaadc8a7a8d
+Grading at Mon Nov  8 23:47:44 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -288,6 +288,20 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 13 (success): cyoa-step1 story-valid/page1.txt
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 14 (success): cyoa-step1 story-valid/page+1.txt
+We considered this an error case and gave the following message:
+Could not open file story-valid/page+1.txt
+1d0
+< ERROR: Testing wrongness.
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 15 (success): cyoa-step1 story-valid/page002.txt
+We considered this an error case and gave the following message:
+Could not open file story-valid/page002.txt
+1d0
+< ERROR: Testing wrongness.
+Your file did not match the expected output
 
 You have FAILED one or more of your test cases
 Keep debugging

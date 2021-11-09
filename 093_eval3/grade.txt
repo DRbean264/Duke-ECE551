@@ -1,6 +1,6 @@
-Grading at 11/09/2021:20:32:29.593940
-For commit ID 48402a83c46502b11cfd04ad6c8f67c182a4efeb
-Grading at Tue Nov  9 15:32:03 EST 2021
+Grading at 11/09/2021:20:35:18.344293
+For commit ID 587bd2921e7d4c668c9c9b528c258b56f142884a
+Grading at Tue Nov  9 15:34:52 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -31,7 +31,12 @@ Test case 7 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 8 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page3.txt
-Your file matched the expected output
+4c4
+< Congratulations! You have won. Hooray!
+\ No newline at end of file
+---
+> Congratulations! You have won. Hooray!
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 9 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page4.txt
 4c4

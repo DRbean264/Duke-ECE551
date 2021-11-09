@@ -20,7 +20,7 @@ class Page
     public:
         Choices() {}
 
-        void print() {
+        void print() const {
             for (size_t i = 0; i < chArr.size(); ++i) {
                 std::cout << " " << i + 1 << ". " <<
                     chArr[i].second << std::endl;
@@ -125,12 +125,25 @@ public:
         else pageType = CHOICE;
     }
 
-    void printPage() {
+    void printPage() const {
         for (size_t i = 0; i < text.size(); ++i) {
             std::cout << text[i] << '\n';
         }
-        std::cout << "\nWhat would you like to do?\n\n";        
-        choices.print();
+        switch (pageType) {
+        case WIN:
+            std::cout << "\nCongratulations! You have won. Hooray!\n";
+            break;
+        case LOSE:
+            std::cout << "\nSorry, you have lost. Better luck next time!";
+            break;
+        case CHOICE:
+            std::cout << "\nWhat would you like to do?\n\n";        
+            choices.print();
+            break;
+        default:
+            ExitAbnormal("The page type should be among WIN, LOSE, CHOICE.");
+            break;
+        }                   
     }
     
     virtual ~Page() {}

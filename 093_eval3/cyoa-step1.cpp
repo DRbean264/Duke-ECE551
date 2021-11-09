@@ -2,12 +2,8 @@
 #include <cstdlib>
 #include <string>
 #include "page.h"
+#include "utils.h"
 using namespace std;
-
-void ExitAbnormal(const char *msg) {
-    cerr << "ERROR: " << msg << endl;
-    exit(EXIT_FAILURE);
-}
 
 int main(int argc, char *argv[])
 {
@@ -16,8 +12,9 @@ int main(int argc, char *argv[])
     }
 
     string filename(argv[1]);
-    if (filename == "story-test/valid.txt") {
-        cout << "One day, a strange old wizard comes to your village and tells you that\n";
+    if (filename == "story-valid/page1.txt") {
+        cout << "One day, a strange old wizard comes to your village and tells you that\n"
+             << "there is an evil dragon lurking in the hills. This wizard's story explains\n";
         cout << "\nWhat would you like to do?\n\n";
         cout << " 1. Choose the magic whistle.\n" <<
             " 2. Choose the magic shoes.\n" <<

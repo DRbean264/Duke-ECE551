@@ -1,15 +1,17 @@
 #error
-cyoa-step1 story-test/invalid1.txt
-cyoa-step1 story-test/invalid2.txt
-cyoa-step1 story-test/invalid3.txt
-cyoa-step1 story-test/invalid4.txt
-cyoa-step1 story-test/invalid5.txt
-cyoa-step1 story-test/invalid6.txt
-cyoa-step1 story-test/invalid7.txt
-cyoa-step1 story-test/invalid8.txt
-cyoa-step1 story-test/notexist.txt
-cyoa-step1 story-test/invalid1.txt story-test/invalid2.txt
-cyoa-step1 story-test/valid.txt
+cyoa-step1 story-test/page-1.txt
+cyoa-step1 story-test/page0.txt
+cyoa-step1 story-test/page1.txt
+cyoa-step1 story-test/page2.txt
+cyoa-step1 story-test/page3.txt
+cyoa-step1 story-test/page4.txt
+cyoa-step1 story-test/page5.txt
+cyoa-step1 story-test/page6.txt
+cyoa-step1 story-test/page7.txt
+cyoa-step1 story-test/page8.txt
+cyoa-step1 story-test/page1238.txt
+cyoa-step1 story-test/page1.txt story-test/page2.txt
+
 
 #success
-cyoa-step1 story-test/valid.txt
+cyoa-step1 story-test/page1.txt

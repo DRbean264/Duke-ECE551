@@ -20,6 +20,13 @@ class Page
     public:
         Choices() {}
 
+        void print() {
+            for (size_t i = 0; i < chArr.size(); ++i) {
+                std::cout << " " << i + 1 << ". " <<
+                    chArr[i].second << std::endl;
+            }
+        }
+        
         void addChoice(std::string line) {            
             size_t colPos = line.find(':');
             if (colPos == std::string::npos) {             // if there is no colon
@@ -42,8 +49,8 @@ class Page
     std::string filename;
     Choices choices;
 public:
-    Page(std::string _filename) : filename(_filename) {}
-
+    Page(std::string _filename) : filename(_filename) {}    
+    
     // read the page file and parse the contents
     // set the pageType, pageNum, text, choices correctly
     void parse() {
@@ -55,32 +62,55 @@ public:
         std::ifstream inFile(filename.c_str(), std::ifstream::in);
         if (!inFile)            // fail open the file
             ExitAbnormal("Cannot open the file.");
-        std::string line;
+        std::string line;        
         std::getline(inFile, line); // read the first line
         setPageType(line);          // infer the page type
-        // deal with the choice lines
-        do
-        {
-            if (line[0] == '#')  // the separator between the navigator and text
-                break;           
-            if (pageType == CHOICE) // only effective for CHOICE type
-                choices.addChoice(line);
-        } while (std::getline(inFile, line));
 
+        // if the page type is WIN or LOSE, then the separator '#' should be immediately on the next line
+        if (pageType == WIN || pageType == LOSE) {
+            std::getline(inFile, line);
+            if (line.size() == 0 || line[0] != '#') {
+                ExitAbnormal("The content format of the WIN/LOSE page is wrong.");
+            }
+        } else {   // deal with the choice lines
+            while (true) {
+                choices.addChoice(line);
+                if (!std::getline(inFile, line))
+                    ExitAbnormal("The separator '#' doesn't exist.");
+                if (line.size() > 0 && line[0] == '#')
+                    break;
+            }            
+        }
         
+        // read the text
+        readText(inFile);
     }
 
+    void readText(std::ifstream &inFile) {
+        std::string line;
+        while (getline(inFile, line)) {
+            text.push_back(line);
+        }
+    }
+    
     // the page file name must be in the format 'pageXXX.txt'
     void checkFilename() {
-        // if the first 4 characters are not 'page'
-        if (filename.find("page") != 0) {
+        // if the first 4 characters of the file name are not 'page'
+        std::size_t fileNameStart = filename.find_last_of("/\\");
+        std::string temp;
+        if (fileNameStart == std::string::npos)
+            temp = filename;
+        else
+            temp = filename.substr(fileNameStart + 1, filename.size() - 1 - fileNameStart);
+        
+        if (temp.find("page") != 0) {
             ExitAbnormal("The page file name should be in the format 'pageXXX.txt'");
         }
         // check if the characters after it is a valid number
-        size_t dotPos = filename.find('.');
+        size_t dotPos = temp.find('.');
         size_t numStart = 4;
         int tempPageNum;
-        if (!isValidNumber(filename.substr(numStart, dotPos - numStart), &tempPageNum)) {
+        if (!isValidNumber(temp.substr(numStart, dotPos - numStart), &tempPageNum)) {
             ExitAbnormal("The number after page should be a valid number and strictly greater than 0.");
         }
         pageNum = tempPageNum;
@@ -88,11 +118,19 @@ public:
     
     // we can infer the page type from the first line
     void setPageType(std::string firstLine) {
-        if (firstLine == "WIN\n")
+        if (firstLine == "WIN")
             pageType = WIN;
-        else if (firstLine == "LOSE\n")
+        else if (firstLine == "LOSE")
             pageType = LOSE;
         else pageType = CHOICE;
+    }
+
+    void printPage() {
+        for (size_t i = 0; i < text.size(); ++i) {
+            std::cout << text[i] << '\n';
+        }
+        std::cout << "\nWhat would you like to do?\n\n";        
+        choices.print();
     }
     
     virtual ~Page() {}

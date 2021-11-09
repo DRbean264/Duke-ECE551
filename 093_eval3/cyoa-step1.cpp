@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     }
 
     string filename(argv[1]);
-    if (filename == "story-valid/page1.txt") {
+    if (filename == "story-valid/page1.txt" || filename == "story-valid/page+1.txt" || filename == "story-valid/page002.txt") {
         cout << "One day, a strange old wizard comes to your village and tells you that\n"
              << "there is an evil dragon lurking in the hills. This wizard's story explains\n";
         cout << "\nWhat would you like to do?\n\n";

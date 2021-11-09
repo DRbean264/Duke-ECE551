@@ -1,6 +1,6 @@
-Grading at 11/09/2021:01:29:25.686095
-For commit ID 74e65b332bee4bda6a2d805a3f1be6b59c283eb8
-Grading at Mon Nov  8 20:29:09 EST 2021
+Grading at 11/09/2021:04:22:11.526817
+For commit ID 27a5eb8a339a9030674d38477a67b310c179010c
+Grading at Mon Nov  8 23:21:51 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -251,19 +251,19 @@ g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp page.h
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
 +-----------------------------------------------------------------------+
 Test case 1 (error): cyoa-step1 story-invalid/page-1.txt
-Our cyoa-step1 does not consider this an error case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 2 (error): cyoa-step1 story-invalid/page0.txt
-Our cyoa-step1 does not consider this an error case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 3 (error): cyoa-step1 story-invalid/page1.txt
-Our cyoa-step1 does not consider this an error case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 4 (error): cyoa-step1 story-invalid/page2.txt
-Our cyoa-step1 does not consider this an error case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 5 (error): cyoa-step1 story-invalid/page3.txt
-Our cyoa-step1 does not consider this an error case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 6 (error): cyoa-step1 story-invalid/page4.txt
 Your program successfully indicated a failure case

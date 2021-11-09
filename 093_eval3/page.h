@@ -8,9 +8,9 @@
 #include <fstream>
 #include <sstream>
 #include "utils.h"
-#define WIN 0;
-#define LOSE 1;
-#define CHOICE 2;
+#define WIN 0
+#define LOSE 1
+#define CHOICE 2
 
 class Page
 {
@@ -60,6 +60,8 @@ public:
         // if there is no number after page
         if (dotPos == numStart)
             ExitAbnormal("There's no number after page");
+        
+
         for (size_t i = numStart; i < dotPos; ++i) {
             if (filename[i] >= '0' && filename[i] <= '9')
                 continue;
@@ -67,17 +69,19 @@ public:
             ExitAbnormal("The page number is not valid in file name");
         }
         // set the page number
-        std::stringstream ss(filename.substr(numStart, dotPos - numStart));
+        std::stringstream ss(filename.substr(numStart, dotPos - numStart));        
         ss >> pageNum;
+        if (pageNum <= 0)
+            ExitAbnormal("The page number should be strictly greater than 0.");
     }
     
     // we can infer the page type from the first line
     void setPageType(std::string firstLine) {
         if (firstLine == "WIN\n")
-            pageType = 0;
+            pageType = WIN;
         else if (firstLine == "LOSE\n")
-            pageType = 1;
-        else pageType = 2;
+            pageType = LOSE;
+        else pageType = CHOICE;
     }
     
     virtual ~Page() {}

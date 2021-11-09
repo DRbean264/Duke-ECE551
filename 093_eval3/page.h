@@ -16,9 +16,23 @@ class Page
 {
     class Choices
     {
-        std::vector<std::pair<int, std::string> > choices;
+        std::vector<std::pair<int, std::string> > chArr;
     public:
         Choices() {}
+
+        void addChoice(std::string line) {            
+            size_t colPos = line.find(':');
+            if (colPos == std::string::npos) {             // if there is no colon
+                ExitAbnormal("The choice line should contain a colon.");
+            }
+            int pageNum;
+            // check the validity of the number before the colon
+            if (!isValidNumber(line.substr(0, colPos), &pageNum)) {
+                ExitAbnormal("The page number should be strictly greater than 0 and should be a valid number");
+            }            
+            chArr.push_back(std::pair<int, std::string>(pageNum, line.substr(colPos + 1, line.size() - colPos - 1)));
+        }
+        
         virtual ~Choices() {}
     };
 
@@ -44,35 +58,32 @@ public:
         std::string line;
         std::getline(inFile, line); // read the first line
         setPageType(line);          // infer the page type
-        
+        // deal with the choice lines
+        do
+        {
+            if (line[0] == '#')  // the separator between the navigator and text
+                break;           
+            if (pageType == CHOICE) // only effective for CHOICE type
+                choices.addChoice(line);
+        } while (std::getline(inFile, line));
+
         
     }
 
     // the page file name must be in the format 'pageXXX.txt'
     void checkFilename() {
-        // if the first 4 cahracters are not 'page'
+        // if the first 4 characters are not 'page'
         if (filename.find("page") != 0) {
             ExitAbnormal("The page file name should be in the format 'pageXXX.txt'");
         }
         // check if the characters after it is a valid number
         size_t dotPos = filename.find('.');
         size_t numStart = 4;
-        // if there is no number after page
-        if (dotPos == numStart)
-            ExitAbnormal("There's no number after page");
-        
-
-        for (size_t i = numStart; i < dotPos; ++i) {
-            if (filename[i] >= '0' && filename[i] <= '9')
-                continue;
-            // if contains other character other than number
-            ExitAbnormal("The page number is not valid in file name");
+        int tempPageNum;
+        if (!isValidNumber(filename.substr(numStart, dotPos - numStart), &tempPageNum)) {
+            ExitAbnormal("The number after page should be a valid number and strictly greater than 0.");
         }
-        // set the page number
-        std::stringstream ss(filename.substr(numStart, dotPos - numStart));        
-        ss >> pageNum;
-        if (pageNum <= 0)
-            ExitAbnormal("The page number should be strictly greater than 0.");
+        pageNum = tempPageNum;
     }
     
     // we can infer the page type from the first line

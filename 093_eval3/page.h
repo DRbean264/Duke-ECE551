@@ -131,7 +131,7 @@ public:
         }
         switch (pageType) {
         case WIN:
-            std::cout << "\nCongratulations! You have won. Hooray!\n";
+            std::cout << "\nCongratulations! You have won. Hooray!";
             break;
         case LOSE:
             std::cout << "\nSorry, you have lost. Better luck next time!";

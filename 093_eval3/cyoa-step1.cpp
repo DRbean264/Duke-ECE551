@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
 
     string filename(argv[1]);
     Page p(filename);
-    p.parse();
     p.printPage();
     
     // if (filename == "story-valid/page1.txt" || filename == "story-valid/page+1.txt" || filename == "story-valid/page002.txt") {

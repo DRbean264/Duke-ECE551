@@ -49,7 +49,9 @@ class Page
     std::string filename;
     Choices choices;
 public:
-    Page(std::string _filename) : filename(_filename) {}    
+    Page(std::string _filename) : filename(_filename) {
+        parse();
+    }    
     
     // read the page file and parse the contents
     // set the pageType, pageNum, text, choices correctly

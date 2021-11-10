@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     if (argc != 2)
         ExitAbnormal("You should input one directory.");
     string dirName(argv[1]);
-    if (dirName == "story-valid1-step2") {
+    if (dirName == "notstory-valid1-step2") {
         cout << "This is page 1.\n";
         cout << "\nWhat would you like to do?\n\n";
         cout << " 1. sjdljewffef\n"
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
         cout << " 1. sfjlffvvfdvb\n"
              << " 2. 8409845495\n"
              << " 3. fsnownuv9vv\n";
-        cerr << "Please enter a valid integer\n";
+        cerr << "That is not a valid choice, please try again\n";
         cout << "This is page 1.\n";
         cout << "\nWhat would you like to do?\n\n";
         cout << " 1. sjdljewffef\n"

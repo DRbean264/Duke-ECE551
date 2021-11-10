@@ -108,24 +108,36 @@ public:
             pageName = getPageFileName();
             Page p(pageName);
             p.printPage();
+            // if reach the win/lose page, exit success
             if (p.getPageType() == WIN || p.getPageType() == LOSE)
                 break;
             
             // get choice from user
-            curPageNum = getUserChoice();            
+            curPageNum = getUserChoice();
+            // additionally, if reach the EOF, exit success
+            if (curPageNum == 0)
+                break;
         }
     }
 
+    // Request the user to input a choice
+    // would only output 0 when user press CTRL-D, namely end of file
     int getUserChoice() {
         int numOfChoices = refedPage[curPageNum - 1].size();
         std::string userInput;
         std::cin >> userInput;
         int choiceId;
-        while (!isValidNumber(userInput, &choiceId) || (choiceId < 1 || choiceId > numOfChoices)) {
+        while (true) {
+            // if the user input EOF
+            if (std::cin.eof())
+                return 0;
+            if (isValidNumber(userInput, &choiceId) && (choiceId >= 1 && choiceId <= numOfChoices)) {
+                break; 
+            }
             std::cerr << "That is not a valid choice, please try again\n";
             std::cin >> userInput;
         }
-
+        
         return refedPage[curPageNum - 1][choiceId - 1];
     }
     

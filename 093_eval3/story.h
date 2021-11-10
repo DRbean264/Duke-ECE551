@@ -129,8 +129,9 @@ public:
         int choiceId;
         while (true) {
             // if the user input EOF
-            if (std::cin.eof())
-                return 0;
+            if (std::cin.eof()) {
+                ExitAbnormal("Cannot read from stdin.");
+            }                
             if (isValidNumber(userInput, &choiceId) && (choiceId >= 1 && choiceId <= numOfChoices)) {
                 break; 
             }

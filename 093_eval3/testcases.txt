@@ -3,7 +3,6 @@ cyoa-step2 story-invalid1-step2
 cyoa-step2 story-invalid2-step2
 cyoa-step2 story-invalid3-step2
 cyoa-step2 story-invalid4-step2
-cyoa-step2 story-valid1-step2
 
 #success
 cyoa-step2 story-valid1-step2 < input-story-valid1-step2.txt

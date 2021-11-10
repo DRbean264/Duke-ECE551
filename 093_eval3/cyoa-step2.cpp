@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
         cout << " 1. sjdljewffef\n"
              << " 2. dehdofjefpkjl\n"
              << " 3. sdoijfefvr\n";        
-        cout << "That is not a valid choice, please try again\n";
+        //cout << "That is not a valid choice, please try again\n";
         cout << "This is page 2.\n";
         cout << "\nWhat would you like to do?\n\n";
         cout << " 1. sfjlffvvfdvb\n"
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         cout << " 1. sjdljewffef\n"
              << " 2. dehdofjefpkjl\n"
              << " 3. sdoijfefvr\n";
-        cout << "That is not a valid choice, please try again\n";
+        //cout << "That is not a valid choice, please try again\n";
         cout << "This is page 2.\n";
         cout << "\nWhat would you like to do?\n\n";
         cout << " 1. sfjlffvvfdvb\n"

@@ -1,6 +1,6 @@
-Grading at 11/10/2021:03:19:03.479473
-For commit ID 96ad0e702eee3b3a888b9aab7b6746d6ce4086f2
-Grading at Tue Nov  9 22:18:42 EST 2021
+Grading at 11/10/2021:03:50:23.949191
+For commit ID 6927c614315ca01ca63f5d88a2be229fca5af5b3
+Grading at Tue Nov  9 22:50:02 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -345,17 +345,9 @@ Test case 4 (error): cyoa-step2 story-invalid4-step2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 5 (success): cyoa-step2 story-valid1-step2 < input-story-valid1-step2.txt
-8c8
-< That is not a valid choice, please try again
----
-> Please enter a valid integer
-23c23
-< That is not a valid choice, please try again
----
-> Please enter a valid integer
-Your file did not match the expected output
+Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET

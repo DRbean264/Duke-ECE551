@@ -1,6 +1,6 @@
-Grading at 11/10/2021:15:37:34.430139
-For commit ID 7ebb3d69530e817c36a1165fd00c8605569e4664
-Grading at Wed Nov 10 10:37:13 EST 2021
+Grading at 11/10/2021:15:47:39.097624
+For commit ID a8fc91324aa96d1a760d56e2ad1dbc8078db5d03
+Grading at Wed Nov 10 10:47:18 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -344,10 +344,37 @@ Your program successfully indicated a failure case
 Test case 4 (error): cyoa-step2 story-invalid4-step2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 5 (error): cyoa-step2 story-valid1-step2
-Your program successfully indicated a failure case
+Test case 5 (success): cyoa-step2 story-valid1-step2 < input-story-valid1-step2.txt
+We considered this an error case and gave the following message:
+Cannot read from stdin
+1c1,22
+< ERROR: Testing wrongness.
+---
+> This is page 1.
+> 
+> What would you like to do?
+> 
+>  1. sjdljewffef
+> This is page 2.
+> 
+> What would you like to do?
+> 
+>  1. sfjlffvvfdvb
+> That is not a valid choice, please try again
+> This is page 1.
+> 
+> What would you like to do?
+> 
+>  1. sjdljewffef
+> This is page 2.
+> 
+> What would you like to do?
+> 
+>  1. sfjlffvvfdvb
+> That is not a valid choice, please try again
+Your file did not match the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET

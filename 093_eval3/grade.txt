@@ -1,6 +1,6 @@
-Grading at 11/10/2021:03:13:59.377223
-For commit ID d76115a1916cceb85d9e9694baf6852ae85e8f3d
-Grading at Tue Nov  9 22:13:23 EST 2021
+Grading at 11/10/2021:03:19:03.479473
+For commit ID 96ad0e702eee3b3a888b9aab7b6746d6ce4086f2
+Grading at Tue Nov  9 22:18:42 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -327,82 +327,35 @@ The code did not compile!
 Did not compile for step 4
 Running your test cases
 
-Compiling cyoa-step1
-rm -f *~ *.o cyoa-step2
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp page.h utils.h
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
-+-----------------------------------------------------------------------+
-Test case 1 (error): cyoa-step1 story-invalid/page-1.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 2 (error): cyoa-step1 story-invalid/page0.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 3 (error): cyoa-step1 story-invalid/page1.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 4 (error): cyoa-step1 story-invalid/page2.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 5 (error): cyoa-step1 story-invalid/page3.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 6 (error): cyoa-step1 story-invalid/page4.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 7 (error): cyoa-step1 story-invalid/page5.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 8 (error): cyoa-step1 story-invalid/page6.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 9 (error): cyoa-step1 story-invalid/page7.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 10 (error): cyoa-step1 story-invalid/page8.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 11 (error): cyoa-step1 story-invalid/page1238.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 12 (error): cyoa-step1 story-invalid/page1.txt story-invalid/page2.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 13 (error): cyoa-step1 story-invalid/page9.txt
-Your program successfully indicated a failure case
-
 Compiling cyoa-step2
 rm -f *~ *.o cyoa-step2
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step2.cpp page.h utils.h
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step2 cyoa-step2.o
 +-----------------------------------------------------------------------+
-Test case 14 (error): cyoa-step2 story-invalid1-step2
+Test case 1 (error): cyoa-step2 story-invalid1-step2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 15 (error): cyoa-step2 story-invalid2-step2
+Test case 2 (error): cyoa-step2 story-invalid2-step2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 16 (error): cyoa-step2 story-invalid3-step2
+Test case 3 (error): cyoa-step2 story-invalid3-step2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 17 (error): cyoa-step2 story-invalid4-step2
+Test case 4 (error): cyoa-step2 story-invalid4-step2
 Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 5 (success): cyoa-step2 story-valid1-step2 < input-story-valid1-step2.txt
+8c8
+< That is not a valid choice, please try again
+---
+> Please enter a valid integer
+23c23
+< That is not a valid choice, please try again
+---
+> Please enter a valid integer
+Your file did not match the expected output
 
-Compiling cyoa-step1
-rm -f *~ *.o cyoa-step2
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp page.h utils.h
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
-+-----------------------------------------------------------------------+
-Test case 18 (success): cyoa-step1 story-valid/page1.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 19 (success): cyoa-step1 story-valid/page+1.txt
-Your file matched the expected output
-
-Grading has taken more than 20 seconds
-Skipping remaining test cases
-
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET

@@ -15,12 +15,12 @@ int main(int argc, char *argv[])
         cout << " 1. sjdljewffef\n"
              << " 2. dehdofjefpkjl\n"
              << " 3. sdoijfefvr\n";        
-        //cout << "That is not a valid choice, please try again\n";
         cout << "This is page 2.\n";
         cout << "\nWhat would you like to do?\n\n";
         cout << " 1. sfjlffvvfdvb\n"
              << " 2. 8409845495\n"
              << " 3. fsnownuv9vv\n";
+        cerr << "That is not a valid choice, please try again\n";
         cout << "This is page 1.\n";
         cout << "\nWhat would you like to do?\n\n";
         cout << " 1. sjdljewffef\n"

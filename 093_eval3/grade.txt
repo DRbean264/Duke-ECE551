@@ -1,6 +1,6 @@
-Grading at 11/10/2021:21:13:30.701588
-For commit ID 00dd859b98e728e53f55c90941287d60b4b91efe
-Grading at Wed Nov 10 16:13:07 EST 2021
+Grading at 11/10/2021:21:21:00.460923
+For commit ID 4097cf6a5e208d07a7390a13ec9252f12d3c06b3
+Grading at Wed Nov 10 16:20:36 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -105,10 +105,13 @@ Your program successfully indicated a failure case
 Test case 4 (error): cyoa-step2 story-invalid4-step2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 5 (success): cyoa-step2 story-valid1-step2 < input-story-valid1-step2.txt
-We considered this an error case and gave the following message:
-Cannot read from stdin
-Your file matched the expected output
+Test case 5 (error): cyoa-step2 story-valid1-step2
+This is page 1.
+
+What would you like to do?
+
+ 1. sjdljewffef
+Your program successfully indicated a failure case
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct

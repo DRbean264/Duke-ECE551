@@ -26,6 +26,14 @@ class Page
                     chArr[i].second << std::endl;
             }
         }
+
+        std::vector<int> getPageChoices() const {
+            std::vector<int> results;
+            for (size_t i = 0; i < chArr.size(); ++i) {
+                results.push_back(chArr[i].first);
+            }
+            return results;
+        }
         
         void addChoice(std::string line) {            
             size_t colPos = line.find(':');
@@ -46,12 +54,16 @@ class Page
     int pageType;
     int pageNum;
     std::vector<std::string> text;
-    std::string filename;
-    Choices choices;
+    std::string filename;    
 public:
+    Choices choices;
     Page(std::string _filename) : filename(_filename) {
         parse();
     }    
+
+    int getPageType() {
+        return pageType;
+    }
     
     // read the page file and parse the contents
     // set the pageType, pageNum, text, choices correctly

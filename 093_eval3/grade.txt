@@ -1,11 +1,11 @@
-Grading at 11/10/2021:21:21:00.460923
-For commit ID 4097cf6a5e208d07a7390a13ec9252f12d3c06b3
-Grading at Wed Nov 10 16:20:36 EST 2021
+Grading at 11/11/2021:01:15:37.791517
+For commit ID 3eba75c658ccdde048e65fafb5d9dc176bfcd6e3
+Grading at Wed Nov 10 20:15:15 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
-rm -f *~ *.o cyoa-step2
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp page.h utils.h
+rm -f *~ *.o cyoa-step3 *.gch
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
 Compiled for step 1
 +-----------------------------------------------------------------------+
@@ -41,8 +41,8 @@ Your file matched the expected output
 Step 1: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step2
-rm -f *~ *.o cyoa-step2
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step2.cpp page.h utils.h story.h
+rm -f *~ *.o cyoa-step3 *.gch
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step2.cpp
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step2 cyoa-step2.o
 Compiled for step 2
 Input to story is
@@ -78,19 +78,26 @@ Your file matched the expected output
 Step 2: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step3
-rm -f *~ *.o cyoa-step2
-The code did not compile!
-Did not compile for step 3
+rm -f *~ *.o cyoa-step3 *.gch
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step3.cpp
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step3 cyoa-step3.o
++-----------------------------------------------------------------------+
+Test case 15 (success): cyoa-step3 /usr/local/ece551/cyoa/story1
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 16 (success): cyoa-step3 /usr/local/ece551/cyoa/story2
+Your file matched the expected output
+Step 3: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step4
-rm -f *~ *.o cyoa-step2
+rm -f *~ *.o cyoa-step3 *.gch
 The code did not compile!
 Did not compile for step 4
 Running your test cases
 
 Compiling cyoa-step2
-rm -f *~ *.o cyoa-step2
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step2.cpp page.h utils.h story.h
+rm -f *~ *.o cyoa-step3 *.gch
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step2.cpp
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step2 cyoa-step2.o
 +-----------------------------------------------------------------------+
 Test case 1 (error): cyoa-step2 story-invalid1-step2

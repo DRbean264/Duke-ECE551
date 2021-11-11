@@ -10,9 +10,9 @@ int main(int argc, char *argv[])
     if (argc != 2)
         ExitAbnormal("You should input one directory.");
     string dirName(argv[1]);
-
-    // Story s(dirName);
-    // s.calculateStoryDepth();
+    
+    Story s(dirName);
+    s.calculateCycleFreeWin();
     
     return 0;
 }

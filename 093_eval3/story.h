@@ -156,6 +156,39 @@ public:
                 std::cout << "Page " << i << " is not reachable\n";                    
         }
     }
+
+    void printCycleFreeWin(std::vector<std::vector<int> > &finalPath, std::vector<std::vector<int> > &finalChoices) const {
+        if (finalPath.size() == 0) {
+            std::cout << "This story is unwinnable!\n";
+            return;
+        }            
+
+        // print all the possible winning path
+        for (size_t i = 0; i < finalPath.size(); ++i) {
+            for (size_t j = 0; j < finalPath[i].size(); ++j) {
+                if (j == finalPath[i].size() - 1) {
+                    std::cout << finalPath[i][j] << "(win)";
+                } else
+                    std::cout << finalPath[i][j] << '(' << finalChoices[i][j] << "),";                                
+            }
+            std::cout << std::endl;
+        }
+    }
+    
+    void calculateCycleFreeWin() {
+        std::set<int> visited;
+        visited.insert(1);
+        std::vector<int> curPath(1, 1);
+        std::vector<int> curChoices;
+        std::vector<std::vector<int> > finalPath;
+        std::vector<std::vector<int> > finalChoices;
+        myStack<int> st;
+        st.push(1);
+        
+        backtraceByContainer(visited, curPath, curChoices, finalPath, finalChoices, st);
+
+        printCycleFreeWin(finalPath, finalChoices);
+    }
     
     template<template<typename> class Container>
     std::vector<int> traverseByContainer() {
@@ -186,6 +219,58 @@ public:
             ++curLevel;
         }
         return result;
+    }
+
+    template<typename Container>
+    void backtraceByContainer(std::set<int> &visited, std::vector<int> &curPath, std::vector<int> &curChoices, 
+                              std::vector<std::vector<int> > &finalPath, std::vector<std::vector<int> > &finalChoices, Container con) {
+        // if the last page is win page, save it to finalPath
+        if (isWinPage(curPath.back())) {
+            finalPath.push_back(curPath);
+            finalChoices.push_back(curChoices);
+            return;
+        }
+        else if (isLosePage(curPath.back())) // if the last page is lose page, return and do nothing
+            return;
+        // if the Container is empty, return and do nothing
+        if (con.empty())
+            return;
+
+        // pop from the container
+        int curPageNum = con.pop();
+        for (size_t i = 0; i < refedPage[curPageNum - 1].size(); ++i) {
+            int temp = refedPage[curPageNum - 1][i];
+            // if this page is already in the path, skip
+            if (visited.find(temp) != visited.end()) {
+                continue;
+            }
+            visited.insert(temp);
+            curPath.push_back(temp);
+            curChoices.push_back(i + 1);
+            con.push(temp);
+            // recursive call
+            backtraceByContainer(visited, curPath, curChoices, finalPath, finalChoices, con);
+            // undo the modification
+            visited.erase(temp);
+            curPath.pop_back();
+            curChoices.pop_back();
+        }
+    }    
+
+    bool isLosePage(int pageNum) {
+        for (size_t i = 0; i < losePage.size(); ++i) {
+            if (pageNum == losePage[i])
+                return true;
+        }
+        return false;
+    }
+    
+    bool isWinPage(int pageNum) {
+        for (size_t i = 0; i < winPage.size(); ++i) {
+            if (pageNum == winPage[i])
+                return true;
+        }
+        return false;
     }
     
     void printStoryInfo() {

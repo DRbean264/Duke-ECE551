@@ -1,6 +1,6 @@
-Grading at 11/11/2021:01:21:45.702305
-For commit ID 5eed68d5a79ef12ed9c9dac607eb903ab0b08515
-Grading at Wed Nov 10 20:21:20 EST 2021
+Grading at 11/11/2021:01:26:55.681054
+For commit ID 974ca15593d0dffe6b534e3e3de28a5648c67ed1
+Grading at Wed Nov 10 20:26:29 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -125,14 +125,14 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 4 (error): cyoa-step2 story-invalid4-step2
 Your program successfully indicated a failure case
+
+Compiling cyoa-step3
+rm -f *~ *.o cyoa-step4 *.gch
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step3.cpp
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step3 cyoa-step3.o
 +-----------------------------------------------------------------------+
-Test case 5 (error): cyoa-step2 story-valid1-step2
-This is page 1.
-
-What would you like to do?
-
- 1. sjdljewffef
-Your program successfully indicated a failure case
+Test case 5 (success): cyoa-step3 story-valid1-step2
+Your file matched the expected output
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct

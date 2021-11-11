@@ -5,6 +5,35 @@
 #include <cstdlib>
 #include <string>
 #include <sstream>
+#include <stack>
+#include <queue>
+
+template<typename T>
+class myStack : public std::stack<T>
+{
+public:
+    myStack<T>() {}
+
+    T pop() {
+        T temp = std::stack<T>::top();
+        std::stack<T>::pop();
+        return temp;
+    }
+};
+
+template<typename T>
+class myQueue : public std::queue<T>
+{
+public:
+    myQueue<T>() {}
+
+    T pop() {
+        T temp = std::queue<T>::front();
+        std::queue<T>::pop();
+        return temp;
+    }
+};
+
 
 void ExitAbnormal(const char *msg) {
     std::cerr << "ERROR: " << msg << std::endl;

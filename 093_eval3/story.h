@@ -8,7 +8,10 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include <queue>
+#include <stack>
 #include <sstream>
+#include <deque>
 #include "page.h"
 #include "utils.h"
 
@@ -133,13 +136,56 @@ public:
                 ExitAbnormal("Cannot read from stdin.");
             }                
             if (isValidNumber(userInput, &choiceId) && (choiceId >= 1 && choiceId <= numOfChoices)) {
-                break; 
+                break;
             }
             std::cerr << "That is not a valid choice, please try again\n";
             std::cin >> userInput;
         }
         
         return refedPage[curPageNum - 1][choiceId - 1];
+    }
+
+    // calculate the story depth and print it out
+    void calculateStoryDepth() {
+        std::vector<int> stDepth = traverseByContainer<myQueue>();
+        for (size_t i = 1; i < stDepth.size(); ++i) {
+            if (stDepth[i] != -1)
+                std::cout << "Page " << i << ':'
+                          << stDepth[i] << '\n';
+            else
+                std::cout << "Page " << i << " is not reachable\n";                    
+        }
+    }
+    
+    template<template<typename> class Container>
+    std::vector<int> traverseByContainer() {
+        Container<int> con;
+        std::set<int> visited;
+        std::vector<int> result(numOfPage + 1, -1);
+
+        // push page 1 into the container
+        con.push(1);
+        int curLevel = 0;
+        int numElements = 1;
+        while (!con.empty()) {
+            int nextNumElements = 0;
+            while (numElements--) {
+                int temp = con.pop();
+                result[temp] = curLevel;
+                visited.insert(temp);
+                // push the unvisited choice of current page into queue
+                for (size_t i = 0; i < refedPage[temp - 1].size(); ++i) {
+                    // if the page is not visited, push into the queue
+                    if (visited.find(refedPage[temp - 1][i]) == visited.end()) {
+                        con.push(refedPage[temp - 1][i]);
+                        ++nextNumElements;
+                    }
+                }                
+            }
+            numElements = nextNumElements;
+            ++curLevel;
+        }
+        return result;
     }
     
     void printStoryInfo() {

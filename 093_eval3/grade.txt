@@ -1,6 +1,6 @@
-Grading at 11/13/2021:01:57:45.568460
-For commit ID 826f2d6c0e532ad6192b5c218f4ab876c7c06a94
-Grading at Fri Nov 12 20:57:18 EST 2021
+Grading at 11/13/2021:01:59:03.562234
+For commit ID 22248dace20273e2cdce2cf910c5f6d98c47ab1b
+Grading at Fri Nov 12 20:58:35 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -102,30 +102,30 @@ Your file matched the expected output
 Step 4: PASSED Pre-Grader Test Cases
 Running your test cases
 
-Compiling cyoa-step1
-rm -f *~ *.o cyoa-step4 *.gch
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
-+-----------------------------------------------------------------------+
-Test case 1 (error): cyoa-step1 story-invalid/page+1.txt
-Our cyoa-step1 does not consider this an error case
-
 Compiling cyoa-step2
 rm -f *~ *.o cyoa-step4 *.gch
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step2.cpp
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step2 cyoa-step2.o
 +-----------------------------------------------------------------------+
-Test case 2 (error): cyoa-step2 story-invalid1-step2
+Test case 1 (error): cyoa-step2 story-invalid1-step2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 3 (error): cyoa-step2 story-invalid2-step2
+Test case 2 (error): cyoa-step2 story-invalid2-step2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 4 (error): cyoa-step2 story-invalid3-step2
+Test case 3 (error): cyoa-step2 story-invalid3-step2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 5 (error): cyoa-step2 story-invalid4-step2
+Test case 4 (error): cyoa-step2 story-invalid4-step2
 Your program successfully indicated a failure case
+
+Compiling cyoa-step1
+rm -f *~ *.o cyoa-step4 *.gch
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp
+g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
++-----------------------------------------------------------------------+
+Test case 5 (success): cyoa-step1 story-invalid/page+1.txt
+Your file matched the expected output
 
 Compiling cyoa-step3
 rm -f *~ *.o cyoa-step4 *.gch
@@ -135,7 +135,7 @@ g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step3 cyoa-step3.o
 Test case 6 (success): cyoa-step3 story-valid1-step2
 Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET

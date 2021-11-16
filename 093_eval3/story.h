@@ -12,6 +12,7 @@
 #include <stack>
 #include <sstream>
 #include <deque>
+#include <assert.h>
 #include "page.h"
 #include "utils.h"
 
@@ -147,116 +148,50 @@ public:
 
     // calculate the story depth and print it out
     void calculateStoryDepth() {
-        std::vector<int> stDepth = traverseByContainer<myQueue>();
-        for (size_t i = 1; i < stDepth.size(); ++i) {
-            if (stDepth[i] != -1)
+        std::vector<std::vector<int> > result(refedPage.size() + 1, std::vector<int>(1, -1));
+        graphSearch<myQueue<std::vector<int> >, BFS>(refedPage, 1, result);
+
+        for (size_t i = 1; i < result.size(); ++i) {
+            if (result[i][0] != -1)
                 std::cout << "Page " << i << ':'
-                          << stDepth[i] << '\n';
+                          << result[i][0] << '\n';
             else
-                std::cout << "Page " << i << " is not reachable\n";                    
+                std::cout << "Page " << i << " is not reachable\n";
         }
     }
 
-    void printCycleFreeWin(std::vector<std::vector<int> > &finalPath, std::vector<std::vector<int> > &finalChoices) const {
-        if (finalPath.size() == 0) {
-            std::cout << "This story is unwinnable!\n";
-            return;
-        }            
-
-        // print all the possible winning path
-        for (size_t i = 0; i < finalPath.size(); ++i) {
-            for (size_t j = 0; j < finalPath[i].size(); ++j) {
-                if (j == finalPath[i].size() - 1) {
-                    std::cout << finalPath[i][j] << "(win)";
-                } else
-                    std::cout << finalPath[i][j] << '(' << finalChoices[i][j] << "),";                                
+    int getChoiceNum(int curPage, int nextPage) const {
+        for (size_t i = 0; i < refedPage[curPage - 1].size(); ++i) {
+            if (refedPage[curPage - 1][i] == nextPage) {
+                return i + 1;
             }
-            std::cout << std::endl;
         }
+        return 0;
+    }
+    
+    void printCycleFreeWin(std::vector<int> &result) const {
+        for (size_t i = 1; i < result.size(); ++i) {
+            std::cout << result[i - 1] << "(" << getChoiceNum(result[i - 1], result[i])
+                      << "),";
+        }
+        std::cout << result.back() << "(win)\n";
     }
     
     void calculateCycleFreeWin() {
-        std::set<int> visited;
-        visited.insert(1);
-        std::vector<int> curPath(1, 1);
-        std::vector<int> curChoices;
-        std::vector<std::vector<int> > finalPath;
-        std::vector<std::vector<int> > finalChoices;
-        myStack<int> st;
-        st.push(1);
+        std::vector<std::vector<int> > result;
+        graphSearch<myStack<std::vector<int> >, DFS>(refedPage, 1, result);
         
-        backtraceByContainer(visited, curPath, curChoices, finalPath, finalChoices, st);
-
-        printCycleFreeWin(finalPath, finalChoices);
-    }
-    
-    template<template<typename> class Container>
-    std::vector<int> traverseByContainer() {
-        Container<int> con;
-        std::set<int> visited;
-        std::vector<int> result(numOfPage + 1, -1);
-
-        // push page 1 into the container
-        con.push(1);
-        int curLevel = 0;
-        int numElements = 1;
-        while (!con.empty()) {
-            int nextNumElements = 0;
-            while (numElements--) {
-                int temp = con.pop();
-                result[temp] = curLevel;
-                visited.insert(temp);
-                // push the unvisited choice of current page into queue
-                for (size_t i = 0; i < refedPage[temp - 1].size(); ++i) {
-                    // if the page is not visited, push into the queue
-                    if (visited.find(refedPage[temp - 1][i]) == visited.end()) {
-                        con.push(refedPage[temp - 1][i]);
-                        ++nextNumElements;
-                    }
-                }                
+        bool winnible = false;
+        for (size_t i = 0; i < result.size(); ++i) {
+            if (isWinPage(result[i].back())) {
+                winnible = true;
+                printCycleFreeWin(result[i]);
             }
-            numElements = nextNumElements;
-            ++curLevel;
         }
-        return result;
+        if (!winnible)
+            std::cout << "This story is unwinnable!\n";
     }
-
-    template<typename Container>
-    void backtraceByContainer(std::set<int> &visited, std::vector<int> &curPath, std::vector<int> &curChoices, 
-                              std::vector<std::vector<int> > &finalPath, std::vector<std::vector<int> > &finalChoices, Container con) {
-        // if the last page is win page, save it to finalPath
-        if (isWinPage(curPath.back())) {
-            finalPath.push_back(curPath);
-            finalChoices.push_back(curChoices);
-            return;
-        }
-        else if (isLosePage(curPath.back())) // if the last page is lose page, return and do nothing
-            return;
-        // if the Container is empty, return and do nothing
-        if (con.empty())
-            return;
-
-        // pop from the container
-        int curPageNum = con.pop();
-        for (size_t i = 0; i < refedPage[curPageNum - 1].size(); ++i) {
-            int temp = refedPage[curPageNum - 1][i];
-            // if this page is already in the path, skip
-            if (visited.find(temp) != visited.end()) {
-                continue;
-            }
-            visited.insert(temp);
-            curPath.push_back(temp);
-            curChoices.push_back(i + 1);
-            con.push(temp);
-            // recursive call
-            backtraceByContainer(visited, curPath, curChoices, finalPath, finalChoices, con);
-            // undo the modification
-            visited.erase(temp);
-            curPath.pop_back();
-            curChoices.pop_back();
-        }
-    }    
-
+        
     bool isLosePage(int pageNum) {
         for (size_t i = 0; i < losePage.size(); ++i) {
             if (pageNum == losePage[i])

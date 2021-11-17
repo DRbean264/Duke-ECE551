@@ -42,7 +42,7 @@ class Page
             }
             int pageNum;
             // check the validity of the number before the colon
-            if (!isValidNumber(line.substr(0, colPos), &pageNum)) {
+            if (!isValidNumber(line.substr(0, colPos), &pageNum, false)) {
                 ExitAbnormal("The page number should be strictly greater than 0 and should be a valid number");
             }            
             chArr.push_back(std::pair<int, std::string>(pageNum, line.substr(colPos + 1, line.size() - colPos - 1)));
@@ -54,13 +54,17 @@ class Page
     int pageType;
     int pageNum;
     std::vector<std::string> text;
-    std::string filename;    
+    std::string filename;
+    bool noSign;
 public:
     Choices choices;
-    Page(std::string _filename) : filename(_filename) {
+    Page(std::string _filename) : filename(_filename), noSign(true) {
         parse();
     }    
-
+    Page(std::string _filename, bool _noSign) : filename(_filename), noSign(_noSign) {
+        parse();
+    }
+    
     int getPageType() {
         return pageType;
     }
@@ -124,7 +128,7 @@ public:
         size_t dotPos = temp.find('.');
         size_t numStart = 4;
         int tempPageNum;
-        if (!isValidNumber(temp.substr(numStart, dotPos - numStart), &tempPageNum)) {
+        if (!isValidNumber(temp.substr(numStart, dotPos - numStart), &tempPageNum, noSign)) {
             ExitAbnormal("The number after page should be a valid number and strictly greater than 0.");
         }
         pageNum = tempPageNum;

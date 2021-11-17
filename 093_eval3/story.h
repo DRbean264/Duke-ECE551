@@ -136,7 +136,7 @@ public:
             if (std::cin.eof()) {
                 ExitAbnormal("Cannot read from stdin.");
             }                
-            if (isValidNumber(userInput, &choiceId) && (choiceId >= 1 && choiceId <= numOfChoices)) {
+            if (isValidNumber(userInput, &choiceId, false) && (choiceId >= 1 && choiceId <= numOfChoices)) {
                 break;
             }
             std::cerr << "That is not a valid choice, please try again\n";

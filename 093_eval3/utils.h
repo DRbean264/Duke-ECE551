@@ -45,7 +45,7 @@ void ExitAbnormal(const char *msg) {
     exit(EXIT_FAILURE);
 }
 
-bool isValidNumber(const std::string &line, int *pageNum) {
+bool isValidNumber(const std::string &line, int *pageNum, bool noSign) {
     if (line.size() == 0) {
         return false;
     }
@@ -57,6 +57,10 @@ bool isValidNumber(const std::string &line, int *pageNum) {
     // the page number should be strictly greater than 0 and should only be valid number
     if (*pageNum <= 0 || rest.size() > 0)
         return false;
+    // if noSign is set to be true, then the number with a sign symbol (+/-) before it is not accepted
+    if (noSign && (line[0] < '0' || line[0] > '9')) {
+        return false;
+    }
     return true;
 }
 

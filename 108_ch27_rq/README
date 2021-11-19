@@ -1,0 +1,138 @@
+As always, read and understand Chapters 27, then answer these questions
+in "answers.txt".  
+
+For questions 1--6, consider the following tree:
+
+                      55
+                    /    \ 
+                   32      77
+                  /  \   /   \
+                 16  50 68    90
+                /      /  \   / 
+               8      66  73 80  
+                         /  \ 
+                        70  75
+			
+For questions 1--4, consider this tree as an AVL tree.
+For questions 5--6, consider this tree as a Red/Black tree.
+
+1. If you were to add 4 to this tree, what rotation would be required?
+
+A. A single rotation at 8
+B. A single rotation at 16
+C. A single rotation at 32
+D. A single rotation at 55
+E. A double rotation at 8
+F. A double rotation at 16
+G. A double rotation at 32
+H. A dobule rotation at 55
+I. No rotation is required.
+J. Some other rotation (not listed here) is required.
+
+2.  If you were to add 67 to the original tree, what rotation would be required?
+
+A. A single rotation at 70.
+B. A single rotation at 73.
+C. A single rotation at 66.
+D. A single rotation at 77.
+E. A single rotation at 55.
+F. A double rotation at 70.
+G. A double rotation at 73.
+H. A double rotation at 66.
+I. A double rotation at 77.
+J. A double rotation at 55
+K. No rotation is required.
+L. Some other rotation (not listed here) is required.
+
+3. If you were to add 47 to the original tree, what rotation would be required?
+
+A. A single rotation at 50.
+B. A single rotation at 32.
+C. A single rotation at 55.
+D. A double rotation at 50.
+E. A double rotation at 32.
+F. A double rotation at 55.
+G. No rotation is required.
+H. Some other rotation (not listed here) is required.
+
+4. If you were to add 69 to the original tree, what rotation would be required?
+
+A. A single rotation at 68.
+B. A single rotation at 73.
+C. A single rotation at 77.
+D. A double rotation at 68.
+E. A double rotation at 73.
+F. A double rotation at 77.
+G. No rotation is required.
+H. Some other rotation (not listed here) is required.
+
+5. To red black color this tree, how many black nodes must there be on
+   all paths from the root to NULL [do not include NULL nodes in this count]:
+
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+F. 1 or 2  [i.e., some colorings have 1, others have 2]
+G. 2 or 3
+H. 1, 2, or 3
+
+6. Which of the following nodes must be colored RED to correctly 
+   red/black color this tree?
+
+A. 16
+B. 32
+C. 50
+D. 64
+E. 66
+F. 68
+G. 72
+H. 90
+
+7. What is the worst case time complexity for the "insert" operation
+   in a balanced BST? (n is the number of nodes in the tree)
+
+A. O(1)
+B. O(lg(n))
+C. O(n)
+D. O(n*lg(n))
+
+8. What is the worst case time complexity for the "delete" operation
+   in AVL tree?	(n is the number of nodes in the tree)
+
+A. O(1)
+B. O(lg(n))
+C. O(n)
+D. O(n*lg(n))
+
+9. Which of the following is INCORRECT about the principles of forming
+   a red-black tree?
+
+A. The root node is black.
+B. If a node is red, its children must be black.
+C. If a node is black, its children must be red.
+D. Each path from root to leaf node has the same number of black nodes.
+
+10. Which of the following is not accurate regarding properties of AVL and
+    red-black trees? 
+
+A. Both AVL tree and red-black tree always have each node balanced
+   (as defined by the difference in their children's heights)
+B. Both AVL tree and red-black tree take O(log(n)) time for basic operations,
+   like lookup, insertion and deletion. 
+C. Both AVL tree and red-black tree make use of rotations to
+   preserve the balance.
+D. None of the above (all are accurate)
+
+11. Which of the following describes the relationship between the
+    set of all valid red-black trees and the set of all valid AVL trees:
+
+A.  AVL is a strict super set of red-black:  every red-black tree is
+    AVL balanced, but there exist AVL trees for which no red-black coloring exists
+B.  Red-black is a strict super set of AVL:  every AVL tree can be
+    red-black colored, but there exist red-black tree which are not AVL balanced.
+C.  The two are the same: any valid AVL tree can be red-black colored,
+    and any valid red-black tree is a valid AVL tree
+D.  None of the above    
+

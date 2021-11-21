@@ -1,0 +1,192 @@
+As always, read and understand Chapters 28 then answer these questions
+in "answers.txt".
+
+1. What does pid stand for?
+
+A. Performance Interrupt Descriptor
+B. Parallelism Intensity Definition
+C. Process ID
+D. Pretty Interesting Data
+
+2. Threads are like processes except that, unlike processes, threads...
+
+A. share a stack pointer
+B. do not run in parallel with each other
+C. share an address space
+D. do not share their heaps
+E. are only supported on Linux
+
+3. The third argument to pthread_create (which is of type void *(*) (void *))
+   specifies...
+
+A. the stack pointer for the new thread
+B. the heap pointer for the new thread
+C. the function to execute for the new thread
+D. None of the above
+
+4. What does pthread_join do?
+
+A. Causes two threads to execute serially
+B. Causes two threads to join togetehr to work on the same data
+C. Causes two threads to merge their heaps
+D. Causes the calling thread to wait for another thread to exit.
+
+5. Figure 28.1 stops at 16 threads, as that is what the hardware 
+   that was used supported.  Suppose this experiment were run on
+   hardware that supports more threads.  What would you expect to see
+   happen to the black (2048x2048) line?
+
+A. It would continue to linearly increase no matter how many threads are available.
+B. It would flatten off immediately after 16 threads.
+C. It would continue to increase mostly linearly to a point, then flatten off
+D. None of the above
+
+6. If you want to parallelise work that is not EP, you typically need...
+
+A. at least 64 threads
+B. synchronization
+C. a hashtable
+D. to use a functional language
+E. to use fork() instead of threads
+F. some other thing not listed here (None of the above).
+
+7. If one thread has locked a mutex, and another thread attempts to lock it,
+   what will happen on the second thread?
+
+A. segmentation fault
+B. std::mutex_locked_exception
+C. it is automatically unlocked on the other thread
+D. it will wait until the mutex is unlocked
+E. None of the above
+
+8. The performance benefits of a reader/writer lock come from the fact that it allows...
+
+A. one read and one write can be done at the same time
+B. multiple reads to happen when no writes are occuring
+C. multiple writes to happen when no reads are occuring
+D. None of the above
+
+9. Which operations are used on a condition variable?
+
+A. lock/unlock
+B. acquire/release
+C. up/down
+D. wait/signal
+E. enqueue/dequeue
+F. test/set
+G. None of the above
+
+10. In order to write your own correct mutex implementat which also performs well, 
+    (as opposed to using one in a library) you need to have complete mastery of
+    which of the following concepts?
+
+A. Cache coherence
+B. Memory consistency models
+C. Atomic primitives
+D. All of the above
+
+11. The trickiest part of implementing a lock free data structure in a language
+    like C or C++ is...
+
+A. understanding atomic compare-and-swap
+B. correctly freeing memory
+C. understanding memory consistency models
+D. None of the above
+
+12. What is Cilk?
+
+A. A framework for task paralellism
+B. A framework for data parallelism
+C. A framework for pipeline parallelism
+D. A framework for lock free data structures
+E. None of the above
+
+13. Applying Amdhal’s Law to time you spend on tasks during a day, you
+    would find that optimizing time spent brushing your teeth is worthwhile...
+
+A. only if you can speed up tooth brushing by at least 2x
+B. only if you can speed up tooth brushing by at least 10x
+C. only if you can speed up tooth brushing by at least 100x
+D. never.
+
+14. Which of the following is accurate with regards to multi-threading?
+
+A. The hardware has a fixed number of threads that can run at one time.
+   If you are running more threads than this at any given time, some of them
+   must wait for the hardware to become available.
+B. Because each thread has its own stack, one thread cannot access data
+   in another thread’s stack.
+C. Threads in the same process share memory with each other. 
+D. The speedup performance is always in linear proportion to the number of
+   threads we are using.
+
+15. Which of the following is correct about multi-processing? 
+
+A. If you run 100 tasks on a 4-core machine, total run time could be 4x less time
+   than running on single-core machine.
+B. A zombie process is a process whose parent process has finished or terminated.
+C. Calling wait()/waitpid() is required by the parent process to cleanup child processes
+   that have exited.
+D. Processes cannot communicate with each other.
+
+16. Which of the following might cause the deadlock?
+
+A. A process releases a resource.
+B. One process has goes into an infinite loop.
+C. There are too many threads sharing the same resource.
+D. No resource pre-emption and circular wait.
+
+17. Data race means a situation where at least two threads both try to access
+    the same address without synchronization in between, and...
+    
+A. both operations are reads.
+B. at least one operation is a read.
+C. both operations are writes.
+D. at least one operation is a write.
+
+18. In the example from Video 28.3, which is NOT the reason of this
+    mutex-based version of code running slow?
+
+A. The entire computation in this example is serially dependent.
+B. Each thread is working on a different task in the program.
+C. Locking or unlocking a mutex has a non-trivial overhead.
+D. Each thread spends a significant amount of time waiting for a mutex.
+
+19. Which of the following about mutex is correct?
+
+A. A thread cannot acquire more than one lock(mutex) at a time. 
+B. No mutex can be locked more than one thread at time.
+C. If you wanted to write your own mutex, you can just write
+     while(locked) {
+     }
+     locked = true;
+   to implement the lock operation.
+D. A mutex allows two threads to modify the same piece of data safely at the same time.
+
+20. Which of the following about atomic test-and-set is correct?
+
+A. If thread A executes test-and-set, and thread B executes test-and-set
+   at the same time, there could be a race in which both observe the data
+   as 0, and set it to 1.
+B. It is a more general atomic primitive than atomic compare-and-exchange.
+C. Test-and-set can be used to implement the lock operation of a mutex.
+D. It is not possible for a CPU to perform test-and-set in a single instruction.
+
+21. What is the problem that test-and-set might cause?
+
+A. Two threads executing the instruction at the same time might cause deadlock
+B. The race condition described in answer (a) of question 20 above.
+C. If many threads are contending for a lock, the cache block must move
+   around the system, causing significant on chip data traffic, as each
+   thread tries to read the variable.
+D. If too many threads execute test-and-set at once, the system crashes.
+
+22. Which model of parallelism is best described as
+    "Each task spawns a small number of child tasks (which in turn
+    may spawn their own children, and so on)."
+
+A. Data parallelism
+B. Pipeline parallelism
+C. Task parallelism
+D. Time parallelism
+

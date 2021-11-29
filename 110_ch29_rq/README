@@ -1,0 +1,100 @@
+As always, read and understand Chapters 29 then answer these questions
+in "answers.txt".
+
+1. What does the sub-object rule say?
+
+A. Ring-ding-ding-ding-dingeringeding! Gering-ding-ding-ding-dingeringeding!
+B. Objects must be laid out such that they contain a portion which is laid
+   out exactly like each parent class.
+C. Objects must be laid out such that fields are in one part of the object,
+   and methods are in another part of the object.
+D. Objects must be laid out such that private fields are separated from public
+   fields.
+E. None of the above.
+
+2. What is a vtable?
+
+A. An array of objects of the same type
+B. An array of pointers to parent classes
+C. An array of verification data.
+D. An array of function pointers, used for dynamic dispatch.
+E. None of the above.
+
+3. If class X inherits from two parent classes, how many vtable pointers
+    do objects of type X contain?
+
+A. 0
+B. 1
+C. 2
+D. 3
+E. 4
+
+4. What does virtual inheritance do?
+
+A. Makes all inherited functions use dynamic dispatch.
+B. Makes all inherited functions use static dispatch.
+C. Makes the sub-object rule not apply to the child class.
+D. Makes references to the parent sub-object occur through an offest in the vtable.
+E. None of the above.
+
+5. What is a mixin?
+
+A. When you go get icecream, and they fold the toppings into it.
+B. A templated class, whose template parameter is used as the parent class.
+C. A class where the parent and child classes in an inheritance hiearchy each
+   have pointers to distinct instances of that class.
+D. A form of circular queue.
+E. None of the above
+
+6. Which of the following is INCORRECT about static dispatch and dynamic dispatch?
+
+A. Static dispatch is also called early binding, which selects the method at compile time.
+B. Dynamic dispatch is also called late binding, which selects the method at run time.
+C. Static dispatch allows programmers to combine components at run time.
+D. Dynamic dispatch allows programmers to use overridden methods when an object
+   is being used polymorphically.
+
+7. If a child class inherits from two parent classes, then ...
+   
+A. both parent classes can inherit the features of the child class.
+B. the child class can be used polymorphically with either parent class.
+C. two parent class can be the same class.
+D. the order of two parent classes makes no difference.
+
+8. Which of the following is accurate with regards to multiple inheritance?
+
+A. The destructor of the primary parent class will first be called in the destruction process.
+B. The body of the constructor of the child class will be executed before the bodies
+   of the parent class constructors.
+C. In the layout of multiple inheritance, each parent’s vtable only contains its own methods.
+D. If two parent classes have fields with the same name, we need to use the scope resolution
+   operator to access the specified field in parent class.
+
+9. Which of the following is INCORRECT about virtual inheritance?
+
+A. Virtual inheritance is used to avoid two copies of the same grandparent class.
+B. The keyword "virtual" is used in a child class when it tries to inherit two parents, which
+   both inherit from the same grandparent class.
+C. When a program tries to access fields in the virtually inherited class, the memory
+   address of that field is not a fixed offset from the start of the object.
+D. Virtual inheritance has well defined rules for the order in which virtually inherited
+   superclasses are constructed, based on a DFS through the inheritance graph.
+
+10. Given the following code, which accurately describes the access restriction
+    of D's inheritance of C?
+
+class A {
+public:
+	int x;
+	A() :x(0) {  }	
+};
+
+class B: public virtual A {};	
+class C: virtual public A {};	
+class D: public B, C {};	
+
+A. D public inherits C
+B. D protected inherits C
+C. D private inherits C
+D. This code fails to compile since we did not specify an access restriction between the
+   comma and C in declaring class D.

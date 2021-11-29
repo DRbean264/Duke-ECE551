@@ -12,11 +12,11 @@ B
 A
 D
 C
-B
-B
+C
+D
 D
 B
-B
+D
 C
 C
 C

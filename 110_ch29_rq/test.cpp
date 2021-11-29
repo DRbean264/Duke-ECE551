@@ -27,5 +27,7 @@ int main()
 {
     D aD;
     aD.print();
+    C *anotherD = &aD;    
+    cout << anotherD->x << endl;
     return 0;
 }

@@ -24,12 +24,7 @@ class Story
     std::vector<std::vector<int> > refedPage;
     std::vector<int> winPage;
     std::vector<int> losePage;
-public:
-    Story(std::string _dirName)
-        : dirName(_dirName), numOfPage(0), curPageNum(0) {
-        checkValidity();
-    }
-
+protected:
     std::string getPageFileName() {
         std::stringstream ss;
         ss << dirName << "/page" << curPageNum << ".txt";
@@ -53,7 +48,7 @@ public:
             // check if the page can be constructed successfully
             Page p(pageName);
             ++numOfPage;
-            refedPage.push_back(p.choices.getPageChoices());
+            refedPage.push_back(p.getPageChoicesNum());
             if (p.getPageType() == WIN) { // if the page is WIN page
                 winPage.push_back(curPageNum);
             } else if (p.getPageType() == LOSE) { // if the page is LOSE page
@@ -101,29 +96,7 @@ public:
         // check the story logic
         checkStoryLogic();                
     }
-
-    void start() {
-        // display from the first page of the story
-        curPageNum = 1;
-        std::string pageName;
-        
-        while (true) {
-            // display current page
-            pageName = getPageFileName();
-            Page p(pageName);
-            p.printPage();
-            // if reach the win/lose page, exit success
-            if (p.getPageType() == WIN || p.getPageType() == LOSE)
-                break;
-            
-            // get choice from user
-            curPageNum = getUserChoice();
-            // additionally, if reach the EOF, exit success
-            if (curPageNum == 0)
-                break;
-        }
-    }
-
+    
     // Request the user to input a choice
     // would only output 0 when user press CTRL-D, namely end of file
     int getUserChoice() {
@@ -146,20 +119,6 @@ public:
         return refedPage[curPageNum - 1][choiceId - 1];
     }
 
-    // calculate the story depth and print it out
-    void calculateStoryDepth() {
-        std::vector<std::vector<int> > result(refedPage.size() + 1, std::vector<int>(1, -1));
-        graphSearch<myQueue<std::vector<int> >, BFS>(refedPage, 1, result);
-
-        for (size_t i = 1; i < result.size(); ++i) {
-            if (result[i][0] != -1)
-                std::cout << "Page " << i << ':'
-                          << result[i][0] << '\n';
-            else
-                std::cout << "Page " << i << " is not reachable\n";
-        }
-    }
-
     int getChoiceNum(int curPage, int nextPage) const {
         for (size_t i = 0; i < refedPage[curPage - 1].size(); ++i) {
             if (refedPage[curPage - 1][i] == nextPage) {
@@ -175,24 +134,9 @@ public:
                       << "),";
         }
         std::cout << result.back() << "(win)\n";
-    }
-    
-    void calculateCycleFreeWin() {
-        std::vector<std::vector<int> > result;
-        graphSearch<myStack<std::vector<int> >, DFS>(refedPage, 1, result);
-        
-        bool winnible = false;
-        for (size_t i = 0; i < result.size(); ++i) {
-            if (isWinPage(result[i].back())) {
-                winnible = true;
-                printCycleFreeWin(result[i]);
-            }
-        }
-        if (!winnible)
-            std::cout << "This story is unwinnable!\n";
-    }
-        
-    bool isLosePage(int pageNum) {
+    }   
+
+        bool isLosePage(int pageNum) {
         for (size_t i = 0; i < losePage.size(); ++i) {
             if (pageNum == losePage[i])
                 return true;
@@ -207,7 +151,65 @@ public:
         }
         return false;
     }
+
     
+public:
+    Story(std::string _dirName)
+        : dirName(_dirName), numOfPage(0), curPageNum(0) {
+        checkValidity();
+    }
+    
+    void start() {
+        // display from the first page of the story
+        curPageNum = 1;
+        std::string pageName;
+        
+        while (true) {
+            // display current page
+            pageName = getPageFileName();
+            Page p(pageName);
+            p.printPage();
+            // if reach the win/lose page, exit success
+            if (p.getPageType() == WIN || p.getPageType() == LOSE)
+                break;
+            
+            // get choice from user
+            curPageNum = getUserChoice();
+            // additionally, if reach the EOF, exit success
+            if (curPageNum == 0)
+                break;
+        }
+    }
+
+    // calculate the story depth and print it out
+    void calculateStoryDepth() {
+        std::vector<std::vector<int> > result(refedPage.size() + 1, std::vector<int>(1, -1));
+        graphSearch<myQueue<std::vector<int> >, BFS>(refedPage, 1, result);
+
+        for (size_t i = 1; i < result.size(); ++i) {
+            if (result[i][0] != -1)
+                std::cout << "Page " << i << ':'
+                          << result[i][0] << '\n';
+            else
+                std::cout << "Page " << i << " is not reachable\n";
+        }
+    }
+     
+    void calculateCycleFreeWin() {
+        std::vector<std::vector<int> > result;
+        graphSearch<myStack<std::vector<int> >, DFS>(refedPage, 1, result);
+        
+        bool winnible = false;
+        for (size_t i = 0; i < result.size(); ++i) {
+            if (isWinPage(result[i].back())) {
+                winnible = true;
+                printCycleFreeWin(result[i]);
+            }
+        }
+        if (!winnible)
+            std::cout << "This story is unwinnable!\n";
+    }
+            
     void printStoryInfo() {
         std::cout << "Number of pages in this story: " << numOfPage << '\n';
         std::cout << "Page choices:\n";
@@ -230,6 +232,5 @@ public:
     
     virtual ~Story() {}
 };
-
 
 #endif /* STORY_H */

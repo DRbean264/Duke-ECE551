@@ -27,12 +27,11 @@ class Page
             }
         }
 
-        std::vector<int> getPageChoices() const {
-            std::vector<int> results;
+        void getPageChoicesNumber(std::vector<int> &results) const {
+            results = std::vector<int>();
             for (size_t i = 0; i < chArr.size(); ++i) {
                 results.push_back(chArr[i].first);
-            }
-            return results;
+            }            
         }
         
         void addChoice(std::string line) {            
@@ -50,25 +49,55 @@ class Page
         
         virtual ~Choices() {}
     };
-
+    
     int pageType;
     int pageNum;
     std::vector<std::string> text;
     std::string filename;
+    Choices choices;
     bool noSign;
 public:
-    Choices choices;
     Page(std::string _filename) : filename(_filename), noSign(true) {
         parse();
     }    
     Page(std::string _filename, bool _noSign) : filename(_filename), noSign(_noSign) {
         parse();
     }
+
+    std::vector<int> getPageChoicesNum() const {
+        std::vector<int> results;
+        choices.getPageChoicesNumber(results);
+        return results;
+    }
     
     int getPageType() {
         return pageType;
     }
+
+    void printPage() const {
+        for (size_t i = 0; i < text.size(); ++i) {
+            std::cout << text[i] << '\n';
+        }
+        switch (pageType) {
+        case WIN:
+            std::cout << "\nCongratulations! You have won. Hooray!\n";
+            break;
+        case LOSE:
+            std::cout << "\nSorry, you have lost. Better luck next time!\n";
+            break;
+        case CHOICE:
+            std::cout << "\nWhat would you like to do?\n\n";        
+            choices.print();
+            break;
+        default:
+            ExitAbnormal("The page type should be among WIN, LOSE, CHOICE.");
+            break;
+        }                   
+    }    
+
+    virtual ~Page() {}
     
+protected:
     // read the page file and parse the contents
     // set the pageType, pageNum, text, choices correctly
     void parse() {
@@ -141,30 +170,7 @@ public:
         else if (firstLine == "LOSE")
             pageType = LOSE;
         else pageType = CHOICE;
-    }
-
-    void printPage() const {
-        for (size_t i = 0; i < text.size(); ++i) {
-            std::cout << text[i] << '\n';
-        }
-        switch (pageType) {
-        case WIN:
-            std::cout << "\nCongratulations! You have won. Hooray!\n";
-            break;
-        case LOSE:
-            std::cout << "\nSorry, you have lost. Better luck next time!\n";
-            break;
-        case CHOICE:
-            std::cout << "\nWhat would you like to do?\n\n";        
-            choices.print();
-            break;
-        default:
-            ExitAbnormal("The page type should be among WIN, LOSE, CHOICE.");
-            break;
-        }                   
-    }
-    
-    virtual ~Page() {}
+    }        
 };
 
 

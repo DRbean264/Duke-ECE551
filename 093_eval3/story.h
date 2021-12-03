@@ -21,21 +21,27 @@ class Story
     std::string dirName;
     int numOfPage;
     int curPageNum;
+    // this is an adjacency list, with each item corresponding to a page's choice pages
+    // e.g. {{2,3,4}, {3,4,5}, {1,2,5}, {}, {}}
     std::vector<std::vector<int> > refedPage;
     std::vector<int> winPage;
     std::vector<int> losePage;
+// protected member functions, which is not intended to be called by others
 protected:
+    // get the path of the file
     std::string getPageFileName() {
         std::stringstream ss;
         ss << dirName << "/page" << curPageNum << ".txt";
         return ss.str();
     }
-
+    // check the existance of the file
     bool checkFileExist(std::string pageName) {
         std::ifstream inFile(pageName.c_str());
         return inFile.good();
     }
-    
+    // check if the page exists, if the page is of valid format,
+    // if the page1.txt exist.
+    // Additionally, set the all the fields to appropriate values
     void checkPages() {
         curPageNum = 1;
         std::string pageName = getPageFileName();
@@ -46,6 +52,7 @@ protected:
         
         while (true) {
             // check if the page can be constructed successfully
+            // namely, if the content of the page is of valid format
             Page p(pageName);
             ++numOfPage;
             refedPage.push_back(p.getPageChoicesNum());
@@ -65,8 +72,12 @@ protected:
             }            
         }
     }
-
+    // check the logic of the story
+    // whether the story has at least one win and lose page
+    // whether all pages in the story are refered to at least once (except page1)
+    // whether some pages refer to an unexisted page
     void checkStoryLogic() {
+        // use a set to record all the pages which are refered
         std::set<int> refedPageSet;
         for (size_t i = 0; i < refedPage.size(); ++i) {
             for (size_t j = 0; j < refedPage[i].size(); ++j) {
@@ -88,6 +99,7 @@ protected:
             ExitAbnormal("A story should contain at least one WIN and one LOSE page.");
     }
     
+    // thorough checking of the story
     void checkValidity() {
         // first check all the pages
         // e.g. check the existence of page1.txt, the content of all the pages
@@ -98,7 +110,7 @@ protected:
     }
     
     // Request the user to input a choice
-    // would only output 0 when user press CTRL-D, namely end of file
+    // and return the corresponding next page number
     int getUserChoice() {
         int numOfChoices = refedPage[curPageNum - 1].size();
         std::string userInput;
@@ -108,7 +120,8 @@ protected:
             // if the user input EOF
             if (std::cin.eof()) {
                 ExitAbnormal("Cannot read from stdin.");
-            }                
+            }
+            // check if the user entered a valid number
             if (isValidNumber(userInput, &choiceId, false) && (choiceId >= 1 && choiceId <= numOfChoices)) {
                 break;
             }
@@ -118,7 +131,7 @@ protected:
         
         return refedPage[curPageNum - 1][choiceId - 1];
     }
-
+    // get the rank/index of a choice
     int getChoiceNum(int curPage, int nextPage) const {
         for (size_t i = 0; i < refedPage[curPage - 1].size(); ++i) {
             if (refedPage[curPage - 1][i] == nextPage) {
@@ -127,7 +140,7 @@ protected:
         }
         return 0;
     }
-    
+    // print the cycle free win path
     void printCycleFreeWin(std::vector<int> &result) const {
         for (size_t i = 1; i < result.size(); ++i) {
             std::cout << result[i - 1] << "(" << getChoiceNum(result[i - 1], result[i])
@@ -135,15 +148,15 @@ protected:
         }
         std::cout << result.back() << "(win)\n";
     }   
-
-        bool isLosePage(int pageNum) {
+    // check if a page is a lose page
+    bool isLosePage(int pageNum) {
         for (size_t i = 0; i < losePage.size(); ++i) {
             if (pageNum == losePage[i])
                 return true;
         }
         return false;
     }
-    
+    // check is a page is a win page
     bool isWinPage(int pageNum) {
         for (size_t i = 0; i < winPage.size(); ++i) {
             if (pageNum == winPage[i])
@@ -151,14 +164,13 @@ protected:
         }
         return false;
     }
-
-    
+// public member functions
 public:
     Story(std::string _dirName)
         : dirName(_dirName), numOfPage(0), curPageNum(0) {
         checkValidity();
     }
-    
+    // start the story!!!
     void start() {
         // display from the first page of the story
         curPageNum = 1;
@@ -176,8 +188,8 @@ public:
             // get choice from user
             curPageNum = getUserChoice();
             // additionally, if reach the EOF, exit success
-            if (curPageNum == 0)
-                break;
+            // if (curPageNum == 0)
+            //     break;
         }
     }
 
@@ -194,11 +206,12 @@ public:
                 std::cout << "Page " << i << " is not reachable\n";
         }
     }
-     
+    // calculate the cycle free win path and print it out
     void calculateCycleFreeWin() {
         std::vector<std::vector<int> > result;
         graphSearch<myStack<std::vector<int> >, DFS>(refedPage, 1, result);
-        
+
+        // only print the win path, get rid of the lose path
         bool winnible = false;
         for (size_t i = 0; i < result.size(); ++i) {
             if (isWinPage(result[i].back())) {
@@ -209,7 +222,7 @@ public:
         if (!winnible)
             std::cout << "This story is unwinnable!\n";
     }
-            
+    // print the story information, useful for debugging
     void printStoryInfo() {
         std::cout << "Number of pages in this story: " << numOfPage << '\n';
         std::cout << "Page choices:\n";

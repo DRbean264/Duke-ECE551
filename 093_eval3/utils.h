@@ -13,6 +13,8 @@
 #define BFS 1
 #define DFS 2
 
+// inherit the stl stack class
+// modify the pop interface
 template<typename T>
 class myStack : public std::stack<T>
 {
@@ -25,7 +27,8 @@ public:
         return temp;
     }
 };
-
+// inherit the stl queue class
+// modify the pop interface
 template<typename T>
 class myQueue : public std::queue<T>
 {
@@ -39,12 +42,15 @@ public:
     }
 };
 
-
+// exit failure function
 void ExitAbnormal(const char *msg) {
     std::cerr << "ERROR: " << msg << std::endl;
     exit(EXIT_FAILURE);
 }
 
+// check if the string is a valid number
+// if it is, save the result in pageNum
+// the "noSign" determines if the sign(+/-) is acceptable before the number
 bool isValidNumber(const std::string &line, int *pageNum, bool noSign) {
     if (line.size() == 0) {
         return false;
@@ -64,6 +70,7 @@ bool isValidNumber(const std::string &line, int *pageNum, bool noSign) {
     return true;
 }
 
+// specify how to update the result vector
 template<typename T, int mode>
 void updateResult(std::vector<T> &result, const std::vector<int> &curPath) {
     if (mode == BFS) {
@@ -72,7 +79,7 @@ void updateResult(std::vector<T> &result, const std::vector<int> &curPath) {
         result.push_back(curPath);        
     }    
 }
-
+// a general graph search algorithm
 template<typename Container, int mode>
 void graphSearch(const std::vector<std::vector<int> > &adjList, int from, std::vector<std::vector<int> > &result) {
     std::set<int> visited;
@@ -88,10 +95,11 @@ void graphSearch(const std::vector<std::vector<int> > &adjList, int from, std::v
         if (visited.find(curNode) == visited.end()) {
             visited.insert(curNode);
             // only when the last page is win/lose should we put the path into result
-            // or the is calculating story depth
+            // or we're calculating story depth
             if (mode == BFS || (mode == DFS && adjList[curNode - 1].size() == 0))
                 updateResult<std::vector<int>, mode>(result, curPath);
-            
+
+            // push the neighbors into the Container
             for (size_t i = 0; i < adjList[curNode - 1].size(); ++i) {
                 curPath.push_back(adjList[curNode - 1][i]);
                 con.push(curPath);
@@ -100,6 +108,5 @@ void graphSearch(const std::vector<std::vector<int> > &adjList, int from, std::v
         }
     }    
 }
-
 
 #endif /* UTILS_H */

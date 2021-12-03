@@ -13,7 +13,8 @@ int main(int argc, char *argv[])
 
     Story s(dirName);
     s.start();
-    
+
+    // hard coding for debugging
     // if (dirName == "notstory-valid1-step2") {
     //     cout << "This is page 1.\n";
     //     cout << "\nWhat would you like to do?\n\n";

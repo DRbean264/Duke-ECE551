@@ -14,12 +14,16 @@
 
 class Page
 {
+    // Inner Choices class, process the page choices,
+    // like print, add choices, and get choice number
     class Choices
     {
+        // this field contains (choice number, description) pairs
         std::vector<std::pair<int, std::string> > chArr;
     public:
         Choices() {}
 
+        // print the choices information in a readable format
         void print() const {
             for (size_t i = 0; i < chArr.size(); ++i) {
                 std::cout << " " << i + 1 << ". " <<
@@ -27,13 +31,15 @@ class Page
             }
         }
 
+        // get current page's choice numbers into the results vector
         void getPageChoicesNumber(std::vector<int> &results) const {
             results = std::vector<int>();
             for (size_t i = 0; i < chArr.size(); ++i) {
                 results.push_back(chArr[i].first);
             }            
         }
-        
+
+        // parse the input line and add new choice info
         void addChoice(std::string line) {            
             size_t colPos = line.find(':');
             if (colPos == std::string::npos) {             // if there is no colon
@@ -55,7 +61,10 @@ class Page
     std::vector<std::string> text;
     std::string filename;
     Choices choices;
+    // if true, then the number should not contain any sign before it
+    // if false, then then number with sign is acceptable
     bool noSign;
+// public member function
 public:
     Page(std::string _filename) : filename(_filename), noSign(true) {
         parse();
@@ -63,7 +72,7 @@ public:
     Page(std::string _filename, bool _noSign) : filename(_filename), noSign(_noSign) {
         parse();
     }
-
+    // an interface of getting current page's choices
     std::vector<int> getPageChoicesNum() const {
         std::vector<int> results;
         choices.getPageChoicesNumber(results);
@@ -73,7 +82,7 @@ public:
     int getPageType() {
         return pageType;
     }
-
+    // print the page of requested format
     void printPage() const {
         for (size_t i = 0; i < text.size(); ++i) {
             std::cout << text[i] << '\n';
@@ -96,7 +105,7 @@ public:
     }    
 
     virtual ~Page() {}
-    
+// protected member function
 protected:
     // read the page file and parse the contents
     // set the pageType, pageNum, text, choices correctly
@@ -128,11 +137,11 @@ protected:
                     break;
             }            
         }
-        
+        // pass all the format checking
         // read the text
         readText(inFile);
     }
-
+    // read the text from the file
     void readText(std::ifstream &inFile) {
         std::string line;
         while (getline(inFile, line)) {
@@ -160,10 +169,12 @@ protected:
         if (!isValidNumber(temp.substr(numStart, dotPos - numStart), &tempPageNum, noSign)) {
             ExitAbnormal("The number after page should be a valid number and strictly greater than 0.");
         }
+        // pass all the format checking
         pageNum = tempPageNum;
     }
     
     // we can infer the page type from the first line
+    // set the correcponding page type
     void setPageType(std::string firstLine) {
         if (firstLine == "WIN")
             pageType = WIN;

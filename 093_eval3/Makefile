@@ -1,6 +1,6 @@
 CPPFLAGS = -Wall -Werror -pedantic -std=gnu++98 -ggdb3
 
-cyoa-step4: cyoa-step4.o cyoa-step3.o cyoa-step2.o cyoa-step1.o
+cyoa-step4: cyoa-step4.o
 	g++ $(CPPFLAGS) -o cyoa-step4 cyoa-step4.o
 
 cyoa-step3: cyoa-step3.o

@@ -1,141 +1,303 @@
-Grading at 12/03/2021:19:11:54.880657
+Grading at 12/07/2021:03:23:09.795197
 For commit ID 8acde9f3c3aedf5bd7047005202c2579ff68a3bf
-Grading at Fri Dec  3 14:11:24 EST 2021
-Checking Step 1 test cases required for extra credit
+Grading at Mon Dec  6 22:22:11 EST 2021
 
-Compiling cyoa-step1
+=========================================================================
+Step 1
+
+Checking that cyoa-step1 compiles
 rm -f *~ *.o cyoa-step4 cyoa-step3 cyoa-step2 cyoa-step1 *.gch
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
-Compiled for step 1
 +-----------------------------------------------------------------------+
-Test case 1 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page1.txt
-Your file matched the expected output
+Test case 1
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 2 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page2.txt
-Your file matched the expected output
+Test case 2
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 3 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page3.txt
-Your file matched the expected output
+Test case 3
+Your program successfully indicated a failure case
+                                                         [1/1]
 +-----------------------------------------------------------------------+
-Test case 4 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page4.txt
-Your file matched the expected output
+Test case 4
+Your program successfully indicated a failure case
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 5 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page5.txt
-Your file matched the expected output
+Test case 5
+Your program successfully indicated a failure case
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 6 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page1.txt
-Your file matched the expected output
+Test case 6
+Your program successfully indicated a failure case
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 7 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page2.txt
-Your file matched the expected output
+Test case 7
+Your program successfully indicated a failure case
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 8 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page3.txt
+Test case 8
 Your file matched the expected output
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 9 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page4.txt
+Test case 9
 Your file matched the expected output
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 10 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page5.txt
+Test case 10
 Your file matched the expected output
-Step 1: PASSED Pre-Grader Test Cases
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 11
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 12
+Your file matched the expected output
+                                                         [2/2]
 
-Compiling cyoa-step2
+Step 1 total                                             [20.0/20]
+
+=========================================================================
+Step 2
+
+Checking that cyoa-step2 compiles
 rm -f *~ *.o cyoa-step4 cyoa-step3 cyoa-step2 cyoa-step1 *.gch
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step2.cpp
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step2 cyoa-step2.o
-Compiled for step 2
-Input to story is
-1
-1
-1
-
 +-----------------------------------------------------------------------+
-Test case 11 (success): cyoa-step2 /usr/local/ece551/cyoa/story1 < pregrader_input.txt
-Your file matched the expected output
-Input to story is
-3
-2
-
+Test case 13
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 12 (success): cyoa-step2 /usr/local/ece551/cyoa/story1 < pregrader_input.txt
-Your file matched the expected output
-Input to story is
-1
-2
-2
-1
-
+Test case 14
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 13 (success): cyoa-step2 /usr/local/ece551/cyoa/story2 < pregrader_input.txt
-Your file matched the expected output
-Input to story is
-3
-
+Test case 15
+Your program successfully indicated a failure case
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 14 (success): cyoa-step2 /usr/local/ece551/cyoa/story2 < pregrader_input.txt
+Test case 16
+Your program successfully indicated a failure case
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 17
+Your program successfully indicated a failure case
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 18
+Your program successfully indicated a failure case
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 19
+Your program successfully indicated a failure case
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 20
+Your program successfully indicated a failure case
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 21
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 22
 Your file matched the expected output
-Step 2: PASSED Pre-Grader Test Cases
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 23
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 24
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 25
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 26
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 27
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 28
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 29
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 30
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 31
+Your file matched the expected output
+                                                         [2/2]
 
-Compiling cyoa-step3
+Step 2 total                                             [30.0/30]
+
+=========================================================================
+Step 3
+
+Checking that cyoa-step3 compiles
 rm -f *~ *.o cyoa-step4 cyoa-step3 cyoa-step2 cyoa-step1 *.gch
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step3.cpp
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step3 cyoa-step3.o
 +-----------------------------------------------------------------------+
-Test case 15 (success): cyoa-step3 /usr/local/ece551/cyoa/story1
-Your file matched the expected output
+Test case 32
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 16 (success): cyoa-step3 /usr/local/ece551/cyoa/story2
+Test case 33
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 34
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 35
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 36
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 37
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 38
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 39
 Your file matched the expected output
-Step 3: PASSED Pre-Grader Test Cases
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 40
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 41
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 42
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 43
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 44
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 45
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 46
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 47
+Your file matched the expected output
+                                                         [2/2]
 
-Compiling cyoa-step4
+Step 3 total                                             [20.0/20]
+
+=========================================================================
+Step 4
+
+Checking that cyoa-step4 compiles
 rm -f *~ *.o cyoa-step4 cyoa-step3 cyoa-step2 cyoa-step1 *.gch
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step4.cpp
 g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step4 cyoa-step4.o
 +-----------------------------------------------------------------------+
-Test case 17 (success): cyoa-step4 /usr/local/ece551/cyoa/story1
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 18 (success): cyoa-step4 /usr/local/ece551/cyoa/story2
-Your file matched the expected output
-Step 4: PASSED Pre-Grader Test Cases
-Running your test cases
-
-Compiling cyoa-step2
-rm -f *~ *.o cyoa-step4 cyoa-step3 cyoa-step2 cyoa-step1 *.gch
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step2.cpp
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step2 cyoa-step2.o
-+-----------------------------------------------------------------------+
-Test case 1 (error): cyoa-step2 story-invalid1-step2
+Test case 48
 Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 2 (error): cyoa-step2 story-invalid2-step2
+Test case 49
 Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 3 (error): cyoa-step2 story-invalid3-step2
+Test case 50
 Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 4 (error): cyoa-step2 story-invalid4-step2
+Test case 51
 Your program successfully indicated a failure case
-
-Compiling cyoa-step1
-rm -f *~ *.o cyoa-step4 cyoa-step3 cyoa-step2 cyoa-step1 *.gch
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step1.cpp
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step1 cyoa-step1.o
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 5 (success): cyoa-step1 story-invalid/page+1.txt
+Test case 52
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 53
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 54
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 55
 Your file matched the expected output
-
-Compiling cyoa-step3
-rm -f *~ *.o cyoa-step4 cyoa-step3 cyoa-step2 cyoa-step1 *.gch
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -c cyoa-step3.cpp
-g++ -Wall -Werror -pedantic -std=gnu++98 -ggdb3 -o cyoa-step3 cyoa-step3.o
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 6 (success): cyoa-step3 story-valid1-step2
+Test case 56
 Your file matched the expected output
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 57
+Your file matched the expected output
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 58
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 59
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 60
+Your file matched the expected output
+                                                         [2/2]
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+Step 4 total                                             [20.0/20]
 
-Overall Grade: NO GRADE YET
+=========================================================================
+Code quality
+
+Abstration:    Excellent
+OOP:           Excellent
+Naming:        Excellent
+Formatting:    Excellent
+Documentation: Excellent
+Comments from your grader:
+Great job! The code has excellent abstraction and objected orientation with 
+classes Page and Story. The code is also good in terms of documentation and 
+formatting. A suggestion is that the code implementation could be extracted out 
+from the *.hpp files. Header files are supposed to be consice and easy to read.
+Quality total                                            [10/10]
+
+=========================================================================
+Extra credit for early progress: 10
+
+Overall Grade: 110
